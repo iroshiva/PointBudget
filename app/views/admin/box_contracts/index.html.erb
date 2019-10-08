@@ -1,0 +1,10 @@
+<%= render partial: "admin/shared/index",
+           locals:{resources: @contracts,
+                   action: 'box_contracts',
+                   path_new: new_admin_box_contract_path,
+                   path: "/admin/box_contracts/",
+                   edition: true,
+                   title: 'Box Contracts',
+                   titles: ['Supplier','Offer name', 'Price per month',  'Internet_ype', 'TV', 'Fixe Fr', 'Mobile Fr', 'Abroad'],
+                   values: %w(supplier  offer_name price_month internet_type tv call_fix_fr call_mobile_fr call_foreign ),
+                   button_new: "New Box contract"}%>

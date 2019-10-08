@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module PermissionHelper
-  def is_admin?
+  def admin?
     user_signed_in? && current_user.is_admin == true
   end
 end

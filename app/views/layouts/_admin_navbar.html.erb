@@ -1,13 +1,25 @@
 <div class="container-fluid flex-grow-1">
   <div class="row h-100">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
+      <div class="sidebar-sticky mt-5">
         <ul class="nav flex-column">
           <li class="nav-item">
             <%= link_to("Users", admin_users_path, class: "nav-link")%>
           </li>
           <li class="nav-item">
             <%= link_to("Gas Contracts", admin_gas_contracts_path, class: "nav-link")%>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Mobile Contracts", admin_mobil_contracts_path, class: "nav-link")%>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Box Contracts", admin_box_contracts_path, class: "nav-link")%>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Bank Contracts", admin_bank_contracts_path, class: "nav-link")%>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Electricity Contracts", admin_ele_contracts_path, class: "nav-link")%>
           </li>
           <li class="nav-item">
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link"%>

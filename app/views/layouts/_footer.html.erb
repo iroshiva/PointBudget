@@ -1,49 +1,74 @@
-<footer class="page-footer font-small text-white bg-primary pt-4">
-  <div id="footer" class="container-fluid text-center text-md-left">
-    <div class="row">
-      <div class="col-md-4 mt-md-0 mt-3 contact-section">
-        <h3 class="text-uppercase contact-title">Contact</h3>
-        <div class="contact-info">
-          <p>Email: point@pointbudget.fr <br> Tel: +33 3 33 33 33 33
-          </p>
-        </div>
-      </div>
-      <hr class="clearfix w-100 d-md-none pb-3">
-      <div class="col-md-4 mb-md-0 mb-3 d-flex align-items-center icon-section">
-        <div class="contact-icons">
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="fb-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-          </a>
-          <a class="fb-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-          </a>
+<footer class="page-footer font-small text-white bg-primary pt-5">
+  <div id="footer" class="container-fluid text-center">
+    <div class="row justify-content-around  ">
+
+<!--      CONTACT SECTION-->
+      <div class="col-md-2 mb-md-0 mb-4 ">
+        <h3 class="text-uppercase text-md-left text-center">Contact</h3>
+        <div class="d-flex flex-column justify-content-end align-items-md-start text-md-left text-center align-items-sm-center">
+          <div >
+            Adresse: <br> <%= link_to "10 rue Jules Blaizet CHENOVE 21300", "https://www.google.com/maps/place/10+Rue+Jules+Blaizet,+21300+Chen%C3%B4ve/@47.293148,4.9985903,17z/data=!3m1!4b1!4m5!3m4!1s0x47f29cf9a25fd603:0x8d492cf712231de1!8m2!3d47.2931444!4d5.0007843", target: :_blank%>
+          </div>
+          <div>
+            Email: <%=mail_to 'pointbudget@hotmail.com'%>
+          </div>
+          <div>
+            Tel: <%= link_to "+33652680080","tel:+33652680080" %>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-4 mb-md-0 mb-3 link-section">
-        <h5 class="text-uppercase">Liens</h5>
-        <ul class="list-unstyled">
+
+   <!--      SOCIAL NETWORKS-->
+
+      <div class="col-md-3"> 
+        <div class="row justify-content-center mt-3">
+          <div class="col-md-12  mb-md-0 mb-4 d-flex justify-content-around align-items-center my-sm-4">
+            <!--                INSTAGRAM-->
+            <div>
+              <%= link_to "https://www.instagram.com/pointbudget/", class:'fb-ic mr-3', target: :_blank do %>
+                <i class="fab fa-instagram fa-lg white-text fa-2x"></i>
+              <% end %>
+            </div>
+            <!--                 LINKEDIN-->
+            <div>
+              <%= link_to "https://www.linkedin.com/in/benjamin-vaissac-20b930193/", class:'fb-ic mr-3', target: :_blank do %>
+                <i class="fab fa-linkedin-in fa-lg white-text fa-2x"></i>
+              <% end %>
+            </div>
+
+            <!--                TWITTER-->
+            <div>
+              <%= link_to "https://twitter.com/VaissacB", class:'fb-ic mr-3', target: :_blank do %>
+                <i class="fab fa-twitter fa-lg white-text fa-2x"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<!--      OTHER LINKS-->
+      <div class="col-md-2 mb-md-0 mb-4 d-flex flex-column justify-content-center align-items-md-end align-items-center">
+        <ul class="list-unstyled text-md-right mb-0 text-sm-center" >
           <li>
-            <%= link_to "A propos", static_pages_about_path %>
+            <%= link_to "Haut de page", {:anchor => "navbar"} %>
           </li>
           <li>
-            <%= link_to "Se connecter", new_user_session_path %>
+            <%= link_to "Mentions légales", static_pages_legal_information_path %>
           </li>
           <li>
-            <%= link_to "S'inscrire", new_user_session_path %>
+            <%= link_to "Conditions générales", static_pages_terms_and_conditions_path %>
           </li>
           <li>
-            <%= link_to "Mentions légales" %>
+            <%= link_to "Politique de confidentialité", static_pages_privacy_policy_path %>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+
+  <div class="footer-copyright text-center py-3 mt-3">© 2019 Copyright
   </div>
 </footer>
 

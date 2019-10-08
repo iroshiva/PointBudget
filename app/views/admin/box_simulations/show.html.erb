@@ -1,0 +1,82 @@
+
+<!-- Card -->
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="pricing-card">
+        <div class="card shadow-soft border-light p-4">
+          <!-- Header -->
+          <header class="card-header border-bottom bg-white text-center d-flex flex-column">
+            <div class="display-1 text-secondary font-weight-bold">
+              <p class="align-top font-medium pr-5">Vous pouvez épargner</p><%= (@box_sim.box_cost_saved).round(2)%> €
+              <span class="font-medium">/ an</span>
+            </div>
+          </header>
+          <!-- Content -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Coût mensuel de votre box internet</strong><br><%=@box_sim.actual_price_paid%> €</li>
+                  <li class="list-group-item"><strong>Télevision</strong><br>
+                    <%= @tv%> </li>
+                </ul>
+              </div>
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Appels vers les fixes en France</strong> <br>  <%= @call_fix_fr%></li>
+                  <li class="list-group-item"><strong>Appels vers les mobiles en France</strong> <br>
+                    <%= @call_mob_fr%></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <h2 class='text-center'>
+    <%case @box_contracts.length %>
+    <%when 0 %>
+      Ce contrat actuel répond parfaitement aux besoins du client !
+    <% when 1 %>
+      1 seul meilleur contrat est ressorti!
+    <%else %>
+      Voici les <%=@box_contracts.length %> contrats plus avantageux
+    <%end %>
+  </h2>
+  <div class="row my-5">
+    <% @box_contracts.each do |contract| %>
+      <div class="col-md-4">
+
+        <div class="pricing-card">
+          <div class="card shadow-soft border-light p-4">
+            <!-- Header -->
+            <header class="card-header border-bottom bg-white text-center">
+              <span class="d-block">
+                <span class="display-1 text-primary font-weight-bold">
+                    <span class="align-top font-medium"><%= contract.supplier %></span>
+                    <p>Offre : <%=contract.offer_name %></p>
+                </span>
+              </span>
+            </header>
+            <!-- End Header -->
+            <!-- Content -->
+            <div class="card-body">
+              <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Economies grâce à ce contrat</strong> : <%=contract.join_table_box_contracts.find_by(box_simulation_id: @box_sim.id).savings %> €</li>
+                <li class="list-group-item"><strong>Prix de l'abonnement par mois</strong> : <%=contract.price_month %> € </li>
+              </ul>
+            </div>
+            <!-- End Content -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render partial: 'shared/back' %>

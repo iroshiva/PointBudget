@@ -1,15 +1,16 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe GasSimulation, type: :model do
   before(:each) do
     @gas_simulation = create(:gas_simulation)
-    end
+  end
 
   context 'validations' do
-
     it 'is valid with valid attributes' do
-        expect(@gas_simulation).to be_a(GasSimulation)
-        expect(@gas_simulation).to be_valid
+      expect(@gas_simulation).to be_a(GasSimulation)
+      expect(@gas_simulation).to be_valid
     end
 
     describe '#actual_price_paid' do
@@ -36,7 +37,7 @@ RSpec.describe GasSimulation, type: :model do
       end
     end
 
-    describe'#floor_space' do
+    describe '#floor_space' do
       it 'can be empty' do
         expect(build(:gas_simulation, floor_space: nil)).to be_valid
       end
@@ -94,13 +95,11 @@ RSpec.describe GasSimulation, type: :model do
   end
 
   context 'associations' do
-
     describe 'gas_simulation' do
       it 'belongs to one full_simulation' do
         expect(@gas_simulation).to belong_to(:full_simulation)
       end
     end
-
   end
 
   context 'public methods' do
@@ -130,12 +129,11 @@ RSpec.describe GasSimulation, type: :model do
       end
 
       it 'should return 10360 if 9' do
-        expect(@gas_simulation.consumption_people(9)).to eq(10360)
+        expect(@gas_simulation.consumption_people(9)).to eq(10_360)
       end
     end
 
     describe 'verify_nilness_params' do
-
       it 'should return false if yearly_cost is empty' do
         expect(@gas_simulation.verify_nilness_params(0, 7000, 100, 'Gaz', 'Gaz', 1)).to eq(false)
       end
@@ -155,8 +153,8 @@ RSpec.describe GasSimulation, type: :model do
         expect(@gas_simulation.verify_nilness_params(100, 7000, 50, 'Gaz', 'Gaz', 1)).to eq(true)
       end
 
-      it 'should return true if yearly consumption 0 but evrything else is not empty' do
-        expect(@gas_simulation.verify_nilness_params(100, 0,50, 'Gaz', 'Gaz', 1)).to eq(true)
+      it 'should return true if yearly consumption 0 but everything else is not empty' do
+        expect(@gas_simulation.verify_nilness_params(100, 0, 50, 'Gaz', 'Gaz', 1)).to eq(true)
       end
     end
 
@@ -176,5 +174,4 @@ RSpec.describe GasSimulation, type: :model do
       end
     end
   end
-
 end

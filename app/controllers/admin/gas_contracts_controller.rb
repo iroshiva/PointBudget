@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module Admin
   class GasContractsController < ApplicationController
-
     def index
       @contracts = GasContract.all.sort_by(&:supplier)
     end
@@ -20,8 +21,7 @@ module Admin
                                   subscription_base_price_month: my_params[:subscription_base_price_month],
                                   kwh_price_base: my_params[:kwh_price_base],
                                   low_kw_consumption_per_year: my_params[:low_kw_consumption_per_year],
-                                  high_kw_consumption_per_year: my_params[:high_kw_consumption_per_year]
-      )
+                                  high_kw_consumption_per_year: my_params[:high_kw_consumption_per_year])
       if @contract.save
         flash[:success] = 'Contract created'
         redirect_to admin_gas_contracts_path
@@ -46,7 +46,7 @@ module Admin
     def destroy
       @contract = GasContract.find(params[:id])
       @contract.destroy
-      flash[:success] = 'User successfully deleted'
+      flash[:success] = 'Gaz contract successfully deleted'
       redirect_to admin_gas_contracts_path
     end
 

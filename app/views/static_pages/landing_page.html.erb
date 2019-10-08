@@ -9,48 +9,47 @@
     <div class="title-context">
       <h2>Notre constat</h2>
     </div>
-    <div class="content">
-      <p>Notre expérience dans le milieu bancaire nous a permis de nous rendre compte que beaucoup de particuliers pourraient faire des économies sur leurs contrats mensuels de gaz, d'électricité, de téléphonie, d'assurances...<br><br>
+    <div class="content text-justify px-3">
+      <p class="lead">Notre expérience dans le milieu bancaire nous a permis de nous rendre compte que beaucoup de particuliers pourraient faire des économies sur leurs contrats mensuels de gaz, d'électricité, de téléphonie, d'assurances...
       Cependant, faute de temps ou par crainte, ces contrats restent inchangés mais ne correspondent plus aux besoins ni au prix du marché.</p><br>
-      <h4>Aimeriez-vous vous décharger de la corvée qu’est de comparer l’ensemble des contrats que vous payez tous les mois?</h4><br>
+      <h4>Aimeriez-vous vous décharger de la corvée de comparer l’ensemble des contrats que vous payez tous les mois?</h4><br>
       <h4>Aimeriez-vous changer de contrats, mais vous n’avez pas le temps de le faire?</h4><br>
     </div>
   </div>
 
 <!-- BENEFITS -->
 
-  <div class="container-fluid bg-primary">
-    <div id="benefits">
-      <div class="title">
-          <h2 class="title-color">PointBudget vous promet</h2>
+  <div id="benefits" class="container-fluid d-flex flex-column bg-primary">
+    <div class="row">
+      <div class="col-12 mt-5 mb-4">
+        <h2 class="title-benefits text-center">PointBudget vous promet</h2>
       </div>
-      <div class="content">
-        <div class="row d-flex justify-content-around">
-          <div class="col-xs-4 col-md-3 icon-position">
-            <span class="icon text-secondary icon"><i class="fas fa-balance-scale"></i></span>
-            <h3 class="title-color">Fiabilité</h3>
-            <p>Tous nos partenaires sont soigneusement sélectionnés pour la qualité de leur contrat et leur sérieux.</p>
-          </div>
-          <div class="col-xs-4 col-md-3 icon-position">
-            <span class="icon text-secondary icon"><i class="fas fa-euro-sign"></i></span>
-            <h3 class="title-color">Gratuité</h3>
-            <p>Service 100% gratuit, vous ne payez rien ! Ce sont nos partenaires qui nous versent une commission.</p>
-          </div>
-          <div class="col-xs-4 col-md-3 icon-position">
-            <span class="icon text-secondary icon"><i class="fas fa-info-circle"></i></span>
-            <h3 class="title-color">Simplicité</h3>
-            <p>Faites vos simulations, envoyer-nous les documents nécessaires. <br>Nous nous occupons du reste!</p>
-          </div>
-        </div>
+    </div>
+
+    <div class="row d-flex justify-content-around my-4">
+      <div class="col-sm-8 col-md-3 icon-position mb-4">
+        <span class="icon text-secondary icon"><i class="fas fa-balance-scale"></i></span>
+        <h3 class="title-color">Fiabilité</h3>
+        <p>Tous nos partenaires sont soigneusement sélectionnés pour la qualité de leur contrat <br>et leur sérieux.</p>
+      </div>
+      <div class="col-sm-8 col-md-3 icon-position mb-4">
+        <span class="icon text-secondary icon"><i class="fas fa-euro-sign"></i></span>
+        <h3 class="title-color">Gratuité</h3>
+        <p>Service 100% gratuit, vous ne payez rien ! <br>Ce sont nos partenaires qui nous versent <br>une commission.</p>
+      </div>
+      <div class="col-sm-8 col-md-3 icon-position mb-4">
+        <span class="icon text-secondary icon"><i class="fas fa-info-circle"></i></span>
+        <h3 class="title-color">Simplicité</h3>
+        <p>Faites vos simulations et prenez rendez-vous. <br>Nous nous occupons du reste!</p>
       </div>
     </div>
   </div>
 
-<!-- TIMELINE -->
+  <!-- TIMELINE -->
 
   <div id="steps" class="container">   
 
-    <div class="title">
+    <div class="title text-center">
         <h2>PointBudget en 4 étapes</h2>
     </div>                                                     
     <div class="timeline timeline-one">
@@ -60,17 +59,15 @@
       <div class="timeline-item">
         <span class="icon text-secondary"><i class="fas fa-sign-in-alt"></i></i>
         </span>
-        <h5 class="my-3">S'inscrire</h5>
-        <p>Rien de plus simple!<br> Vous trouverez un espace de connexion dans la barre de navigation, à droite.<br><br>Ou suivre tout simplement ces liens!</p>
-        <%= link_to "Je crée mon compte", new_user_registration_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
-        <%= link_to "Je me connecte", new_user_session_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
+        <h4 class="my-3">Vous inscrire/Vous connecter</h4>
+        <p>Rien de plus simple!<br> Vous trouverez un espace de connexion dans la barre de navigation, à droite, ou à la fin des étapes.</p>
       </div>
 
     <!-- Timeline Item 2 -->
 
       <div class="timeline-item">
         <span class="icon text-primary"><i class="fas fa-chalkboard"></i></span>
-        <h5 class="my-3">Accès à votre dashboard personnel</h5>
+        <h4 class="my-3">Accès à votre espace personnel</h4>
         <p>Afin de vous accompagner au mieux et vous donner un maximum d'autonomie de gestion, vous aurez directement accès à votre espace personnel après votre connexion.</p>
         <p>Vous aurez la possibilité:</p>
         <ul>
@@ -90,7 +87,7 @@
 
       <div class="timeline-item">
         <span class="icon text-secondary"><i class="fas fa-calculator"></i></span>
-        <h5 class="my-3">Lancer une simulation</h5>
+        <h4 class="my-3">Lancer une simulation</h4>
         <p>La partie la plus facile.</p>
         <p>Selon vos besoins, il suffira de remplir nos formulaires concernant les domaines: </p>
         <div class="container" style="text-align: left;">
@@ -100,25 +97,19 @@
             <div class="col-md-5">
               <ul>
                 <li>
-                  <p>De l'assurance.</p>
-                </li>
-                <li>
-                  <p>Banquaire.</p>
-                </li>
-                <li>
                   <p>Energetique.</p>
                 </li>
                 <li>
                   <p>Numérique.</p>
                 </li>
                 <li>
-                  <p>Des mutuelles.</p>
-                </li> 
+                  <p>Banquaire.</p>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-        <p>Afin de gagner du temps, munissez-vous d'un maximum de vos contrats ou factures</p>
+        <p>Afin de gagner du temps, munissez-vous d'un maximum <br>de vos contrats ou factures.</p>
         <p>Prêt... Feu.... Simuler!</p>
       </div>
 
@@ -127,10 +118,20 @@
 
         <div class="timeline-item">
         <span class="icon text-primary"><i class="fas fa-comments"></i></span>
-        <h5 class="my-3">Vous êtes décidé à faire des économies?</h5>
+        <h4 class="my-3">Vous êtes décidé à faire des économies?</h4>
         <p>C'est maintenant que nous intervenons et prenons le relais!</p>
-        <p>Votre dernier effort sera de contacter votre conseiller personnel, de lui transmettre vos souhaits et il les exaucera!
+        <p>Après chaque validation de simulation, vous aurez la possibilité de contacter votre conseiller.</p>
+        <p>Votre dernier effort sera de de lui transmettre vos souhaits et il les exaucera!
       </div>
     </div>
   </div>
 </main>
+
+<div class="container d-flex justify-content-center logs-button">
+  <div class="sign-up-button mx-md-5 mx-1">
+    <%= link_to "Je crée mon compte", new_user_registration_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
+  </div>
+  <div class="log-in-button mx-md-5 mx-1">
+    <%= link_to "Je me connecte", new_user_session_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
+  </div>
+</div>

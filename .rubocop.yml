@@ -1,0 +1,38 @@
+require: rubocop-rails
+inherit_from:
+  - http://relaxed.ruby.style/rubocop.yml
+
+AllCops:
+  DisplayStyleGuide: true
+  DisplayCopNames: true
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'config/environments/*.rb'
+    - 'bin/*'
+    - 'test/*'
+
+Rails:
+  Enabled: True
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'Guardfile'
+    - 'vendor/bundle'
+    - '*'
+Rails/BulkChangeTable:
+  Exclude:
+    - 'db/migrate/*'
+
+Rails/FilePath:
+  Exclude:
+    - 'app/controllers/application_controller.rb'
+
+Style/IfInsideElse:
+  Exclude:
+    - 'app/models/gas_simulation.rb'
+
+Style/RescueStandardError:
+  Exclude:
+    - 'app/**/*'

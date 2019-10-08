@@ -1,0 +1,17 @@
+<%if disabled == true%>
+  <div data-toggle="tooltip" title="<%=title%>">
+  <%= button_tag class: "btn-simu-#{sub_category} btn-simu btn btn-#{bg} #{animate} mx-md-5 mx-1", id:"btn-#{category}", style: style, disabled: disabled do %>
+    <div class="d-flex justify-content-center align-items-center text-white">
+      <span class="icon"><i class="<%=icon%>"></i> </span>
+      <h5 class="mt-4 ml-3"> <%=name %></h5>
+    </div>
+  </div>
+  <% end %>
+<%else%>
+  <%= button_tag class: "btn-simu-#{sub_category} btn-simu btn btn-#{bg} #{animate} mx-md-5 mx-1", id:"btn-#{category}", style: style do %>
+    <div class="d-flex justify-content-center align-items-center text-white">
+    <span class="icon"><i class="<%=icon%>"></i> </span>
+    <h5 class="mt-4 ml-3"> <%=name %></h5>
+  </div>
+  <% end %>
+<%end%>

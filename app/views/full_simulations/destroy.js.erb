@@ -1,0 +1,5 @@
+<%if @full_simulation.validated %>
+$("#simulation-confirmed-<%=params[:id] %>").remove();
+<% else %>
+$("#simulation-unconfirmed-<%=params[:id] %>").remove();
+<% end %>

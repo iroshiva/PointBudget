@@ -1,0 +1,10 @@
+<%= render partial: "admin/shared/index",
+           locals:{resources: @contracts,
+                   action: 'mobil_contracts',
+                   path_new: new_admin_mobil_contract_path,
+                   path: "/admin/mobil_contracts/",
+                   edition: true,
+                   title: 'Mobil Contracts',
+                   titles: ['Opérateur',"Nom de l'offre", 'Prix forfait', 'Gigabytes', 'Appels France', 'Appels Europe', 'Appels Etranger'],
+                   values: %w(supplier offer_name bundle_price bundle_gbyte calls_france calls_europe calls_international),
+                   button_new: "New Mobil contract"}%>

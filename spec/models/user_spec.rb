@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -6,7 +8,6 @@ RSpec.describe User, type: :model do
   end
 
   context 'validations' do
-
     it 'is valid with valid attributes' do
       expect(@user).to be_a(User)
       expect(@user).to be_valid
@@ -26,7 +27,7 @@ RSpec.describe User, type: :model do
       end
 
       it 'should not be valid if email is already taken' do
-        user = create(:user, email: 'to@to.com')
+        create(:user, email: 'to@to.com')
         bad_user = build(:user, email: 'to@to.com')
         expect(bad_user).not_to be_valid
         expect(bad_user.errors.include?(:email)).to eq(true)
@@ -53,52 +54,32 @@ RSpec.describe User, type: :model do
         expect(user).to be_valid
       end
       it 'should be a valid french number' do
-        expect(@user.phone_number).to match /^((\+)33|0)[1-9](\d{2}){4}$/
+        expect(@user.phone_number).to match(/\A((\+)33|0)[1-9](\d{2}){4}\Z/)
       end
     end
-
   end
 
   context 'associations' do
-
-
     describe 'full_simulations association' do
       it 'should have many full_simulations' do
         expect(@user).to have_many(:full_simulations)
       end
     end
-
-  end
-
-  context 'callbacks' do
-
-    describe 'some callbacks' do
-    end
-
   end
 
   context 'public instance methods' do
-
-    describe '#has_city' do
+    describe '#city?' do
       it 'should return a boolean' do
-        expect(@user.has_city).to be_in([true, false])
+        expect(@user.city?).to be_in([true, false])
       end
 
       it 'should return true if has a city' do
-        expect(@user.has_city).to be(true)
+        expect(@user.city?).to be(true)
       end
 
       it 'should return false if has not a city' do
-        expect(build(:user_empty_city).has_city).to be(false)
+        expect(build(:user_empty_city).city?).to be(false)
       end
     end
-
-  end
-
-  context 'public class methods' do
-
-    describe 'self.some_method' do
-    end
-
   end
 end

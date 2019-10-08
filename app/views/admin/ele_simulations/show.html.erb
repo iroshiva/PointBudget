@@ -1,0 +1,79 @@
+
+<!-- Card -->
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="pricing-card">
+        <div class="card shadow-soft border-light p-4">
+          <!-- Header -->
+          <header class="card-header border-bottom bg-white text-center d-flex flex-column">
+            <div class="display-1 text-secondary font-weight-bold">
+              <p class="align-top font-medium pr-5">Vous pouvez épargner</p><%= (@ele_sim.ele_cost_saved).round(2)%> €
+              <span class="text-light font-small">/ an</span>
+            </div>
+          </header>
+          <!-- Content -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Coût annuel de l'électricité</strong><br><%=@ele_sim.actual_price_paid%> €</li>
+                </ul>
+              </div>
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Consommation annuelle</strong>  <%= @ele_sim.ele_use%> kWh</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <h2 class='text-center'>
+    <%case @ele_contracts.length %>
+    <%when 0 %>
+      Ce contrat actuel répond parfaitement aux besoins du client !
+    <% when 1 %>
+      1 seul meilleur contrat est ressorti!
+    <%else %>
+      Voici les <%=@ele_contracts.length %> contrats plus avantageux
+    <%end %>
+  </h2>
+  <div class="row my-5">
+    <% @ele_contracts.each do |contract| %>
+      <div class="col-md-4">
+
+        <div class="pricing-card">
+          <div class="card shadow-soft border-light p-4">
+            <!-- Header -->
+            <header class="card-header border-bottom bg-white text-center">
+              <span class="d-block">
+                <span class="display-1 text-primary font-weight-bold">
+                    <span class="align-top font-medium"><%= contract.supplier %></span>
+                    <p>Offre : <%=contract.offer_name %></p>
+                </span>
+              </span>
+            </header>
+            <!-- End Header -->
+            <!-- Content -->
+            <div class="card-body">
+              <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Economies grâce à ce contrat</strong> : <%=contract.join_table_ele_simulation_contracts.find_by(ele_simulation_id: @ele_sim.id).savings %> €</li>
+                <li class="list-group-item"><strong>Prix de l'abonnement par an</strong> : <%=(contract.subscription_base_price_month * 12).round(2) %></li>
+                <li class="list-group-item"><strong>Prix du kwh</strong> : <%=contract.kwh_price_base %></li>
+              </ul>
+            </div>
+            <!-- End Content -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render partial: 'shared/back' %>

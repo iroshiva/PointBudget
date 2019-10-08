@@ -1,0 +1,92 @@
+
+<!-- Card -->
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="pricing-card">
+        <div class="card shadow-soft border-light p-4">
+          <!-- Header -->
+          <header class="card-header border-bottom bg-white text-center d-flex flex-column">
+            <div class="display-1 text-secondary font-weight-bold">
+              <p class="align-top font-medium pr-5">Vous pouvez épargner</p><%= (@mobil_simulation.mobil_cost_saved).round(2)%> €
+              <span class="font-medium">/ an</span>
+            </div>
+          </header>
+          <!-- Content -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Coût mensuel de votre forfait Mobile</strong><br><%= @mobil_simulation.actual_price_paid%> €
+                  </li>
+                  <li class="list-group-item"><strong>Nombre de Go</strong><br>
+                    <%= @mobil_simulation.bundle_go%>
+                  </li>
+                  <li class="list-group-item"><strong>+Forfaits avec engagement</strong><br>
+                    <%= @mobil_simulation.engagement%>
+                  </li>
+                </ul>
+              </div>
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Appels/SMS/MMS illimités en Europe</strong> <br> <%= @calls_europe%>
+                  </li>
+                  <li class="list-group-item"><strong>Appels/SMS/MMS illimités à l'étranger</strong> <br>
+                    <%= @mobil_simulation.calls_international%>
+                  </li>
+                  <li class="list-group-item"><strong>Internet à l'étranger</strong> <br>
+                    <%= @mobil_simulation.net_international%>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <h2 class='text-center'>
+    <%case @mobil_contracts.length %>
+    <%when 0 %>
+      Ce contrat actuel répond parfaitement aux besoins du client !
+    <% when 1 %>
+      1 seul meilleur contrat est ressorti!
+    <%else %>
+      Voici les <%=@mobil_contracts.length %> contrats plus avantageux
+    <%end %>
+  </h2>
+  <div class="row my-5">
+    <% @mobil_contracts.each do |contract| %>
+      <div class="col-md-4">
+
+        <div class="pricing-card">
+          <div class="card shadow-soft border-light p-4">
+            <!-- Header -->
+            <header class="card-header border-bottom bg-white text-center">
+              <span class="d-block">
+                <span class="display-1 text-primary font-weight-bold">
+                    <span class="align-top font-medium"><%= contract.supplier %></span>
+                    <p>Offre : <%=contract.offer_name %></p>
+                </span>
+              </span>
+            </header>
+            <!-- End Header -->
+            <!-- Content -->
+            <div class="card-body">
+              <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Economies grâce à ce contrat</strong> : <%=contract.join_table_mobil_contracts.find_by(mobil_simulation_id: @mobil_simulation.id).savings %> €</li>
+                <li class="list-group-item"><strong>Prix de l'abonnement par mois</strong> : <%=contract.bundle_price %> € </li>
+              </ul>
+            </div>
+            <!-- End Content -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render partial: 'shared/back' %>

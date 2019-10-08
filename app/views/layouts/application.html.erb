@@ -4,7 +4,8 @@
     <title>PointBudget</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= tag :meta, name: :page_specific_js, action: action_name, controller:controller_name %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,14 +13,15 @@
   <%=content_tag :body, data:{action: action_name, controller:controller_name} do %>
 
   <header>
-    <%unless is_admin? %>
+    <%unless admin? %>
       <%= render 'layouts/navbar' %>
     <%end %>
-    <%= render 'layouts/flash'%>
   </header>
-  <body class="d-flex flex-column justify-content-between">
 
-    <%if is_admin? %>
+  <body class="d-flex flex-column justify-content-between">
+     <%= render 'layouts/flash'%>
+
+    <%if admin? %>
       <%= render 'layouts/admin_navbar' %>
     <% elsif user_signed_in? %>
       <%= render 'layouts/user_navbar' %>

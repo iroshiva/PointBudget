@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe FullSimulation, type: :model do
@@ -6,7 +8,6 @@ RSpec.describe FullSimulation, type: :model do
   end
 
   context 'validations' do
-
     it 'is valid with valid attributes' do
       expect(@full_simulation).to be_a(FullSimulation)
       expect(@full_simulation).to be_valid
@@ -34,25 +35,18 @@ RSpec.describe FullSimulation, type: :model do
       end
     end
 
-
     describe 'user' do
       it 'belongs to one user' do
         expect(@full_simulation).to belong_to(:user)
       end
     end
-
   end
 
   context 'public instance methods' do
-
     describe '#only_one_gas_simulation' do
-
       it 'should return a boolean' do
         expect(@full_simulation.only_one_gas_simulation).to be_in([true, false])
       end
-
     end
-
   end
-
 end

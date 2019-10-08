@@ -1,6 +1,34 @@
-<h1>FullSimulations#new</h1>
-<p>Find me in app/views/full_simulations/new.html.erb</p>
-<br>
-<br>
-<br>
-<%=link_to "Nouvelle Simulation", user_full_simulations_path(current_user), method: :post, class: "btn btn-primary"%>
+<div class="full-simu-new text-center">
+  <div class="title-full-simu">
+    <h5>Munissez-vous des factures trop chères à votre goût! <button id="btn-click-1"><u><strong>Cliquez ici</strong></u></button> pour voir les domaines analysés</h5>
+  </div>
+  <br>
+  <ul id="domain-list" style="list-style:none;display:none;">
+
+    <li class="btn-simu-elec btn-simu btn btn-secondary disabled">
+      <div class="d-flex justify-content-around align-items-center text-white">
+        <span class="icon"><i class="fas fa-sun"></i></span>
+        <h5 class="mt-4 mx-1">Energie</h5>
+      </div>
+    </li>
+    <li class="btn-simu-num btn-simu btn btn-secondary disabled">
+      <div class="d-flex justify-content-around align-items-center text-white">
+        <span class="icon"><i class="fas fa-mobile-alt"></i></span>
+        <h5 class="mt-4 mx-3">Numérique</h5>
+      </div>
+    </li>
+    <li class="btn-simu-bank btn-simu btn btn-secondary disabled">
+      <div class="d-flex justify-content-around align-items-center text-white">
+        <span class="icon"><i class="fas fa-money-check-alt"></i></span>
+        <h5 class="mt-4 mx-3">Banque</h5>
+      </div>
+    </li>
+  </ul>
+  <br>
+  <h2>Pour commencer à économiser, lancez votre simulation! </h2>
+  <br>
+  <br>
+  <div>
+    <%=link_to "Je lance ma simulation", user_full_simulations_path(current_user), method: :post, class: "btn btn-primary animate-up-3 btn-lg btn-result"%>
+  </div>
+</div>

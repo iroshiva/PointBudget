@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -42,9 +44,9 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'guard-rspec', require: false
+  gem 'letter_opener'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'letter_opener'
 end
 
 group :development do
@@ -65,13 +67,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'activerecord'
-gem 'devise'
+gem 'devise', '>= 4.7.1'
+gem 'devise-i18n'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'faker'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'pry'
+gem 'rest-client'
+gem 'rubocop-rails'
 gem 'stripe'
 gem 'table_print'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'rest-client'
+

@@ -1,0 +1,2 @@
+module MobilSimulationsHelper
+end

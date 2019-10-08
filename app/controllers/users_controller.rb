@@ -1,14 +1,15 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+class UsersController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
   before_action :not_other_user
 
   def show
-    unless current_user.id == @user.id
-      flash[:error] = "Vous n'avez pas le droit d'accéder à cette page"
-      redirect_to user_path(current_user)
-    end
+    return if current_user.id == @user.id
+
+    flash[:error] = "Vous n'avez pas le droit d'accéder à cette page"
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -41,11 +42,11 @@ class UsersController < ApplicationController
   end
 
   def change_city
-    unless params[:user][:city_id].empty?
-      city = params[:user][:city_id]
-      table = city.split(' - ')
-      the_city = City.find_by(name: table[1])
-      params[:user][:city_id] = the_city.id unless the_city.nil?
-    end
+    return if params[:user][:city_id].empty?
+
+    city = params[:user][:city_id]
+    table = city.split(' - ')
+    the_city = City.find_by(name: table[1])
+    params[:user][:city_id] = the_city.id unless the_city.nil?
   end
 end

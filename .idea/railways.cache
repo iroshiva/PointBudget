@@ -1,67 +1,135 @@
 do /home/carsano/Documents/Programmation/THP/final_project/PointBudget/bin/bundle exec /home/carsano/.rvm/rubies/ruby-2.5.1/bin/ruby /home/carsano/Documents/Programmation/THP/final_project/PointBudget/bin/rake routes --trace 
 Ruby enVironment Manager 1.29.8 (latest) (c) 2009-2017 Michal Papis, Piotr Kuczynski, Wayne E. Seguin
 
-                                  Prefix Verb   URI Pattern                                                                              Controller#Action
-                        new_user_session GET    /users/sign_in(.:format)                                                                 devise/sessions#new
-                            user_session POST   /users/sign_in(.:format)                                                                 devise/sessions#create
-                    destroy_user_session DELETE /users/sign_out(.:format)                                                                devise/sessions#destroy
-                       new_user_password GET    /users/password/new(.:format)                                                            devise/passwords#new
-                      edit_user_password GET    /users/password/edit(.:format)                                                           devise/passwords#edit
-                           user_password PATCH  /users/password(.:format)                                                                devise/passwords#update
-                                         PUT    /users/password(.:format)                                                                devise/passwords#update
-                                         POST   /users/password(.:format)                                                                devise/passwords#create
-                cancel_user_registration GET    /users/cancel(.:format)                                                                  registrations#cancel
-                   new_user_registration GET    /users/sign_up(.:format)                                                                 registrations#new
-                  edit_user_registration GET    /users/edit(.:format)                                                                    registrations#edit
-                       user_registration PATCH  /users(.:format)                                                                         registrations#update
-                                         PUT    /users(.:format)                                                                         registrations#update
-                                         DELETE /users(.:format)                                                                         registrations#destroy
-                                         POST   /users(.:format)                                                                         registrations#create
-                                    root GET    /                                                                                        static_pages#landing_page
-                      static_pages_about GET    /static_pages/about(.:format)                                                            static_pages#about
-                    static_pages_contact GET    /static_pages/contact(.:format)                                                          static_pages#contact
-                              admin_root GET    /admin(.:format)                                                                         admin/users#index
-                             admin_users GET    /admin/users(.:format)                                                                   admin/users#index
-                                         POST   /admin/users(.:format)                                                                   admin/users#create
-                          new_admin_user GET    /admin/users/new(.:format)                                                               admin/users#new
-                         edit_admin_user GET    /admin/users/:id/edit(.:format)                                                          admin/users#edit
-                              admin_user GET    /admin/users/:id(.:format)                                                               admin/users#show
-                                         PATCH  /admin/users/:id(.:format)                                                               admin/users#update
-                                         PUT    /admin/users/:id(.:format)                                                               admin/users#update
-                                         DELETE /admin/users/:id(.:format)                                                               admin/users#destroy
-                     admin_gas_contracts GET    /admin/gas_contracts(.:format)                                                           admin/gas_contracts#index
-                                         POST   /admin/gas_contracts(.:format)                                                           admin/gas_contracts#create
-                  new_admin_gas_contract GET    /admin/gas_contracts/new(.:format)                                                       admin/gas_contracts#new
-                 edit_admin_gas_contract GET    /admin/gas_contracts/:id/edit(.:format)                                                  admin/gas_contracts#edit
-                      admin_gas_contract GET    /admin/gas_contracts/:id(.:format)                                                       admin/gas_contracts#show
-                                         PATCH  /admin/gas_contracts/:id(.:format)                                                       admin/gas_contracts#update
-                                         PUT    /admin/gas_contracts/:id(.:format)                                                       admin/gas_contracts#update
-                                         DELETE /admin/gas_contracts/:id(.:format)                                                       admin/gas_contracts#destroy
-                              users_root GET    /users(.:format)                                                                         users#show
-         new_user_full_simulation_energy GET    /users/:user_id/full_simulations/:full_simulation_id/energies/new(.:format)              energies#new
-             user_full_simulation_energy GET    /users/:user_id/full_simulations/:full_simulation_id/energies/:id(.:format)              energies#show
-    user_full_simulation_gas_simulations GET    /users/:user_id/full_simulations/:full_simulation_id/gas_simulations(.:format)           gas_simulations#index
-                                         POST   /users/:user_id/full_simulations/:full_simulation_id/gas_simulations(.:format)           gas_simulations#create
- new_user_full_simulation_gas_simulation GET    /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/new(.:format)       gas_simulations#new
-edit_user_full_simulation_gas_simulation GET    /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id/edit(.:format)  gas_simulations#edit
-     user_full_simulation_gas_simulation GET    /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id(.:format)       gas_simulations#show
-                                         PATCH  /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id(.:format)       gas_simulations#update
-                                         PUT    /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id(.:format)       gas_simulations#update
-                                         DELETE /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id(.:format)       gas_simulations#destroy
-                   user_full_simulations GET    /users/:user_id/full_simulations(.:format)                                               full_simulations#index
-                                         POST   /users/:user_id/full_simulations(.:format)                                               full_simulations#create
-                new_user_full_simulation GET    /users/:user_id/full_simulations/new(.:format)                                           full_simulations#new
-               edit_user_full_simulation GET    /users/:user_id/full_simulations/:id/edit(.:format)                                      full_simulations#edit
-                    user_full_simulation GET    /users/:user_id/full_simulations/:id(.:format)                                           full_simulations#show
-                                         PATCH  /users/:user_id/full_simulations/:id(.:format)                                           full_simulations#update
-                                         PUT    /users/:user_id/full_simulations/:id(.:format)                                           full_simulations#update
-                                         DELETE /users/:user_id/full_simulations/:id(.:format)                                           full_simulations#destroy
-                               edit_user GET    /users/:id/edit(.:format)                                                                users#edit
-                                    user GET    /users/:id(.:format)                                                                     users#show
-                                         PATCH  /users/:id(.:format)                                                                     users#update
-                                         PUT    /users/:id(.:format)                                                                     users#update
-                      rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
-               rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
-                      rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
-               update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
-                    rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+                                    Prefix Verb     URI Pattern                                                                               Controller#Action
+                          new_user_session GET      /users/sign_in(.:format)                                                                  devise/sessions#new
+                              user_session POST     /users/sign_in(.:format)                                                                  devise/sessions#create
+                      destroy_user_session DELETE   /users/sign_out(.:format)                                                                 devise/sessions#destroy
+                         new_user_password GET      /users/password/new(.:format)                                                             devise/passwords#new
+                        edit_user_password GET      /users/password/edit(.:format)                                                            devise/passwords#edit
+                             user_password PATCH    /users/password(.:format)                                                                 devise/passwords#update
+                                           PUT      /users/password(.:format)                                                                 devise/passwords#update
+                                           POST     /users/password(.:format)                                                                 devise/passwords#create
+                  cancel_user_registration GET      /users/cancel(.:format)                                                                   registrations#cancel
+                     new_user_registration GET      /users/sign_up(.:format)                                                                  registrations#new
+                    edit_user_registration GET      /users/edit(.:format)                                                                     registrations#edit
+                         user_registration PATCH    /users(.:format)                                                                          registrations#update
+                                           PUT      /users(.:format)                                                                          registrations#update
+                                           DELETE   /users(.:format)                                                                          registrations#destroy
+                                           POST     /users(.:format)                                                                          registrations#create
+          user_facebook_omniauth_authorize GET|POST /users/auth/facebook(.:format)                                                            users/omniauth_callbacks#passthru
+           user_facebook_omniauth_callback GET|POST /users/auth/facebook/callback(.:format)                                                   users/omniauth_callbacks#facebook
+                                      root GET      /                                                                                         static_pages#landing_page
+                        static_pages_about GET      /static_pages/about(.:format)                                                             static_pages#about
+                      static_pages_contact GET      /static_pages/contact(.:format)                                                           static_pages#contact
+         static_pages_terms_and_conditions GET      /static_pages/terms_and_conditions(.:format)                                              static_pages#terms_and_conditions
+            static_pages_legal_information GET      /static_pages/legal_information(.:format)                                                 static_pages#legal_information
+               static_pages_privacy_policy GET      /static_pages/privacy_policy(.:format)                                                    static_pages#privacy_policy
+                     send_email_counselour GET      /full_simulations/send_email_counselour(.:format)                                         full_simulations#send_email_counselour
+                                admin_root GET      /admin(.:format)                                                                          admin/users#index
+                               admin_users GET      /admin/users(.:format)                                                                    admin/users#index
+                                           POST     /admin/users(.:format)                                                                    admin/users#create
+                            new_admin_user GET      /admin/users/new(.:format)                                                                admin/users#new
+                           edit_admin_user GET      /admin/users/:id/edit(.:format)                                                           admin/users#edit
+                                admin_user GET      /admin/users/:id(.:format)                                                                admin/users#show
+                                           PATCH    /admin/users/:id(.:format)                                                                admin/users#update
+                                           PUT      /admin/users/:id(.:format)                                                                admin/users#update
+                                           DELETE   /admin/users/:id(.:format)                                                                admin/users#destroy
+                     admin_full_simulation GET      /admin/full_simulations/:id(.:format)                                                     admin/full_simulations#show
+                      admin_gas_simulation GET      /admin/gas_simulations/:id(.:format)                                                      admin/gas_simulations#show
+                      admin_box_simulation GET      /admin/box_simulations/:id(.:format)                                                      admin/box_simulations#show
+                     admin_bank_simulation GET      /admin/bank_simulations/:id(.:format)                                                     admin/bank_simulations#show
+                      admin_ele_simulation GET      /admin/ele_simulations/:id(.:format)                                                      admin/ele_simulations#show
+                    admin_mobil_simulation GET      /admin/mobil_simulations/:id(.:format)                                                    admin/mobil_simulations#show
+                       admin_gas_contracts GET      /admin/gas_contracts(.:format)                                                            admin/gas_contracts#index
+                                           POST     /admin/gas_contracts(.:format)                                                            admin/gas_contracts#create
+                    new_admin_gas_contract GET      /admin/gas_contracts/new(.:format)                                                        admin/gas_contracts#new
+                   edit_admin_gas_contract GET      /admin/gas_contracts/:id/edit(.:format)                                                   admin/gas_contracts#edit
+                        admin_gas_contract GET      /admin/gas_contracts/:id(.:format)                                                        admin/gas_contracts#show
+                                           PATCH    /admin/gas_contracts/:id(.:format)                                                        admin/gas_contracts#update
+                                           PUT      /admin/gas_contracts/:id(.:format)                                                        admin/gas_contracts#update
+                                           DELETE   /admin/gas_contracts/:id(.:format)                                                        admin/gas_contracts#destroy
+                     admin_mobil_contracts GET      /admin/mobil_contracts(.:format)                                                          admin/mobil_contracts#index
+                                           POST     /admin/mobil_contracts(.:format)                                                          admin/mobil_contracts#create
+                  new_admin_mobil_contract GET      /admin/mobil_contracts/new(.:format)                                                      admin/mobil_contracts#new
+                 edit_admin_mobil_contract GET      /admin/mobil_contracts/:id/edit(.:format)                                                 admin/mobil_contracts#edit
+                      admin_mobil_contract GET      /admin/mobil_contracts/:id(.:format)                                                      admin/mobil_contracts#show
+                                           PATCH    /admin/mobil_contracts/:id(.:format)                                                      admin/mobil_contracts#update
+                                           PUT      /admin/mobil_contracts/:id(.:format)                                                      admin/mobil_contracts#update
+                                           DELETE   /admin/mobil_contracts/:id(.:format)                                                      admin/mobil_contracts#destroy
+                       admin_box_contracts GET      /admin/box_contracts(.:format)                                                            admin/box_contracts#index
+                                           POST     /admin/box_contracts(.:format)                                                            admin/box_contracts#create
+                    new_admin_box_contract GET      /admin/box_contracts/new(.:format)                                                        admin/box_contracts#new
+                   edit_admin_box_contract GET      /admin/box_contracts/:id/edit(.:format)                                                   admin/box_contracts#edit
+                        admin_box_contract GET      /admin/box_contracts/:id(.:format)                                                        admin/box_contracts#show
+                                           PATCH    /admin/box_contracts/:id(.:format)                                                        admin/box_contracts#update
+                                           PUT      /admin/box_contracts/:id(.:format)                                                        admin/box_contracts#update
+                                           DELETE   /admin/box_contracts/:id(.:format)                                                        admin/box_contracts#destroy
+                      admin_bank_contracts GET      /admin/bank_contracts(.:format)                                                           admin/bank_contracts#index
+                                           POST     /admin/bank_contracts(.:format)                                                           admin/bank_contracts#create
+                   new_admin_bank_contract GET      /admin/bank_contracts/new(.:format)                                                       admin/bank_contracts#new
+                  edit_admin_bank_contract GET      /admin/bank_contracts/:id/edit(.:format)                                                  admin/bank_contracts#edit
+                       admin_bank_contract GET      /admin/bank_contracts/:id(.:format)                                                       admin/bank_contracts#show
+                                           PATCH    /admin/bank_contracts/:id(.:format)                                                       admin/bank_contracts#update
+                                           PUT      /admin/bank_contracts/:id(.:format)                                                       admin/bank_contracts#update
+                                           DELETE   /admin/bank_contracts/:id(.:format)                                                       admin/bank_contracts#destroy
+                       admin_ele_contracts GET      /admin/ele_contracts(.:format)                                                            admin/ele_contracts#index
+                                           POST     /admin/ele_contracts(.:format)                                                            admin/ele_contracts#create
+                    new_admin_ele_contract GET      /admin/ele_contracts/new(.:format)                                                        admin/ele_contracts#new
+                   edit_admin_ele_contract GET      /admin/ele_contracts/:id/edit(.:format)                                                   admin/ele_contracts#edit
+                        admin_ele_contract GET      /admin/ele_contracts/:id(.:format)                                                        admin/ele_contracts#show
+                                           PATCH    /admin/ele_contracts/:id(.:format)                                                        admin/ele_contracts#update
+                                           PUT      /admin/ele_contracts/:id(.:format)                                                        admin/ele_contracts#update
+                                           DELETE   /admin/ele_contracts/:id(.:format)                                                        admin/ele_contracts#destroy
+                                users_root GET      /users(.:format)                                                                          full_simulations#new
+      user_full_simulation_gas_simulations POST     /users/:user_id/full_simulations/:full_simulation_id/gas_simulations(.:format)            gas_simulations#create
+   new_user_full_simulation_gas_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/new(.:format)        gas_simulations#new
+  edit_user_full_simulation_gas_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id/edit(.:format)   gas_simulations#edit
+       user_full_simulation_gas_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id(.:format)        gas_simulations#show
+                                           PATCH    /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id(.:format)        gas_simulations#update
+                                           PUT      /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id(.:format)        gas_simulations#update
+                                           DELETE   /users/:user_id/full_simulations/:full_simulation_id/gas_simulations/:id(.:format)        gas_simulations#destroy
+    user_full_simulation_mobil_simulations POST     /users/:user_id/full_simulations/:full_simulation_id/mobil_simulations(.:format)          mobil_simulations#create
+ new_user_full_simulation_mobil_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/mobil_simulations/new(.:format)      mobil_simulations#new
+edit_user_full_simulation_mobil_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/mobil_simulations/:id/edit(.:format) mobil_simulations#edit
+     user_full_simulation_mobil_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/mobil_simulations/:id(.:format)      mobil_simulations#show
+                                           PATCH    /users/:user_id/full_simulations/:full_simulation_id/mobil_simulations/:id(.:format)      mobil_simulations#update
+                                           PUT      /users/:user_id/full_simulations/:full_simulation_id/mobil_simulations/:id(.:format)      mobil_simulations#update
+                                           DELETE   /users/:user_id/full_simulations/:full_simulation_id/mobil_simulations/:id(.:format)      mobil_simulations#destroy
+      user_full_simulation_box_simulations POST     /users/:user_id/full_simulations/:full_simulation_id/box_simulations(.:format)            box_simulations#create
+   new_user_full_simulation_box_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/box_simulations/new(.:format)        box_simulations#new
+  edit_user_full_simulation_box_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/box_simulations/:id/edit(.:format)   box_simulations#edit
+       user_full_simulation_box_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/box_simulations/:id(.:format)        box_simulations#show
+                                           PATCH    /users/:user_id/full_simulations/:full_simulation_id/box_simulations/:id(.:format)        box_simulations#update
+                                           PUT      /users/:user_id/full_simulations/:full_simulation_id/box_simulations/:id(.:format)        box_simulations#update
+                                           DELETE   /users/:user_id/full_simulations/:full_simulation_id/box_simulations/:id(.:format)        box_simulations#destroy
+     user_full_simulation_bank_simulations POST     /users/:user_id/full_simulations/:full_simulation_id/bank_simulations(.:format)           bank_simulations#create
+  new_user_full_simulation_bank_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/bank_simulations/new(.:format)       bank_simulations#new
+ edit_user_full_simulation_bank_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/bank_simulations/:id/edit(.:format)  bank_simulations#edit
+      user_full_simulation_bank_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/bank_simulations/:id(.:format)       bank_simulations#show
+                                           PATCH    /users/:user_id/full_simulations/:full_simulation_id/bank_simulations/:id(.:format)       bank_simulations#update
+                                           PUT      /users/:user_id/full_simulations/:full_simulation_id/bank_simulations/:id(.:format)       bank_simulations#update
+                                           DELETE   /users/:user_id/full_simulations/:full_simulation_id/bank_simulations/:id(.:format)       bank_simulations#destroy
+      user_full_simulation_ele_simulations POST     /users/:user_id/full_simulations/:full_simulation_id/ele_simulations(.:format)            ele_simulations#create
+   new_user_full_simulation_ele_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/ele_simulations/new(.:format)        ele_simulations#new
+  edit_user_full_simulation_ele_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/ele_simulations/:id/edit(.:format)   ele_simulations#edit
+       user_full_simulation_ele_simulation GET      /users/:user_id/full_simulations/:full_simulation_id/ele_simulations/:id(.:format)        ele_simulations#show
+                                           PATCH    /users/:user_id/full_simulations/:full_simulation_id/ele_simulations/:id(.:format)        ele_simulations#update
+                                           PUT      /users/:user_id/full_simulations/:full_simulation_id/ele_simulations/:id(.:format)        ele_simulations#update
+                                           DELETE   /users/:user_id/full_simulations/:full_simulation_id/ele_simulations/:id(.:format)        ele_simulations#destroy
+                     user_full_simulations GET      /users/:user_id/full_simulations(.:format)                                                full_simulations#index
+                                           POST     /users/:user_id/full_simulations(.:format)                                                full_simulations#create
+                  new_user_full_simulation GET      /users/:user_id/full_simulations/new(.:format)                                            full_simulations#new
+                      user_full_simulation GET      /users/:user_id/full_simulations/:id(.:format)                                            full_simulations#show
+                                           PATCH    /users/:user_id/full_simulations/:id(.:format)                                            full_simulations#update
+                                           PUT      /users/:user_id/full_simulations/:id(.:format)                                            full_simulations#update
+                                           DELETE   /users/:user_id/full_simulations/:id(.:format)                                            full_simulations#destroy
+                                 edit_user GET      /users/:id/edit(.:format)                                                                 users#edit
+                                      user GET      /users/:id(.:format)                                                                      users#show
+                                           PATCH    /users/:id(.:format)                                                                      users#update
+                                           PUT      /users/:id(.:format)                                                                      users#update
+                        rails_service_blob GET      /rails/active_storage/blobs/:signed_id/*filename(.:format)                                active_storage/blobs#show
+                 rails_blob_representation GET      /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)  active_storage/representations#show
+                        rails_disk_service GET      /rails/active_storage/disk/:encoded_key/*filename(.:format)                               active_storage/disk#show
+                 update_rails_disk_service PUT      /rails/active_storage/disk/:encoded_token(.:format)                                       active_storage/disk#update
+                      rails_direct_uploads POST     /rails/active_storage/direct_uploads(.:format)                                            active_storage/direct_uploads#create

@@ -1,24 +1,6 @@
-# README
+# PointBudget
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Notre crédo : aider les consommateurs à savoir si ce qu’ils
+              payent correspond bien au juste prix.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Venez donc faire un tout [ici](https://point-budget.herokuapp.com/)

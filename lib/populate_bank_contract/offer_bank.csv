@@ -1,0 +1,18 @@
+Supplier,Groupe,Frais TENUE COMPTE,Frais TENUE COMPTE INNACTIF,Cheques ?,CHEQUE BANQUE,COMMANDE CHEQUIER,ASSURANCE MOYEN PAIEMENTS,ALERTE SMS,RETRAIT HORS ZONE EURO DAB %
+Crédit Agricole,Groupe Crédit Agricole,12.60 ,30.00 ,TRUE,13.00 ,0.00 ,24.00 ,24.00 ,2.41
+Crédit Agricole,Groupe Crédit Agricole,0.00 ,0.00 ,TRUE,13.00 ,0.00 ,0.00 ,0.00 ,2.41
+Boursorama,Groupe Société Générale,0.00 ,60.00 ,TRUE,0.00 ,5.00 ,0.00 ,0.00 ,1.94
+Nickel,Groupe BNP,0.00 ,0.00 ,FALSE,0.00 ,0.00 ,0.00,0.00
+Ing direct,ING Bank,0.00 ,60.00 ,TRUE,0.00 ,0.00 ,0.00 ,0.00 ,2.00
+Axa banque,Groupe Axa,0.00 ,30.00 ,TRUE,0.00 ,0.00 ,24.00 ,0.00 ,2.00
+N26,N26,0.00 ,0.00 ,FALSE,0.00 ,0.00 ,0.00 ,0.00 ,2.00
+Fortuneo France,Groupe Arkéa,0.00 ,36.00 ,TRUE,0.00 ,0.00 ,0.00 ,0.00 ,1.7
+Fortuneo France,Groupe Arkéa,0.00 ,60.00 ,TRUE,0.00 ,0.00 ,0.00 ,0.00 ,1.94
+Fortuneo France,Groupe Arkéa,0.00 ,200.00 ,TRUE,0.00 ,0.00 ,0.00 ,0.00 ,1.94
+Hello Bank France,Groupe BNP,0.00 ,0.00 ,TRUE,0.00 ,0.00 ,26.50 ,0.00 ,2.00
+Monabanq,Groupe CM11-CIC,0.00 ,24.00 ,TRUE,0.00 ,0.00 ,24.00 ,0.00 ,2.00
+Bforbank,Groupe Crédit Agricole,0.00 ,24.00 ,TRUE,0.00 ,0.00 ,24.00 ,0.00 ,2.00
+Bforbank,Groupe Crédit Agricole,0.00 ,36.00 ,TRUE,0.00 ,0.00 ,24.00 ,0.00 ,1.95
+Bforbank,Groupe Crédit Agricole,0.00 ,0.00 ,TRUE,0.00 ,0.00 ,24.00 ,0.00 ,1.95
+Orange Bank,Groupe Orange,0.00 ,60.00 ,TRUE,0.00 ,0.00 ,0.00 ,0.00 ,1.95
+Orange Bank,Groupe Orange,0.00 ,60.00 ,TRUE,0.00 ,0.00 ,0.00 ,0.00 ,2.00

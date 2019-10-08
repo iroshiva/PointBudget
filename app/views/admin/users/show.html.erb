@@ -23,56 +23,59 @@
   </div>
 </div>
 
-<div class="simulation-section">
-  <div class="row">
-    <div class="col-md-3">
+<div class="simu-section-top container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10 simu-title">
       <h2><strong>Simulations non validated</strong></h2>
     </div>
-    <div class="col-md-9">
-      <table class="table table-striped table-sm table-admin">
-        <thead>
+    <div class="col-md-10">
+      <table class="table table-responsive-sm table-striped" id="table-non-validated">
+        <thead class="bg-primary text-white">
         <tr>
-          <th>Id</th>
-          <th>Total cost saved</th>
-          <th>Created_at</th>
-          <th colspan="3"></th>
+          <th scope="col" style="width: 30%;">Created</th>
+          <th scope="col" style="width: 30%;">Updated</th>
+          <th scope="col" style="width: 40%;">Tested categories</th>
         </tr>
         </thead>
         <tbody>
         <%@full_sim_non_valid.each do |full_sim| %>
           <tr>
-            <th><%=full_sim.id %></th>
-            <th><%=full_sim.total_cost_saved %></th>
-            <th><%=full_sim.created_at %></th>
+            <td><%= full_sim.created_at.to_formatted_s(:short) %></td>
+            <td><%= full_sim.updated_at.to_formatted_s(:short) %></td>
+            <td><%= full_sim.counter %></td>
           </tr>
         <% end %>
         </tbody>
       </table>
     </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-md-3">
+<div class="simu-section-bottom container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10 simu-title">
       <h2><strong>Simulations validated</strong></h2>
     </div>
-    <div class="col-md-9">
-      <table class="table table-striped table-sm table-admin">
-        <thead>
+    <div class="col-md-10">
+      <table class="table table-responsive-sm table-striped" id="table-validated">
+        <thead class="bg-primary text-white">
         <tr>
-          <th>Id</th>
-          <th>Total cost saved</th>
-          <th>Created_at</th>
-          <th colspan="3"></th>
+          <th scope="col" style="width: 20%;">Savings</th>
+          <th scope="col" style="width: 40%;">Validated date</th>
+          <th scope="col" style="width: 30%;">Tested categories</th>
+          <th colspan="3" style="width: 20%;" class="text-center">Actions</th>
         </tr>
         </thead>
         <tbody>
-        <%@full_sim_valid.each do |full_sim| %>
-          <tr>
-            <th><%=full_sim.id %></th>
-            <th><%=full_sim.total_cost_saved %></th>
-            <th><%=full_sim.created_at %></th>
-          </tr>
-        <% end %>
+          <%@full_sim_valid.each do |full_sim| %>
+        <tr>
+            <td><%=full_sim.total_cost_saved %></td>
+            <td><%= full_sim.created_at.to_formatted_s(:short) %></td>
+            <td><%= full_sim.updated_at.to_formatted_s(:short) %></td>
+            <td><%= full_sim.counter %></td>
+            <td><%=link_to 'Show', admin_full_simulation_path( full_sim), class: 'btn btn-primary' %></td>
+        </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

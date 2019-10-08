@@ -5,21 +5,22 @@
       <span id="nav-user-collapse">
       <i class="fas fa-angle-left nav-link-arrow" id="nav-arrow"></i>
       </span>
-      <div class="sidebar h-100" >
+      <div class="sidebar h-100 ml-2 mt-4" >
         <ul class="nav flex-column">
-          <li class="nav-item txt-user-nav-prem">
+          <li class="nav-item my-2">
             <%= link_to("Mon profil", user_path(current_user), class: "nav-link, text-primary")%>
           </li>
-          <li class="nav-item txt-user-nav">
+          <li class="nav-item mb-3">
             <%= link_to("Mes simulations", user_full_simulations_path(current_user), class: "nav-link, text-primary")%>
           </li>
-          <li class="nav-item txt-user-nav">
-            <%= link_to("Nouvelle simulation", new_user_full_simulation_path(current_user), class: "nav-link, ")%>
+          <br>
+          <li class="nav-item">
+            <%= link_to("Nouvelle simulation", new_user_full_simulation_path(current_user), class: "nav-link, btn mr-2 mb-2 btn-outline-success btn-result")%>
           </li>
         </ul>
       </div>
     </nav>
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10" id="body_content_user">
+    <main role="main" class="col-12 col-md-10 ml-sm-auto d-flex justify-content-center align-items-center flex-column" id="body_content_user">
       <%=yield%>
     </main>
   </div>

@@ -1,0 +1,84 @@
+
+<!-- Card -->
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="pricing-card">
+        <div class="card shadow-soft border-light p-4">
+          <!-- Header -->
+          <header class="card-header border-bottom bg-white text-center d-flex flex-column">
+            <% if @bank_sim.bank_cost_saved <= 0 %>
+              <div class="display-1 text-secondary font-weight-bold">
+                  <p class="align-top font-medium pr-5">Résumé des données rentrées lors de votre simulation</p>
+              </div>
+            <% else %>
+              <div class="display-1 text-secondary font-weight-bold">
+                  <p class="align-top font-medium pr-5">Vous pouvez épargner</p><%= (@bank_sim.bank_cost_saved).round(2)%> €
+              <span class="font-medium">/ an</span>
+              </div>
+            <% end %>
+          </header>
+          <!-- Content -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Frais de gestion de compte</strong><br>
+                    <%= @bank_sim.accounting_fees%> €  </li>
+                  <li class="list-group-item"><strong>Frais liés au chéquier</strong><br>
+                    <%= @bank_sim.price_cheque%>  € </li>
+                  <li class="list-group-item"><strong>Frais liés à l'assurance de vos moyens de paiement</strong><br>
+                    <%= @bank_sim.insurance_payment%>  €  </li>
+                </ul>
+              </div>
+            </div>
+            <%= link_to 'Lancer une nouvelle simulation', new_user_full_simulation_path(current_user), class:"btn animate-up-3 btn-outline-secondary btn-block"%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <h2 class='text-center'>
+    <%case @bank_contracts.length %>
+    <%when 0 %>
+      Votre contrat actuel répond parfaitement à vos besoins !
+    <% when 1 %>
+      Voici le meilleur contrat pour vous
+    <%else %>
+      Voici les <%=@bank_contracts.length %> meilleurs contrats pour vous
+    <%end %>
+  </h2>
+  <div class="row d-flex justify-content-center my-5">
+    <% @bank_contracts.each do |contract| %>
+      <div class="col-md-4">
+
+        <div class="pricing-card">
+          <div class="card shadow-soft border-light p-4">
+            <!-- Header -->
+            <header class="card-header border-bottom bg-white text-center">
+              <span class="d-block">
+                <span class="display-1 text-primary font-weight-bold">
+                    <span class="align-top font-medium"><%= contract.supplier %></span>
+                </span>
+              </span>
+            </header>
+            <!-- End Header -->
+            <!-- Content -->
+            <div class="card-body">
+              <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Frais de gestion de compte</strong> : <%=contract.accounting_fees %> € </li>
+                <li class="list-group-item"><strong>Frais liés au chéquier</strong> : <%=contract.price_cheque %> € </li>
+                <li class="list-group-item"><strong>Frais liés à l'assurance de vos moyens de paiement</strong> : <%=contract.insurance_payment %> € </li>
+              </ul>
+            </div>
+            <!-- End Content -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render partial: 'shared/back' %>

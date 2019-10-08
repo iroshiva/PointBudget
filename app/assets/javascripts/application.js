@@ -32,58 +32,183 @@
 
 $(document).ready(function () {
 
-if($("body").data("controller") == "gas_simulations" && $("body").data("action") == "new") {
-  radioYes = document.getElementById("answer_yes")
-  radioNo = document.getElementById("answer_no")
 
-  radioYes.addEventListener('click', function(){
-      $('#consumption').show(600);
-      $('#estimation').hide(600);
-  });
+    $("body").on("click", "[data-trigger-button]", function() {
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            var $this = $(this),
+                cNavButton = $this.data("trigger-button");
+            $(cNavButton).trigger('click');
+        }
+    });
 
-  radioNo.addEventListener('click', function(){
-      $('#consumption').hide(600);
-      $('#estimation').show(600);
-  });
-} else if($("body").data("controller") == "full_simulations" && $("body").data("action") == "show"){
-  try {
-    $('.btn-block')[0].on('click', function () {
-      $('#myModal').trigger('focus');
-    })
-  }
-  catch(error){
-  }
-}
+    if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "show" && document.body.contains(document.getElementById('full-simu-not-validated'))) {
+        radioYes = document.getElementById("answer_yes");
+        radioNo = document.getElementById("answer_no");
 
+        // it show the two differents form of the gas simulation
 
-if (document.cookie !== "username=guest"){
-  navCollapse = document.getElementById("nav-user-collapse")
-  userNavStatus = true ;
-
-  navCollapse.addEventListener('click', function() {
-    if (userNavStatus == true) {
-        $('#sidenav').animate({
-            right: '250px'
+        radioYes.addEventListener('click', function () {
+            $('#consumption').show(500);
+            $('#estimation').hide(500);
         });
-        $('#body_content_user').animate({
-            right: '250px'
+
+        radioNo.addEventListener('click', function () {
+            $('#consumption').hide(500);
+            $('#estimation').show(500);
         });
-      document.getElementById("nav-arrow").classList.remove("fa-angle-left");
-      document.getElementById("nav-arrow").classList.add("fa-angle-right");
-      userNavStatus = false
+    } else if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "show") {
+        try {
+            $('.btn-block')[0].on('click', function () {
+                $('#myModal').trigger('focus');
+            })
+        } catch (error) {
+        }
     }
-    else if (userNavStatus == false) {
-        $('#sidenav').animate({
-            right: '0px'
-        });
-        $('#body_content_user').animate({
-            right: '0px'
-        });
-      document.getElementById("nav-arrow").classList.remove("fa-angle-right");
-      document.getElementById("nav-arrow").classList.add("fa-angle-left");
-      userNavStatus = true
-    }
-  });
-};
 
+    if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "new") {
+      clickToDisplayDomains = document.getElementById("btn-click-1");
+      domainDeploySatus = false;
+
+      clickToDisplayDomains.addEventListener('click', function(){
+        $("#domain-list").toggle(600);
+      })
+    };
+
+    if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "show" && document.body.contains(document.getElementById('full-simu-not-validated'))) {
+
+        // GET the differents button of the simulation
+
+        clickToDisplayNumerics = document.getElementById("btn-numeric");
+        numericDeployStatus = false;
+        clickToDisplayBoxSimu = document.getElementById("btn-box");
+        boxDeployStatus = false;
+        clickToDisplayMobilSimu = document.getElementById("btn-mobil");
+        mobilDeployStatus = false;
+        clickToDisplayEnergies = document.getElementById("btn-energy");
+        energyDeployStatus = false;
+        clickToDisplayGasSimu = document.getElementById("btn-gas");
+        gasDeployStatus = false;
+        clickToDisplayElecSimu = document.getElementById("btn-elec");
+        clickToDisplayBankSimu = document.getElementById("btn-bank");
+        bankDeployStatus = false;
+
+        // BANK
+        clickToDisplayBankSimu.addEventListener('click', function(){
+            $("#bank-categories").toggle(600);
+            $("#numeric-categories").hide(600);
+            $("#numeric-categories").removeClass("d-flex");
+            numericDeployStatus = false;
+            $("#energy-categories").hide(600);
+            $("#energy-categories").removeClass("d-flex");
+            energyDeployStatus = false;
+            if(bankDeployStatus === false){
+                $("#finalize").hide(400);
+                bankDeployStatus = true;
+            }else{
+                $("#finalize").show(400);
+                bankDeployStatus = false;
+            }
+
+
+        });
+        // ENERGY
+        clickToDisplayGasSimu.addEventListener('click', function(){
+            $("#gas-simu").toggle(600);
+            $("#elec-simu").hide(500);
+          });
+
+        clickToDisplayElecSimu.addEventListener('click', function(){
+            $("#elec-simu").toggle(600);
+            $("#gas-simu").hide(500);
+          });
+
+        clickToDisplayEnergies.addEventListener('click', function(){
+            $("#bank-categories").hide(600);
+            $("#numeric-categories").hide(600);
+            $("#numeric-categories").removeClass("d-flex");
+            numericDeployStatus = false;
+            bankDeployStatus = false
+            if (energyDeployStatus == false) {
+              $("#energy-categories").addClass("d-flex");
+              $("#energy-categories").show(500);
+              $("#gas-simu").hide(500);
+              $("#elec-simu").hide(500);
+              gasDeployStatus = false;
+              energyDeployStatus = true;
+              $("#finalize").hide(400);
+            }
+            else if (energyDeployStatus == true) {
+              $("#energy-categories").removeClass("d-flex");
+              $("#energy-categories").hide(500);
+              energyDeployStatus = false;
+              $("#finalize").show(400);
+            }
+          });
+
+      // Numeric
+        clickToDisplayBoxSimu.addEventListener('click', function(){
+            $("#box-simu").toggle(600);
+            $("#mobil-simu").hide(500);
+        });
+
+        clickToDisplayMobilSimu.addEventListener('click', function(){
+            $("#mobil-simu").toggle(600);
+            $("#box-simu").hide(500);
+        });
+
+        clickToDisplayNumerics.addEventListener('click', function(){
+            $("#bank-categories").hide(600);
+            $("#energy-categories").hide(600);
+            $("#energy-categories").removeClass("d-flex");
+            energyDeployStatus = false;
+            bankDeployStatus = false
+            if (numericDeployStatus == false) {
+                $("#numeric-categories").addClass("d-flex");
+                $("#numeric-categories").show(500);
+                $("#box-simu").hide(500);
+                $("#mobil-simu").hide(500);
+                boxDeployStatus = false;
+                mobilDeployStatus = false;
+                numericDeployStatus = true;
+                $("#finalize").hide(400);
+            }
+            else if (numericDeployStatus == true) {
+                $("#numeric-categories").removeClass("d-flex");
+                $("#numeric-categories").hide(500);
+                numericDeployStatus = false;
+                $("#finalize").show(400);
+            }
+        });
+
+    };
+
+    if (document.cookie !== "username=guest"){
+      navCollapse = document.getElementById("nav-user-collapse")
+      userNavStatus = true ;
+
+      navCollapse.addEventListener('click', function() {
+        if (userNavStatus == true) {
+            $('#sidenav').animate({
+                right: $('#sidenav').width()
+            });
+            $('#body_content_user').animate({
+                right: $('#sidenav').width()/2
+            });
+          document.getElementById("nav-arrow").classList.remove("fa-angle-left");
+          document.getElementById("nav-arrow").classList.add("fa-angle-right");
+          userNavStatus = false
+        }
+        else if (userNavStatus == false) {
+            $('#sidenav').animate({
+                right: '0px'
+            });
+            $('#body_content_user').animate({
+                right: '0px'
+            });
+          document.getElementById("nav-arrow").classList.remove("fa-angle-right");
+          document.getElementById("nav-arrow").classList.add("fa-angle-left");
+          userNavStatus = true
+        }
+      });
+    };
 });

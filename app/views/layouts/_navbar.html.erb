@@ -1,7 +1,6 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark navbar-theme-primary">
+<nav id="navbar" class="navbar navbar-expand-lg nav-fix navbar-transparent navbar-dark navbar-theme-primary">
     <div class="container-fluid">
-      <%= link_to "Point Budget", root_path, class: "nav-item text-white point-budget-title"%>
+      <%=link_to(image_tag("logo.png", class: "logo-nav"), root_path)%>
       <div class="navbar-collapse collapse" id="navbar-primary">
         <div class="navbar-collapse-header">
           <div class="row">
@@ -9,32 +8,35 @@
               <%= link_to "Point Budget", root_path, class: "nav-item"%>
             </div>
             <div class="col-6 collapse-close">
-              <i class="fas fa-times" data-toggle="collapse" role="button" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation"></i>
+              <i class="fas fa-times" id="toggler" data-toggle="collapse" role="button" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation"></i>
             </div>
           </div>
         </div>
         <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-          <li class="nav-item"><%= link_to "About", static_pages_about_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Contact", {:anchor => "footer"}, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "A propos", static_pages_about_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Contact", {:anchor => "footer"}, data:{trigger_button:"#toggler"}, class: "nav-link" %></li>
         </ul>
         <ul class="navbar-nav navbar-nav-hover align-items-lg-end ml-auto">
           <% if user_signed_in? %>
+            <li><%= link_to "Commencer une simulation", new_user_full_simulation_path(current_user), class: "nav-item nav-link"%></li>
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+              <%=link_to '', class:'nav-link', data:{toggle:'dropdown'}, role:'button' do %>
                 <i class="fas fa-angle-down nav-link-arrow"></i>
-                <span class="nav-link-inner-text">Connecté</span>
-              </a>
+                <span class="nav-link-inner-text">Mon Espace Client</span>
+              <%end %>
+
               <ul class="dropdown-menu">
-                <li><%= link_to "Mon dashboard", user_path(current_user), class: "dropdown-item"%></li>
+                <li><%= link_to "Mon profil", user_path(current_user), class: "dropdown-item"%></li>
+                <li><%= link_to "Mes simulations", user_full_simulations_path(current_user), class: "dropdown-item"%></li>
                 <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>
               </ul>
             </li>
           <% else %>
             <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" role="button">
+              <%= link_to "", class:'nav-link', data: {toggle:'dropdown'}, role:'button' do %>
                 <i class="fas fa-angle-down nav-link-arrow"></i>
                 <span class="nav-link-inner-text">S'inscrire/Se connecter</span>
-              </a>
+              <% end %>
 
               <ul class="dropdown-menu">
                 <li><%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item"%></li>
@@ -48,10 +50,9 @@
 <!-- Hamburger Button -->
 
       <div class="d-flex align-items-center">
-        <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <%=button_tag class:'navbar-toggler ml-2', data:{toggle:'collapse', target:'#navbar-primary'}, aria:{controls:'navbar-primary', expanded:'false', label:'Toggle navigation' } do%>
+          <span class="navbar-toggler-icon"></span>
+      <%end %>
       </div>
     </div>
   </nav>
-</header>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :user do
     email { Faker::Internet.email }
@@ -5,8 +7,8 @@ FactoryBot.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     phone_number { %w[0606060606 +33606060606].sample }
-    city { create(:city)}
-    is_admin { false}
+    city { create(:city) }
+    is_admin { false }
 
     factory :user_empty_email do
       email { '' }
@@ -31,7 +33,7 @@ FactoryBot.define do
       city {}
     end
     factory :user_admin do
-      is_admin { true}
+      is_admin { true }
     end
   end
 end

@@ -1,0 +1,92 @@
+
+<!-- Card -->
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="pricing-card">
+        <div class="card shadow-soft border-light p-4">
+          <!-- Header -->
+          <header class="card-header border-bottom bg-white text-center d-flex flex-column">
+            <% if @gas_sim.gas_cost_saved <= 0 %>
+              <div class="display-1 text-secondary font-weight-bold">
+                  <p class="align-top font-medium pr-5">Résumé des données rentrées lors de votre simulation</p>
+              </div>
+            <% else %>
+              <div class="display-1 text-secondary font-weight-bold">
+                  <p class="align-top font-medium pr-5">Vous pouvez épargner</p><%= (@gas_sim.gas_cost_saved).round(2)%> €
+              <span class="font-medium">/ an</span>
+              </div>
+            <% end %>
+          </header>
+          <!-- Content -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Coût annuel de gaz</strong><br><%=@gas_sim.actual_price_paid%> €</li>
+                  <li class="list-group-item"><strong>Superficie</strong><br>
+                      <%= @floor_space%> m2</li>
+                  <li class="list-group-item"><strong>Nombre de personnes</strong><br> <%= @residents_number%></li>
+                </ul>
+              </div>
+              <div class="col text-center">
+                <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Type de chauffage (maison)</strong>  <%= @heat_type%></li>
+                  <li class="list-group-item"><strong>Type de chauffage (eau + cuisson)</strong>
+                      <%= @water_cooking_type%></li>
+                  <li class="list-group-item"><strong>Consommation annuelle</strong>  <%= @gas_sim.gas_use%> Wh</li>
+                </ul>
+              </div>
+            </div>
+              <%= link_to 'Lancer une nouvelle simulation', new_user_full_simulation_path(current_user), class:"btn animate-up-3 btn-outline-secondary btn-block"%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <h2 class='text-center'>
+  <%case @gas_contracts.length %>
+  <%when 0 %>
+    Votre contrat actuel répond parfaitement à vos besoins !
+  <% when 1 %>
+    Voici le meilleur contrat pour vous
+  <%else %>
+    Voici les <%=@gas_contracts.length %> meilleurs contrats pour vous
+  <%end %>
+  </h2>
+
+  <div class="row my-5">
+    <% @gas_contracts.each do |contract| %>
+      <div class="col-md-4">
+
+        <div class="pricing-card">
+          <div class="card shadow-soft border-light p-4">
+            <!-- Header -->
+            <header class="card-header border-bottom bg-white text-center">
+              <span class="d-block">
+                <span class="display-1 text-primary font-weight-bold">
+                    <span class="align-top font-medium"><%= contract.supplier %></span>
+                    <p>Offre : <%=contract.offer_name %></p>
+                </span>
+              </span>
+            </header>
+            <!-- End Header -->
+            <!-- Content -->
+            <div class="card-body">
+              <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Prix de l'abonnement par an</strong> : <%=(contract.subscription_base_price_month * 12).round(2) %> € </li>
+                <li class="list-group-item"><strong>Prix du kwh</strong> : <%=contract.kwh_price_base %></li>
+              </ul>
+            </div>
+            <!-- End Content -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render partial: 'shared/back' %>

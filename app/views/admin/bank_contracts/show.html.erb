@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2 class="profile-title"><strong>Bank Contract N°<%=@contract.id %></strong></h2>
+    </div>
+    <div class="col-md-9">
+      <dl>
+        <dt>Supplier</dt>
+        <dl><%=@contract.supplier %></dl>
+        <dt>Group</dt>
+        <dl><%=@contract.group_name %></dl>
+        <dt>Accounting fees</dt>
+        <dl><%=@contract.accounting_fees %> €</dl>
+        <dt>Inactive accounting fees</dt>
+        <dl><%=@contract.inactive_accounting_fees %> €</dl>
+        <dt>Cheque</dt>
+        <dl><%=@contract.cheque %></dl>
+        <dt>Price Cheque</dt>
+        <dl><%=@contract.price_cheque %> €</dl>
+        <dt>Price order cheque</dt>
+        <dl><%=@contract.price_order_cheque %> €</dl>
+        <dt>Insurance payment</dt>
+        <dl><%=@contract.insurance_payment %> €</dl>
+        <dt>Sms alert</dt>
+        <dl><%=@contract.sms_alert %> €</dl>
+        <dt>International Withdraw</dt>
+        <dl><%=@contract.international_withdraw %> €</dl>
+        <br>
+        <%= link_to "Edit the contract", edit_admin_bank_contract_path(@contract), class: "btn btn-success"%>
+        <td><%= link_to 'Destroy',admin_bank_contract_path(@contract), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </dl>
+    </div>
+  </div>
+</div>

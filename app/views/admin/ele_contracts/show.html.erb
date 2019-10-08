@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2 class="profile-title"><strong>Electricity Contract N°<%=@contract.id %></strong></h2>
+    </div>
+    <div class="col-md-9">
+      <dl>
+        <dt>Supplier</dt>
+        <dl><%=@contract.supplier %></dl>
+        <dt>Offer</dt>
+        <dl><%=@contract.offer_name %></dl>
+        <dt>Subscription base price per month</dt>
+        <dl><%=@contract.subscription_base_price_month %></dl>
+        <dt>Kwh price base</dt>
+        <dl><%=@contract.kwh_price_base %></dl>
+        <dt>kVA_power</dt>
+        <dl><%=@contract.kVA_power %></dl>
+        <dt>Creation date</dt>
+        <dl><%=@contract.created_at %></dl>
+        <dt>Updated date</dt>
+        <dl><%=@contract.updated_at %></dl>
+        <br>
+        <%= link_to "Edit the contract", edit_admin_ele_contract_path(@contract), class: "btn btn-success"%>
+        <td><%= link_to 'Destroy',admin_ele_contract_path(@contract), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </dl>
+    </div>
+  </div>
+</div>

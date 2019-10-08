@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :gas_contract do
     supplier { 'MyString' }
@@ -19,5 +21,4 @@ FactoryBot.define do
       kwh_price_base { rand(0.11000..1.10000) }
     end
   end
-
 end

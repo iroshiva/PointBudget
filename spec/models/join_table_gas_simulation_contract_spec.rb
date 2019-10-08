@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe JoinTableGasSimulationContract, type: :model do
@@ -6,13 +8,12 @@ RSpec.describe JoinTableGasSimulationContract, type: :model do
   end
 
   context 'validations' do
-
     it 'is valid with valid attributes' do
       expect(@join_table_gas_simulation_contract).to be_a(JoinTableGasSimulationContract)
       expect(@join_table_gas_simulation_contract).to be_valid
     end
-
   end
+
   context 'associations' do
     describe 'gas_simulation' do
       it 'belongs to one gas_simulation' do

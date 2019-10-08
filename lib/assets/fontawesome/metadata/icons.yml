@@ -1852,7 +1852,7 @@ bolt:
   label: Lightning Bolt
   search:
     terms:
-      - electricity
+      - elec
       - lightning
       - weather
       - zap

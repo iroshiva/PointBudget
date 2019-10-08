@@ -1,13 +1,13 @@
 <%= render partial: "shared/form", locals:{resource: resource,
                                            action: 'edit_registration',
                                            path: registration_path(resource),
-                                           method: :put, title: "Edit your password",
-                                           button: "Update"}%>
+                                           method: :put, title: "Changer son mot de passe",
+                                           button: "Mettre à jour"}%>
 
 <%= render partial: "shared/form", locals:{resource: resource,
                                            action: 'cancel_my_account',
                                            path: registration_path(resource),
                                            method: :delete,
-                                           title: "Delete my account",
-                                           button: "Delete"}%>
+                                           title: "Supprimer mon compte",
+                                           button: "Supprimer"}%>
 

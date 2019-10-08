@@ -1,0 +1,10 @@
+<%= render partial: "admin/shared/index",
+           locals:{resources: @contracts,
+                   action: 'bank_contracts',
+                   path_new: new_admin_bank_contract_path,
+                   path: "/admin/bank_contracts/",
+                   edition: true,
+                   title: 'Bank Contracts',
+                   titles: ['Supplier','Group', 'Accounting fees',  'Price cheque', 'Insurance payment', 'SMS alert', 'International withdraw'],
+                   values: %w(supplier  group_name accounting_fees price_cheque insurance_payment sms_alert international_withdraw ),
+                   button_new: "New Bank contract"}%>

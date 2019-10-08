@@ -1,28 +1,36 @@
-
-<div class="simu-section-top">
-  <div class="simu-title">
-     <h2><strong>Vos simulations en cours</strong></h2>
-  </div>
+<div class="container simu-section-top">
   <div class="row">
-    <div class="col-md-12">
-      <table class="table table-striped table-hover">
-       <thead>
+    <div class="col-md-12 d-flex flex-column align-items-center">
+      <div class="simu-title">
+        <h2>Ajoutez une simulation maintenant et complétez là plus tard</h2>
+      </div>
+      <div>
+        <%=link_to "Ajout rapide", user_full_simulations_path(current_user), method: :post, class: "btn btn-lg btn-primary btn-result", remote: true%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="simu-section-top container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10 simu-title">
+       <h2><strong>Vos simulations en cours</strong></h2>
+    </div>
+    <div class="col-md-10">
+      <table class="table table-responsive-sm table-striped" id="table-non-validated">
+       <thead class="bg-primary text-white">
           <tr>
-            <th scope="col" style="width: 30%;">Simulation</th>
-            <th scope="col" style="width: 35%;">Créée le</th>
-            <th scope="col" style="width: 35%;">Action</th>
+            <th scope="col" style="width: 25%;">Créée le</th>
+            <th scope="col" style="width: 25%;">Mise à jour le</th>
+            <th scope="col" style="width: 30%;">Catégories testées</th>
+            <th colspan="3" style="width: 30%;" class="text-center">Mes actions</th>
           </tr>
         </thead>
         <tbody>
           <% unless @simulations.nil? %>
             <% @simulations.each do |simu| %>
               <% if simu.validated == false %>
-            
-                <tr>
-                  <th scope="row"><%= simu.id %></th>
-                  <td><%= simu.created_at %></td>
-                  <td><%= link_to "Je complète ma simulation", user_full_simulation_path(current_user, simu), class: "btn btn-success" %></td>
-                </tr>
+                <%= render partial:'add_line_index', locals:{simu: simu, confirmed: false} %>
               <%end%>
             <% end %>
           <% end %>
@@ -33,31 +41,26 @@
 </div>
 
 
-<div class="simu-section-bottom">
-  <div class="simu-title">
-      <h2><strong>Vos simulations validées</strong></h2>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table table-striped table-hover">
-        <thead>
+<div class="simu-section-bottom container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10 simu-title">
+        <h2><strong>Vos simulations validées</strong></h2>
+    </div>
+    <div class="col-md-10">
+      <table class="table table-responsive-sm table-striped" id="table-validated">
+        <thead class="bg-primary text-white">
           <tr>
-            <th scope="col" style="width: 25%;">Simulation</th>
-            <th scope="col" style="width: 25%;">Validée le</th>
-            <th scope="col" style="width: 25%;">Action</th>
-            <th scope="col" style="width: 25%;">Action</th>
+            <th scope="col" style="width: 20%;">Economies</th>
+            <th scope="col" style="width: 40%;">Validée le</th>
+            <th scope="col" style="width: 30%;">Catégories testées</th>
+            <th colspan="3" style="width: 20%;" class="text-center">Mes actions</th>
           </tr>
         </thead>
         <tbody>
           <% unless @simulations.nil? %>
             <% @simulations.each do |simu| %>
               <% if simu.validated == true %>
-                <tr>
-                  <th scope="row"><%= simu.id %></th>
-                  <td><%= simu.updated_at %></td>
-                  <td><%= link_to "Consulter", user_full_simulation_path(current_user, simu), class: "btn btn-success" %></td>
-                  <td><%= link_to "Supprimer", user_full_simulation_path(current_user, simu), method: :delete, class: "btn btn-danger" %></td>
-                </tr>
+                <%= render partial:'add_line_index', locals:{simu: simu, confirmed: true} %>
               <% end %>
             <% end %>
           <% end %>
@@ -66,4 +69,3 @@
     </div>
   </div>
 </div>
-

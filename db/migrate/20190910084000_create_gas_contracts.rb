@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateGasContracts < ActiveRecord::Migration[5.2]
   def change
     create_table :gas_contracts do |t|

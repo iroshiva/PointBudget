@@ -1,0 +1,17 @@
+<% if confirmed %>
+  <tr id="simulation-confirmed-<%=simu.id %>">
+    <th scope="row"><%= simu.total_cost_saved %> € </th>
+    <td><%= simu.created_at.to_formatted_s(:short) %></td>
+    <td><%= simu.counter %></td>
+    <td><%= link_to "Consulter", user_full_simulation_path(current_user, simu), class: "btn btn-success" %></td>
+    <td><%= link_to "Supprimer", user_full_simulation_path(current_user, simu), method: :delete, class: "btn btn-danger", data:{ confirm: 'Etes-vous sûr?' },remote: true%></td>
+  </tr>
+<% else %>
+  <tr id="simulation-unconfirmed-<%=simu.id %>">
+    <td><%= simu.created_at.to_formatted_s(:short) %></td>
+    <td><%= simu.updated_at.to_formatted_s(:short) %></td>
+    <td><%= simu.counter %></td>
+    <td><%= link_to "Compléter", user_full_simulation_path(current_user, simu), class: "btn btn-success" %></td>
+    <td><%= link_to "Supprimer", user_full_simulation_path(current_user, simu), method: :delete, class: "btn btn-danger", data:{ confirm: 'Etes-vous sûr?' },remote: true%></td>
+  </tr>
+<% end %>

@@ -1,0 +1,5 @@
+<%= render partial: "shared/form", locals:{resource: @contract,
+                                           action: 'new_box_contract',
+                                           path: admin_box_contracts_path(@contract),
+                                           method: :post, title: 'New box contract',
+                                           button: "Create"}%>

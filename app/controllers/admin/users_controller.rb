@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   class UsersController < ApplicationController
     def index
@@ -6,8 +8,8 @@ module Admin
 
     def show
       @user = User.find(params[:id])
-      @full_sim_non_valid = @user.full_simulations.select { |full_sim| full_sim.validated == false}
-      @full_sim_valid = @user.full_simulations.select { |full_sim| full_sim.validated == true}
+      @full_sim_non_valid = @user.full_simulations.select { |full_sim| full_sim.validated == false }
+      @full_sim_valid = @user.full_simulations.select { |full_sim| full_sim.validated == true }
     end
 
     def new
@@ -18,7 +20,7 @@ module Admin
       @user = User.new(email: params[:user][:email],
                        password: params[:user][:password])
       if @user.save
-        flash[:success]='User created'
+        flash[:success] = 'User created'
         redirect_to admin_root_path
       else
         redirect_to new_admin_user_path
@@ -55,7 +57,6 @@ module Admin
       end
       redirect_to admin_users_path
     end
-
 
     private
 

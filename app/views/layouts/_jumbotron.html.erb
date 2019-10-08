@@ -1,19 +1,16 @@
-<div class="jumbotron" style="background-image: url(assets/jumbo.jpg);">
+<div class="jumbotron" id="jumbo-image">
 	<div class="row">
-		<div class="col-md-12">
-		  <h1 class="display-1">Point Budget</h1>
-		  <p class="lead">La meilleure façon de gérer son budget est de le comparer.</p>
-		</div>
-		<% if user_signed_in? %>
-			<div class="col-md-5">
-				<hr class="my-4">
-				<%=link_to "Lancer une simulation", new_user_full_simulation_path(current_user), class: "btn mr-2 mb-2 btn-pill btn-primary"%>
-			</div>
-		<%else%>
-		<div class="col-md-5">
-			<hr class="my-4">
-			<%=link_to "Je m'inscris et lance ma première simulation", new_user_session_path, class: "btn mr-2 mb-2 btn-pill btn-primary"%>
-		</div>
-		<%end%>
-	</div>
+    <div class="col-md-12">
+      <h1 class="display-1">Point Budget</h1>
+      <p class="lead">La meilleure façon de gérer son budget est de l'évaluer.</p>
+    </div>
+    <div class="col-md-12 mt-5">
+      <h3>Payez-vous le juste prix pour vos factures?</h3> 
+      <% if user_signed_in? %>
+        <%=link_to "Lancer une simulation", new_user_full_simulation_path(current_user), class: "btn mr-2 mb-2 btn-pill btn-primary btn-lg mt-3"%>
+      <%else%>
+        <%=link_to "Je m'inscris et lance ma première simulation", new_user_registration_path, class: "btn mr-2 mb-2 btn-pill btn-primary btn-lg mt-3"%>
+      <%end%>
+    </div>
+  </div>
 </div>

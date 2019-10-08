@@ -1,0 +1,5 @@
+<%= render partial: "shared/form", locals:{resource: @contract,
+                                           action: 'new_mobil_contract',
+                                           path: admin_mobil_contracts_path(@contract),
+                                           method: :post, title: 'New mobil contract',
+                                           button: "Create"}%>

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2 class="profile-title"><strong>Contrat mobile N°<%=@contract.id %></strong></h2>
+    </div>
+    <div class="col-md-9">
+      <dl>
+        <dt>Opérateur</dt>
+        <dl><%=@contract.supplier %></dl>
+        <dt>Offre</dt>
+        <dl><%=@contract.offer_name %></dl>
+        <dt>Mise en service</dt>
+        <dl><%=@contract.line_service_price %></dl>
+        <dt>Prix carte SIM</dt>
+        <dl><%=@contract.sim_card_price %></dl>
+        <dt>Engagement</dt>
+        <dl><%=@contract.engagement %></dl>
+        <dt>Nouveau tel</dt>
+        <dl><%=@contract.add_phone %></dl>
+        <dt>Prix forfait</dt>
+        <dl><%=@contract.bundle_price %></dl>
+        <dt>Prix forfait</dt>
+        <dl><%=@contract.bundle_price %></dl>
+        <dt>Gbytes forfait</dt>
+        <dl><%=@contract.bundle_gbyte%></dl>
+        <dt>Appels France</dt>
+        <dl><%=@contract.calls_france%></dl>
+        <dt>Appels Europe</dt>
+        <dl><%=@contract.calls_europe%></dl>
+        <dt>Gbytes Europe</dt>
+        <dl><%=@contract.gbyte_europe%></dl>
+        <dt>Appels Etranger</dt>
+        <dl><%=@contract.calls_international%></dl>
+        <dt>Net Etranger</dt>
+        <dl><%=@contract.net_international%></dl>
+        <dt>Creation date</dt>
+        <dl><%=@contract.created_at %></dl>
+        <dt>Updated date</dt>
+        <dl><%=@contract.updated_at %></dl>
+        <br>
+        <%= link_to "Edit the contract", edit_admin_mobil_contract_path(@contract), class: "btn btn-success"%>
+        <td><%= link_to 'Destroy',admin_mobil_contract_path(@contract), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </dl>
+    </div>
+  </div>
+</div>

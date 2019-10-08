@@ -18,12 +18,28 @@
 
  */
 
- body{
-     min-height: 100vh;
- }
+
+ html,body
+{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+header{
+	margin-bottom: 106px;
+}
+
+#footer{
+	padding: 0 90px;	
+}
+.test-nav{
+	margin-top: 90;
+}
 
 .title{
-	text-align: center;
 	padding: 60px 0 70px 0;
 }
 
@@ -39,25 +55,99 @@ li.button-group{
   list-style: none;
 }
 
+.btn-form{
+	margin-bottom: 60px;
+}
+
+                        /* LANDING PAGE */
+
 /* NAVBAR */
 
- .point-budget-title{
- 	 font-size: 30px;
- 	 margin-right: 50px;
+
+.logo-nav{
+ 	width: 200px;
+ 	margin-right: 30px;
  }
 
-
+.nav-fix{
+	position: fixed;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+}
 
 /* JUMBOTRON */
 
+
 .jumbotron
 {
-    background-image: url("baniere.jpg");
+    /* background-image: url("baniere.jpg"); */
     background-position: center 75%;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 800px;
+    height: 25em;
 }
+
+
+/* Show in Large desktops and laptops */
+@media (min-width: 1200px) {
+
+	#jumbo-image {
+					background-image: url('jumbo.jpg');
+					background-repeat: no-repeat;
+					height: 800px;
+					width: 100%;
+					background-size:100% auto;
+			}
+
+	}
+
+	/*Hide in Other Small Devices */
+
+
+	/* Landscape tablets and medium desktops */
+	@media (min-width: 992px) and (max-width: 1199px) {
+
+				#jumbo-image {
+					background-image: none;
+					background-color:  white;
+					text-align: center;
+			}
+
+	}
+
+	/* Portrait tablets and small desktops */
+	@media (min-width: 768px) and (max-width: 991px) {
+						#jumbo-image {
+					background-image: none;
+					background-color:  white;
+					text-align: center;
+			}
+
+	}
+
+	/* Landscape phones and portrait tablets */
+	@media (max-width: 767px) {
+
+						#jumbo-image {
+					background-image: none;
+					background-color:  white;
+					text-align: center;
+					justify-content: center;
+			}
+
+	}
+
+	/* Portrait phones and smaller */
+	@media (max-width: 480px) {
+						#jumbo-image {
+			background-image: none;
+			background-color:  white;
+			height: 50%;
+	}
+
+}
+
 
 /* CONTEXT */
 
@@ -83,11 +173,12 @@ li.button-group{
 	padding: 40px 0 30px 0;
 	text-align: center;
 }
+
+
 /* BENEFITS */
 
 #benefits{
 	color: white;
-	height: 500px;
  }
 
 #benefits .icon{
@@ -102,13 +193,36 @@ li.button-group{
 
 #benefits .icon-position{
 	text-align: center;
+
+}
+
+.title-benefits{
+	color: white;
 }
 
 /* TIMELINE */
 
 #steps{
 	margin-top: 40px;
-	margin-bottom: 150px;
+	margin-bottom: 120px;
+}
+
+/* LOGS BUTTON */
+
+.logs-button{
+	margin-bottom: 100px;
+}
+
+
+/* FACEBOOK BUTTON*/
+
+#spinner {
+	background: #4267b2;
+	border-radius: 5px;
+	color: white;
+	height: 40px;
+	text-align: center;
+	width: 250px;
 }
 
 
@@ -118,24 +232,61 @@ li.button-group{
          padding: 1rem 0;
  }
 
+/* FOOTER */
+
+
+
+.contact-icons{
+	height: 40px;
+}
+
+
+.link-section{
+	margin-left: -120px;
+}
+
+
+
 
  /* ABOUT */
 
 
-#last-about{
-	margin-bottom: 10em;
+#success-key{
+	color: white;
+	margin-top: 5em;
+ }
+
+#success-key .icon{
+	font-size: 38px;
+	margin-bottom: 20px;
+	width: 100px;
+	padding: 30px 0;
+	border-radius: 50%;
+	box-shadow: 10px 10px 10px rgba(0,0,0,.05);
 }
 
+#success-key .icon-position{
+	text-align: center;
+}
+
+.about-section{
+	margin-top: 3em;
+}
+
+.last-about-section{
+	margin-bottom: 10em;
+	margin-top: 3em;
+}
+
+
 .indent {
-	padding-left: 2em;
-	padding-right: 2em;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
 	/* NAVBAR USER*/
 
-/*.user-nav{
-	border-right: 2px #dcded8 solid;
-}*/
+
 
 #nav-user-collapse {
   position:absolute;
@@ -146,42 +297,32 @@ li.button-group{
 }
 
 .txt-user-nav{
-	font-size: 18px;
+	font-size: 16px;
 	margin: 3px 0;
-}
-
-.txt-user-nav-prem{
-	font-size: 18px;
-	margin: 30px 0 2px 0;
 }
 
 #nav-user-collapse:hover {
   transform: scale(2);
 }
 
+
 /* DASHBOARD USER */
 
 /* USER PROFILE */
 
-.profile-section{
-	margin-bottom: 50px;
-}
-
-
-.profile-info{
-	margin: 40px 0 0 50px;
-}
-
 #body_content_user{
-	margin: 30px 0;
+	margin: 90px 0 150px 0;
 	padding: 0 40px;
+}
 
+.profile-list{
+	margin-left: -40px;
 }
 
 /* SIMULATION INDEX */
 
 .simu-title{
-	margin: 20px 0 30px 0;
+	margin: 40px 0 40px 0;
 }
 
 .simu-section-top{
@@ -190,65 +331,107 @@ li.button-group{
 
 .simu-section-bottom{
 	margin-bottom: 100px;
+	margin-top: 20px;
+}
+
+/* FULL_SIMULATION#NEW */
+
+.full-simu-new{
+	margin: 50px 0 70px 0;
+}
+
+/* FULL-SIMULATIONS#SHOW */
+
+#categories{
+	margin: 90px 0 70px 0;
+}
+
+#simu-category{
+	width: 120px;
+	height: 120px;
+	display: flex;
+	flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+
+
+.btn-simu{
+	height: 80px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+.btn-simu-gas{
+	width: 120px;
+}
+
+.btn-simu-elec{
+	width: 170px;
+}
+
+.btn-simu-cat{
+	width: 200px;
+}
+
+.btn-simu-numeric{
+	width: 190px;
+}
+
+.title-simu{
+	margin-top: 60px;
+}
+
+.simulation-result{
+	margin: 0 0 60px 0;
+}
+
+.btn-result{
+	border-radius: 5px;
 }
 
 /* MODAL PRICE FULL SIMULATION */
 
 .price-simu{
 	font-size: 38px;
-	height: 150px;
-	width: 150px;
-	padding: 50px 0;
+	height: 180px;
+	width: 180px;
+	padding: 63px 0 50px 0;
 	border-radius: 50%;
 	color: white;
 	box-shadow: 10px 10px 10px rgba(0,0,0,.05);
 }
 
-/* SIMULATIONS#SHOW */
-
-.simulation-result{
-	width: 25%;
-}
 .price-position{
 	text-align: center;
-	margin: 50px 0;
+	margin-bottom: 50px;
 }
 
-/*  SIMULATION SHOW */
+.modal-body{
+	margin: 20px 0;
+}
+
+.modal-footer{
+	margin-bottom: -50px;
+	margin-top: -40px;
+}
+
+/*  FULL_SIMULATION#SHOW AFTER VALIDATED FULL_SIMULATIONS */
 
 #simulation-list{
-	margin-top: -50px;
-	margin-bottom: 200px;
+	margin-top: 70px;
+	margin-bottom: 50px;
 }
 
-
-/* FOOTER */
-
-.contact-title{
-	margin-bottom: 10px;
+.btn-full{
+	border-radius: 5px;
+	margin: 60px 0;
 }
 
-#footer{
-	margin: 0 200px;
-	padding-top: 20px;
-	width: 90%;
+.categ-choice{
+	margin-bottom: 40px;
 }
 
-.contact-icons{
-	height: 40px;
-}
-
-.contact-section{
-	margin-left: 100px;
-}
-
-.link-section{
-	margin-left: -30px;
-}
-
-.icon-section{
-	margin: 0 -80px;
-}
 
 /* SIMULATION CATEGORY */
 
@@ -274,4 +457,26 @@ li.button-group{
 .elec-category{
 	font-size: 15px;
 	padding-bottom: 11px;
+}
+
+#btn-click-1{
+  background:none;
+  border:none
+}
+
+#energy-categories, #numeric-categories{
+	margin-bottom: 80px;
+}
+
+
+/* LEGAL PAGE */
+
+.legal-page{
+	margin-top: 30px;
+	margin-bottom: 90px;
+}
+
+.terms-page{
+	margin-top: 50px;
+	margin-bottom: 90px;
 }
