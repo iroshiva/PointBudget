@@ -16,10 +16,10 @@ class GasSimulation < ApplicationRecord
             numericality: { greater_than_or_equal_to: 9 }
   validates :heat_type,
             allow_blank: true,
-            format: { with: /\A(Gaz|Electricite|Non)\Z/ }
+            format: { with: /\A(Gaz|Electricite|Autre|Non)\Z/ }
   validates :water_cooking_type,
             allow_blank: true,
-            format: { with: /\A(Gaz|Electricite)\Z/ }
+            format: { with: /\A(Gaz|Electricite|Autre)\Z/ }
   validates :residents_number,
             allow_blank: true,
             numericality: { greater_than_or_equal_to: 1 }
@@ -57,6 +57,7 @@ class GasSimulation < ApplicationRecord
       second_factor = water_cooking_type == 'Gaz' ? 1 : 0
       yearly_consumption = floor_space * 100 * first_factor + consumption_people(nb_residents) * second_factor if yearly_consumption.zero?
       [yearly_cost, yearly_consumption]
+    # puts an array
     else
       [false, -1]
     end
@@ -64,10 +65,12 @@ class GasSimulation < ApplicationRecord
 
   # This method execute the comparison between what is entered by the client and the contracts
   def comparison(yearly_cost, yearly_consumption)
+    # select the contracts that correspond to the yearly_consumption
     first_filter = GasContract.all.select { |contract|
       yearly_consumption.between?(contract.low_kw_consumption_per_year * 1000, contract.high_kw_consumption_per_year * 1000)
     }
     second_filter = first_filter.select{ |contract|
+    # select all the contracts cheaper than the user's contract regarding the first_filter
       yearly_cost > (contract.kwh_price_base * yearly_consumption + contract.subscription_base_price_month * 12)
     }
     max_save = 0
@@ -105,9 +108,11 @@ class GasSimulation < ApplicationRecord
   def consumption_people(nb_residents)
     hash = { 1 => 1630, 2 => 2945, 3 => 4265, 4 => 5320, 5 => 6360 }
     if hash[nb_residents].nil?
+    # if nb_residents higher than 5
       hash[5] + (nb_residents - 5) * 1000
     else
       hash[nb_residents]
+    # put the consumption regarding the nb_residents
     end
   end
 
