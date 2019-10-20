@@ -1,13 +1,15 @@
 <h1> full_simulations#show </h1>
 
 <% unless @full_simulation.validated == true %>
+<!-- user complete the full_simulation -->
+
 	<div class="title-simu container-fluid" id="full-simu-not-validated">
 	  <h2 class="text-center">Vous désirez économiser un maximum? <br>Explorez toutes nos catégories!</h2>
 	</div>
 
 	<div id="categories" class="row container-fluid d-flex justify-content-center">
 
-    <!-- energy -->
+    <!-- energy button-->
     <% if @full_simulation.only_one_gas_simulation && @full_simulation.only_one_ele_simulation %>
 
       <%= render partial: 'button_categories', locals: {category: 'energy', sub_category: 'cat', bg:'secondary', animate: 'disabled', style:'cursor:not-allowed', icon: "fas fa-sun", name:'Energie', disabled: true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -182,6 +184,7 @@
 	<!-- End of Modal Content -->
 
 <% else %>
+<!-- result of th full_simulation -->
 
 	<div id="context" class="container mb-1">
     <div class="title-context">

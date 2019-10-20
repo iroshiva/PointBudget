@@ -52,6 +52,7 @@ class GasSimulation < ApplicationRecord
     floor_space = floor_space.to_i
     nb_residents = nb_residents.to_i
     if verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents)
+    # == if gas_simulation is completed
       first_factor = heat_type == 'Gaz' ? 1 : 0
       second_factor = water_cooking_type == 'Gaz' ? 1 : 0
       yearly_consumption = floor_space * 100 * first_factor + consumption_people(nb_residents) * second_factor if yearly_consumption.zero?
@@ -111,7 +112,7 @@ class GasSimulation < ApplicationRecord
   end
 
   # This method is part of the estimation process
-  # It verifies the entries of the client
+  # It verifies the entries of the client and termine if all the fields are completed or not
   def verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents)
     if yearly_cost.zero? # if he forgot the yearly cost
       false
