@@ -49,17 +49,20 @@ class GasSimulation < ApplicationRecord
   end
 
   # This method can estimate the consumption depending on the params you give to it
-  def estimation(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type )
+  def estimation(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type)
     yearly_cost = yearly_cost.to_f
     yearly_consumption = yearly_consumption.to_i
     floor_space = floor_space.to_i
     nb_residents = nb_residents.to_i
-    if verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, isolation_type, nb_residents)
+    if verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type)
     # == if gas_simulation is completed
       first_factor = heat_type == 'Gaz' ? 1 : 0
       second_factor = water_cooking_type == 'Gaz' ? 1 : 0
       yearly_consumption = floor_space * 100 * first_factor + consumption_people(nb_residents) * second_factor if yearly_consumption.zero?
-      [yearly_cost, yearly_consumption]
+
+      third_factor = isolation_type == 'Peu performante' ? 1.1 : isolation_type == 'Performante' ? 1 : 0.9
+      yearly_consumption = yearly_consumption * third_factor
+      [yearly_cost, yearly_consumption.to_i]
     # puts an array
     else
       [false, -1]
