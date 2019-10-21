@@ -33,7 +33,7 @@ class GasSimulation < ApplicationRecord
   def print_report
     table_attributes = []
     message = "Non renseigné"
-    [floor_space, heat_type, water_cooking_type, isolation_type, residents_number].each do |attribute|
+    [floor_space, heat_type, water_cooking_type, residents_number, isolation_type].each do |attribute|
       if attribute.blank?
         table_attributes << message
       else
@@ -49,7 +49,7 @@ class GasSimulation < ApplicationRecord
   end
 
   # This method can estimate the consumption depending on the params you give to it
-  def estimation(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, isolation_type, nb_residents )
+  def estimation(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type )
     yearly_cost = yearly_cost.to_f
     yearly_consumption = yearly_consumption.to_i
     floor_space = floor_space.to_i
@@ -121,7 +121,7 @@ class GasSimulation < ApplicationRecord
 
   # This method is part of the estimation process
   # It verifies the entries of the client and termine if all the fields are completed or not
-  def verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, isolation_type, nb_residents)
+  def verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type)
     if yearly_cost.zero? # if he forgot the yearly cost
       false
     else

@@ -12,6 +12,7 @@ class GasSimulationsController < ApplicationController
     @heat_type = table_attributes[1]
     @water_cooking_type = table_attributes[2]
     @residents_number = table_attributes[3]
+    @isolation_type = table_attributes[4]
     @gas_contracts = @gas_sim.sort_contracts(3)
   end
 
@@ -23,8 +24,8 @@ class GasSimulationsController < ApplicationController
                                             params[:floor_space],
                                             params[:heat_type],
                                             params[:water_cooking_type],
-                                            params[:isolation_type]
-                                            params[:nb_residents])
+                                            params[:nb_residents],
+                                            params[:isolation_type])
     comparison = estimation[0] == false ? [-1, false] : @gas_simulation.comparison(estimation[0], estimation[1])
     @gas_simulation = GasSimulation.new(actual_price_paid: params[:yearly_cost],
                                         gas_cost_saved: comparison[0],
