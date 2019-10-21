@@ -126,7 +126,7 @@ class GasSimulation < ApplicationRecord
       false
     else
       if yearly_consumption.zero? # if the consumption is not entered, all the other field must be present
-        if [floor_space, nb_residents].include?(0) || [heat_type, water_cooking_type].include?('')
+        if [floor_space, nb_residents].include?(0) || [heat_type, water_cooking_type, isolation_type].include?('')
           false
         else
           true
