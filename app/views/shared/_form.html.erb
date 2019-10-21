@@ -208,6 +208,9 @@
               <p> Energie utilisée pour l'eau chaude et la cuisson
               <%= select_tag "water_cooking_type", options_for_select(["", "Gaz", "Electricite", "Autre"], "Non renseignée"), class: 'd-flex justify-content-end'%>
               </p>
+               <p> Estimez la qualité de votre isolation
+              <%= select_tag "isolation_type", options_for_select(["", "Peu performante", "Performante", "Très performante"], "Non renseignée"), class: 'd-flex justify-content-end'%>
+              </p>
               <p>Nombres de personnes dans le logement
               <%= number_field_tag "nb_residents", nil, step: 1 , class: 'd-flex justify-content-end'%>
               </p>
