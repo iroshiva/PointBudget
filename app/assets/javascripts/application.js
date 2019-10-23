@@ -117,11 +117,11 @@ $(document).ready(function () {
           });
 
         clickToDisplayEnergies.addEventListener('click', function(){
-            $("#bank-categories").hide(600);
-            $("#numeric-categories").hide(600);
-            $("#numeric-categories").removeClass("d-flex");
-            numericDeployStatus = false;
-            bankDeployStatus = false
+            // $("#bank-categories").hide(600);
+            // $("#numeric-categories").hide(600);
+            // $("#numeric-categories").removeClass("d-flex");
+            // numericDeployStatus = false;
+            // bankDeployStatus = false
             if (energyDeployStatus == false) {
               $("#energy-categories").addClass("d-flex");
               $("#energy-categories").show(500);
@@ -129,31 +129,35 @@ $(document).ready(function () {
               $("#elec-simu").hide(500);
               gasDeployStatus = true;
               energyDeployStatus = true;
-              $("#finalize").hide(400);
+              // $("#finalize").hide(400);
             }
             else if (energyDeployStatus == true) {
               $("#energy-categories").removeClass("d-flex");
               $("#energy-categories").hide(500);
               energyDeployStatus = false;
-              $("#finalize").show(400);
+              // $("#finalize").show(400);
             }
         });
 
 
         // BANK
         clickToDisplayBankSimu.addEventListener('click', function(){
-            $("#bank-categories").toggle(600);
-            $("#numeric-categories").hide(600);
-            $("#numeric-categories").removeClass("d-flex");
-            numericDeployStatus = false;
-            $("#energy-categories").hide(600);
-            $("#energy-categories").removeClass("d-flex");
-            energyDeployStatus = false;
+            // $("#bank-categories").toggle(600);
+            // $("#numeric-categories").hide(600);
+            // $("#numeric-categories").removeClass("d-flex");
+            // numericDeployStatus = false;
+            // $("#energy-categories").hide(600);
+            // $("#energy-categories").removeClass("d-flex");
+            // energyDeployStatus = false;
             if(bankDeployStatus === false){
-                $("#finalize").hide(400);
+                // $("#bank-simu").hide(400);
+                $("#bank-categories").addClass("d-flex");
+                $("#bank-categories").show(500);
+
                 bankDeployStatus = true;
             }else{
-                $("#finalize").show(400);
+                $("#bank-categories").removeClass("d-flex");
+                $("#bank-categories").hide(400);
                 bankDeployStatus = false;
             }
 
@@ -173,11 +177,11 @@ $(document).ready(function () {
         });
 
         clickToDisplayNumerics.addEventListener('click', function(){
-            $("#bank-categories").hide(600);
-            $("#energy-categories").hide(600);
-            $("#energy-categories").removeClass("d-flex");
-            energyDeployStatus = false;
-            bankDeployStatus = false
+            // $("#bank-categories").hide(600);
+            // $("#energy-categories").hide(600);
+            // $("#energy-categories").removeClass("d-flex");
+            // energyDeployStatus = false;
+            // bankDeployStatus = false
             if (numericDeployStatus == false) {
                 $("#numeric-categories").addClass("d-flex");
                 $("#numeric-categories").show(500);
@@ -186,13 +190,13 @@ $(document).ready(function () {
                 boxDeployStatus = false;
                 mobilDeployStatus = false;
                 numericDeployStatus = true;
-                $("#finalize").hide(400);
+                // $("#finalize").hide(400);
             }
             else if (numericDeployStatus == true) {
                 $("#numeric-categories").removeClass("d-flex");
                 $("#numeric-categories").hide(500);
                 numericDeployStatus = false;
-                $("#finalize").show(400);
+                // $("#finalize").show(400);
             }
         });
 
