@@ -91,7 +91,7 @@ $(document).ready(function () {
         elecDeployStatus = false;
         // btn elec
         clickToDisplayNumerics = document.getElementById("btn-numeric");
-        numericDeployStatus = false;
+        numericDeployStatus = true;
         // btn nuemric
         clickToDisplayBoxSimu = document.getElementById("btn-box");
         boxDeployStatus = false;

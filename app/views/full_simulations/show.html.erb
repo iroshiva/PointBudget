@@ -43,7 +43,8 @@
                                                    title: 'Simulation gaz',
                                                    button: "Terminer"}%>
       </div>
-
+    </div>
+    <div class="col-md-6">
       <% if @full_simulation.only_one_ele_simulation %>
        <!-- ele_simulation disabled btn -->
         <%= render partial: 'button_categories', locals: {category: 'elec', sub_category: 'elec', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-bolt", name:'Electricité', disabled:true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -78,7 +79,7 @@
   </div>
 
     <!-- btn numeric JAVASCRIPT -->
-  <div class="container-fluid" id="numeric-categories" style="display:none;">
+  <div class="container-fluid" id="numeric-categories">
     <div class="col-md-6">
       <% if @full_simulation.only_one_box_simulation %>
         <%= render partial: 'button_categories', locals: {category: 'box', sub_category: 'numeric', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-signal", name:'Box', disabled: true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -88,7 +89,7 @@
       <% end %>
 
         <!-- Box Simulation JS -->
-      <div id="box-simu" class="col-md-12" style="display: none;">
+      <div id="box-simu" class="col-md-12">
          <%= render partial: "shared/form", locals:{resource: @box_simulation,
                                                     action: 'new_box_simulation',
                                                     path: user_full_simulation_box_simulations_path(current_user,
@@ -97,7 +98,8 @@
                                                     title: 'Simulation box internet',
                                                     button: "Terminer"}%>
       </div>
-
+    </div>
+    <div class="col-md-6">
       <% if @full_simulation.only_one_mobil_simulation %>
       <!-- mobil_simulation disabled btn -->
         <%= render partial: 'button_categories', locals: {category: 'mobil', sub_category: 'numeric', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-mobile-alt", name:'Mobile', disabled: true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -107,7 +109,7 @@
       <% end %>
       
        <!-- mobil_simulation JS -->
-      <div id="mobil-simu" class="col-md-12" style="display: none;">
+      <div id="mobil-simu" class="col-md-12">
          <%= render partial: "shared/form", locals:{resource: @mobil_simulation,
                                                     action: 'new_mobil_simulation',
                                                     path: user_full_simulation_mobil_simulations_path(current_user,
@@ -133,7 +135,7 @@
 	</div>
 
 <!--btn BANK JAVASCRIPT-->
-  <div class="container-fluid" id="bank-categories" style="display:none;">
+  <div class="container-fluid" id="bank-categories">
     <div class="col-md-4">
       <!-- Gas Simulation JS -->
       <div id="bank-simu" class="col-md-12" style="">
