@@ -82,7 +82,7 @@ $(document).ready(function () {
         // GET the differents button of the simulation
 
         clickToDisplayEnergies = document.getElementById("btn-energy");
-        energyDeployStatus = true;
+        energyDeployStatus = false;
         // btn energy
         clickToDisplayGasSimu = document.getElementById("btn-gas");
         gasDeployStatus = false;
