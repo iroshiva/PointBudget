@@ -6,7 +6,9 @@
 	<div class="title-simu container-fluid" id="full-simu-not-validated">
 	  <h2 class="text-center">Vous désirez économiser un maximum? <br>Explorez toutes nos catégories!</h2>
 	</div>
+  
 
+  <!-- Energy section vertical -->
 	<div id="categories" class="row container-fluid d-flex justify-content-center">
 
     <!-- energy button-->
@@ -21,8 +23,8 @@
   </div>
 
     <!-- btn energy JAVASCRIPT -->
-  <div class="container-fluid row justify-content-center" id="energy-categories" style="display:none;">
-    <div class="col-md-4 d-flex justify-content-center justify-content-md-around">
+  <div class="container-fluid" id="energy-categories" style="display:none;">
+    <div class="col-md-4">
       <% if @full_simulation.only_one_gas_simulation %>
         <!-- gas_simulation disbled btn -->
         <%= render partial: 'button_categories', locals: {category: 'gas', sub_category: 'gas', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-burn", name:'Gaz', disabled:true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -30,6 +32,18 @@
         <!-- gas_simulation btn -->
         <%= render partial: 'button_categories', locals: {category: 'gas', sub_category: 'gas', bg:'primary', animate: 'animate-up-3 mx-2', style:'', icon: "fas fa-burn", name:'Gaz', disabled:false, title: ''} %>
       <% end %>
+
+          <!-- Gas Simulation JS -->
+      <div id="gas-simu" class="col-md-12" style="display: none;">
+        <%= render partial: "shared/form", locals:{resource: @gas_simulation,
+                                                   action: 'new_gas_simulation',
+                                                   path: user_full_simulation_gas_simulations_path(current_user,
+                                                                                                   @full_simulation),
+                                                   method: :post,
+                                                   title: 'Simulation gaz',
+                                                   button: "Terminer"}%>
+      </div>
+
       <% if @full_simulation.only_one_ele_simulation %>
        <!-- ele_simulation disabled btn -->
         <%= render partial: 'button_categories', locals: {category: 'elec', sub_category: 'elec', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-bolt", name:'Electricité', disabled:true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -37,32 +51,22 @@
        <!--  ele_simulation btn -->
         <%= render partial: 'button_categories', locals: {category: 'elec', sub_category: 'elec', bg:'primary', animate: 'animate-up-3 mx-2', style:'', icon: "fas fa-bolt", name:'Electricité', disabled:false, title: ''} %>
       <%end%>
-    </div>
 
-    <!-- Gas Simulation JS -->
-    <div id="gas-simu" class="col-md-12" style="display: none;">
-      <%= render partial: "shared/form", locals:{resource: @gas_simulation,
-                                                 action: 'new_gas_simulation',
-                                                 path: user_full_simulation_gas_simulations_path(current_user,
-                                                                                                 @full_simulation),
-                                                 method: :post,
-                                                 title: 'Simulation gaz',
-                                                 button: "Terminer"}%>
-    </div>
-    <!-- Elec Simulation JS -->
-    <div id="elec-simu" class="col-md-12" style="display: none;">
-      <%= render partial: "shared/form", locals:{resource: @ele_simulation,
-                                                 action: 'new_ele_simulation',
-                                                 path: user_full_simulation_ele_simulations_path(current_user,
-                                                                                                 @full_simulation),
-                                                 method: :post,
-                                                 title: 'Simulation électricité',
-                                                 button: "Terminer"}%>
+        <!-- Elec Simulation JS -->
+      <div id="elec-simu" class="col-md-12" style="display: none;">
+        <%= render partial: "shared/form", locals:{resource: @ele_simulation,
+                                                   action: 'new_ele_simulation',
+                                                   path: user_full_simulation_ele_simulations_path(current_user,
+                                                                                                   @full_simulation),
+                                                   method: :post,
+                                                   title: 'Simulation électricité',
+                                                   button: "Terminer"}%>
+      </div>
     </div>
   </div>
 
+  <!-- Numeric Section -->
   <div id="categories" class="row container-fluid d-flex justify-content-center">
-
 		<!-- numeric -->
     <% if @full_simulation.only_one_box_simulation && @full_simulation.only_one_mobil_simulation %>
       <!-- numeric disabled -->
@@ -74,14 +78,26 @@
   </div>
 
     <!-- btn numeric JAVASCRIPT -->
-  <div class="container-fluid row justify-content-center" id="numeric-categories" style="display:none;">
-    <div class="col-md-4 d-flex justify-content-around">
+  <div class="container-fluid" id="numeric-categories" style="display:none;">
+    <div class="col-md-4">
       <% if @full_simulation.only_one_box_simulation %>
         <%= render partial: 'button_categories', locals: {category: 'box', sub_category: 'numeric', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-signal", name:'Box', disabled: true, title: 'Vous avez déjà simulé cette catégorie'} %>
       <% else %>
        <!-- box_simulation btn -->
         <%= render partial: 'button_categories', locals: {category: 'box', sub_category: 'numeric', bg:'primary', animate: 'animate-up-3 mx-2', style:'', icon: "fas fa-signal", name:'Box', disabled: false, title: ''} %>
       <% end %>
+
+        <!-- Box Simulation JS -->
+      <div id="box-simu" class="col-md-12" style="display: none;">
+         <%= render partial: "shared/form", locals:{resource: @box_simulation,
+                                                    action: 'new_box_simulation',
+                                                    path: user_full_simulation_box_simulations_path(current_user,
+                                                                                                    @full_simulation),
+                                                    method: :post,
+                                                    title: 'Simulation box internet',
+                                                    button: "Terminer"}%>
+      </div>
+
       <% if @full_simulation.only_one_mobil_simulation %>
       <!-- mobil_simulation disabled btn -->
         <%= render partial: 'button_categories', locals: {category: 'mobil', sub_category: 'numeric', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-mobile-alt", name:'Mobile', disabled: true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -89,29 +105,21 @@
       <!--   mobil_simulation btn -->
         <%= render partial: 'button_categories', locals: {category: 'mobil', sub_category: 'numeric', bg:'primary', animate: 'animate-up-3 mx-2', style:'', icon: "fas fa-mobile-alt", name:'Mobile', disabled: false, title: ''} %>
       <% end %>
-    </div>
-     <!-- Box Simulation JS -->
-    <div id="box-simu" class="col-md-12" style="display: none;">
-       <%= render partial: "shared/form", locals:{resource: @box_simulation,
-                                                  action: 'new_box_simulation',
-                                                  path: user_full_simulation_box_simulations_path(current_user,
-                                                                                                  @full_simulation),
-                                                  method: :post,
-                                                  title: 'Simulation box internet',
-                                                  button: "Terminer"}%>
-    </div>
-     <!-- mobil_simulation JS -->
-    <div id="mobil-simu" class="col-md-12" style="display: none;">
-       <%= render partial: "shared/form", locals:{resource: @mobil_simulation,
-                                                  action: 'new_mobil_simulation',
-                                                  path: user_full_simulation_mobil_simulations_path(current_user,
-                                                                                                  @full_simulation),
-                                                  method: :post,
-                                                  title: 'Simulation mobile',
-                                                  button: "Terminer"}%>
+      
+       <!-- mobil_simulation JS -->
+      <div id="mobil-simu" class="col-md-12" style="display: none;">
+         <%= render partial: "shared/form", locals:{resource: @mobil_simulation,
+                                                    action: 'new_mobil_simulation',
+                                                    path: user_full_simulation_mobil_simulations_path(current_user,
+                                                                                                    @full_simulation),
+                                                    method: :post,
+                                                    title: 'Simulation mobile',
+                                                    button: "Terminer"}%>
+      </div>
     </div>
   </div>
-
+  
+  <!-- Bank section -->
   <div id="categories" class="row container-fluid d-flex justify-content-center">
 
     <!-- bank -->
@@ -125,8 +133,8 @@
 	</div>
 
 <!--btn BANK JAVASCRIPT-->
-  <div class="container-fluid row justify-content-center" id="bank-categories" style="display:none;">
-    <div class="col-md-4 d-flex justify-content-around">
+  <div class="container-fluid" id="bank-categories" style="display:none;">
+    <div class="col-md-4">
       <!-- Gas Simulation JS -->
       <div id="bank-simu" class="col-md-12" style="">
         <%= render partial: "shared/form", locals:{resource: @bank_simulation,
