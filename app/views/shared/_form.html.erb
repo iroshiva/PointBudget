@@ -186,7 +186,7 @@
             <p>Coût annuel du gaz en €
             <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
-            <p>Connaissez vous votre consommation de gaz ?
+            <p>Connaissez vous votre consommation de gaz ? <br><br>
             <%= radio_button_tag(:answer, "yes")%>
             <%= label_tag(:answer_yes, "Oui")%>
             <%= radio_button_tag(:answer, "no") %>
@@ -214,7 +214,7 @@
               <p>Nombres de personnes dans le logement
               <%= number_field_tag "nb_residents", nil, step: 1 , class: 'd-flex justify-content-end'%>
               </p>
-            </div>
+            </div><br>
           </div>
 
 <!--          BOX SIMULATION FORM-->
@@ -223,24 +223,24 @@
             <p>Coût mensuel de votre abonnement box internet en €
               <%= number_field_tag "monthly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
-            <p>Avez-vous ou voulez-vous la TV?
+            <p>Avez-vous la TV? <br><br>
               <%= f.radio_button(:tv, 'true')%>
               <%= f.label(:tv_yes, "Oui")%>
               <%= f.radio_button(:tv, 'false') %>
               <%= f.label(:tv_no, "Non") %>
             </p>
-            <p>Avez-vous ou voulez-vous les appels vers les téléphones fixes en France?
+            <p>Bénéficiez-vous d'appels vers les téléphones fixes en France?<br><br>
               <%= f.radio_button(:call_fix_fr, 'true')%>
               <%= f.label(:call_fix_fr_yes, "Oui")%>
               <%= f.radio_button(:call_fix_fr, 'false') %>
               <%= f.label(:call_fix_fr_no, "Non") %>
             </p>
-            <p>Avez-vous ou voulez-vous les appels vers les téléphones mobile en France?
+            <p>Bénéficiez-vous d'appels vers les téléphones mobiles en France?<br><br>
               <%= f.radio_button(:call_mob_fr, 'true')%>
               <%= f.label(:call_mob_fr_yes, "Oui")%>
               <%= f.radio_button(:call_mob_fr, 'false') %>
               <%= f.label(:call_mob_fr_no, "Non") %>
-            </p>
+            </p><br>
 
           </div>
 
@@ -251,16 +251,14 @@
             <p>Coût annuel de l'electricité en €
               <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
-            <p>Quelle est votre consommation d'électricité ?
-            </p>
             <div id="consumption-elec">
-              <p>Consommation annuelle en kWh
+              <p>Quelle est votre consommation d'électricité annuelle en kWh?
                 <%= number_field_tag "yearly_consumption", nil, step: 1,  placeholder:0, class: 'd-flex justify-content-end' %>
               </p>
               <p>Quelle est la puissance de votre compteur en kVa?
                 <%= number_field_tag "kVA_power", nil, in: 6..12 , step: 3 , placeholder:0, class: 'd-flex justify-content-end' %>
               </p>
-            </div>
+            </div><br>
           </div>
 <!--        NEW MOBILE SIMULATION  -->
 
@@ -275,7 +273,7 @@
             </p>
           </div>
           <div class="form-group">
-            <p>Voulez-vous inclure les forfaits <br> avec engagement dans votre comparaison?<br><br>
+            <p>Voulez-vous inclure les forfaits avec engagement dans <br> votre comparaison?<br><br>
               <%= radio_button_tag(:engagement, 'true', true)%>
               <%= label_tag(:engagement_yes, "Oui")%>
               <%= radio_button_tag(:engagement, 'false') %>
@@ -291,7 +289,7 @@
             </p>
           </div>
           <div class="form-group">
-            <p>Appels, SMS, MMS illimités à l'étranger?<br><br>
+            <p>Bénéficiez-vous d'appels/SMS/MMS illimités à l'étranger?<br><br>
             <%= radio_button_tag(:calls_international, 'true')%>
             <%= label_tag(:calls_international_yes, "Oui")%>
             <%= radio_button_tag(:calls_international, 'false', true) %>
@@ -299,12 +297,12 @@
             </p>
           </div>
           <div class="form-group">
-            <p>Internet à l'étranger?<br><br>
+            <p>Bénéficiez-vous d'Internet à l'étranger?<br><br>
             <%= radio_button_tag(:net_international, 'true')%>
             <%= label_tag(:net_international, "Oui")%>
             <%= radio_button_tag(:net_international, 'false', true) %>
             <%= label_tag(:net_international, "Non") %>
-            </p>
+            </p><br>
           </div>
 
   <!--        NEW BANK SIMULATION  -->

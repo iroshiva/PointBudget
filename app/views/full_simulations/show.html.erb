@@ -36,7 +36,7 @@
           <!-- Gas Simulation JS -->
       <% if @full_simulation.only_one_gas_simulation %>
       <!-- gas_simulation has been done, delete the id otherwise appear... -->
-        <div class="col-md-7" style="display:none;">
+        <div class="col-md-8" style="display:none;">
           <%= render partial: "shared/form", locals:{resource: @gas_simulation,
                                                      action: 'new_gas_simulation',
                                                      path: user_full_simulation_gas_simulations_path(current_user,
@@ -47,7 +47,7 @@
         </div>
       <% else %>
       <!-- gas_simulation has not be done yet, id appear for the js -->
-        <div id="gas-simu" class="col-md-7">
+        <div id="gas-simu" class="col-md-8">
           <%= render partial: "shared/form", locals:{resource: @gas_simulation,
                                                      action: 'new_gas_simulation',
                                                      path: user_full_simulation_gas_simulations_path(current_user,
@@ -70,7 +70,7 @@
         <!-- Elec Simulation JS -->
       <% if @full_simulation.only_one_ele_simulation %>
       <!-- elec_simulation has been done, delete the id otherwise appear... -->
-      <div class="col-md-8" style="display: none;">
+      <div class="col-md-10" style="display: none;">
         <%= render partial: "shared/form", locals:{resource: @ele_simulation,
                                                    action: 'new_ele_simulation',
                                                    path: user_full_simulation_ele_simulations_path(current_user,
@@ -81,7 +81,7 @@
       </div>
       <% else %>
       <!-- elec_simulation has not be done yet, id appear for the js -->
-      <div id="elec-simu" class="col-md-8">
+      <div id="elec-simu" class="col-md-10">
         <%= render partial: "shared/form", locals:{resource: @ele_simulation,
                                                    action: 'new_ele_simulation',
                                                    path: user_full_simulation_ele_simulations_path(current_user,
@@ -120,7 +120,7 @@
         <!-- Box Simulation JS -->
       <% if @full_simulation.only_one_box_simulation %>
       <!-- box_simulation has been done, delete the id otherwise appear... -->
-        <div class="col-md-12" style="display: none;">
+        <div class="col-md-10" style="display: none;">
            <%= render partial: "shared/form", locals:{resource: @box_simulation,
                                                       action: 'new_box_simulation',
                                                       path: user_full_simulation_box_simulations_path(current_user,
@@ -131,7 +131,7 @@
         </div>
       <% else %>
       <!-- box_simulation has not be done yet, id appear for the js -->
-        <div id="box-simu" class="col-md-12">
+        <div id="box-simu" class="col-md-10">
           <%= render partial: "shared/form", locals:{resource: @box_simulation,
                                                     action: 'new_box_simulation',
                                                     path: user_full_simulation_box_simulations_path(current_user,
@@ -154,7 +154,7 @@
        <!-- mobil_simulation JS -->
       <% if @full_simulation.only_one_mobil_simulation %>
       <!-- mobil_simulation has been done, delete the id otherwise appear... -->
-        <div class="col-md-12" style="display: none;">
+        <div class="col-md-9" style="display: none;">
           <%= render partial: "shared/form", locals:{resource: @box_simulation,
                                                     action: 'new_box_simulation',
                                                     path: user_full_simulation_box_simulations_path(current_user,
@@ -165,7 +165,7 @@
         </div>
       <% else %>
       <!-- mobil_simulation has not be done yet, id appear for the js -->
-        <div id="mobil-simu" class="col-md-12">
+        <div id="mobil-simu" class="col-md-9">
            <%= render partial: "shared/form", locals:{resource: @mobil_simulation,
                                                       action: 'new_mobil_simulation',
                                                       path: user_full_simulation_mobil_simulations_path(current_user,
@@ -193,11 +193,11 @@
 
 <!--btn BANK JAVASCRIPT-->
   <div class="container-fluid" id="bank-categories">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <!-- Gas Simulation JS -->
       <% if @full_simulation.only_one_bank_simulation %>
       <!-- bank_simulation has been done, delete the id otherwise appear... -->
-        <div class="col-md-12" style="display: none;">
+        <div class="col-md-9" style="display: none;">
           <%= render partial: "shared/form", locals:{resource: @bank_simulation,
                                                      action: 'new_bank_simulation',
                                                      path: user_full_simulation_bank_simulations_path(current_user,
@@ -208,7 +208,7 @@
         </div>
       <% else %>
       <!-- bank_simulation has not be done yet, id appear for the js -->
-        <div id="bank-simu" class="col-md-12">
+        <div id="bank-simu" class="col-md-9">
           <%= render partial: "shared/form", locals:{resource: @bank_simulation,
                                                      action: 'new_bank_simulation',
                                                      path: user_full_simulation_bank_simulations_path(current_user,
