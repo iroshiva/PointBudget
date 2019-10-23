@@ -73,37 +73,7 @@
     <% end %>
   </div>
 
-  <div id="categories" class="row container-fluid d-flex justify-content-center">
-
-    <!-- bank -->
-    <% if @full_simulation.only_one_bank_simulation %>
-      <!-- bank -->
-      <%= render partial: 'button_categories', locals: {category: 'bank', sub_category: 'cat', bg:'secondary', animate: 'disabled', style:'cursor:not-allowed', icon: "fas fa-money-check-alt", name:'Banque', disabled: true, title: 'Vous avez déjà simulé cette catégorie'} %>
-    <%else%>
-      <!-- bank -->
-      <%= render partial: 'button_categories', locals: {category: 'bank', sub_category: 'cat', bg:'primary', animate: 'animate-up-3', style:'', icon: "fas fa-money-check-alt", name:'Banque', disabled: false, title: ''} %>
-    <%end%>
-	</div>
-
-<!--btn BANK JAVASCRIPT-->
-  <div class="container-fluid row justify-content-center" id="bank-categories" style="display:none;">
-    <div class="col-md-4 d-flex justify-content-around">
-      <!-- Gas Simulation JS -->
-      <div id="bank-simu" class="col-md-12" style="">
-        <%= render partial: "shared/form", locals:{resource: @bank_simulation,
-                                                   action: 'new_bank_simulation',
-                                                   path: user_full_simulation_bank_simulations_path(current_user,
-                                                                                                   @full_simulation),
-                                                   method: :post,
-                                                   title: 'Simulation banque',
-                                                   button: "Terminer"}%>
-      </div>
-    </div>
-  </div>
-
-
-
-   <!-- btn numeric JAVASCRIPT -->
+    <!-- btn numeric JAVASCRIPT -->
   <div class="container-fluid row justify-content-center" id="numeric-categories" style="display:none;">
     <div class="col-md-4 d-flex justify-content-around">
       <% if @full_simulation.only_one_box_simulation %>
@@ -141,6 +111,38 @@
                                                   button: "Terminer"}%>
     </div>
   </div>
+
+  <div id="categories" class="row container-fluid d-flex justify-content-center">
+
+    <!-- bank -->
+    <% if @full_simulation.only_one_bank_simulation %>
+      <!-- bank -->
+      <%= render partial: 'button_categories', locals: {category: 'bank', sub_category: 'cat', bg:'secondary', animate: 'disabled', style:'cursor:not-allowed', icon: "fas fa-money-check-alt", name:'Banque', disabled: true, title: 'Vous avez déjà simulé cette catégorie'} %>
+    <%else%>
+      <!-- bank -->
+      <%= render partial: 'button_categories', locals: {category: 'bank', sub_category: 'cat', bg:'primary', animate: 'animate-up-3', style:'', icon: "fas fa-money-check-alt", name:'Banque', disabled: false, title: ''} %>
+    <%end%>
+	</div>
+
+<!--btn BANK JAVASCRIPT-->
+  <div class="container-fluid row justify-content-center" id="bank-categories" style="display:none;">
+    <div class="col-md-4 d-flex justify-content-around">
+      <!-- Gas Simulation JS -->
+      <div id="bank-simu" class="col-md-12" style="">
+        <%= render partial: "shared/form", locals:{resource: @bank_simulation,
+                                                   action: 'new_bank_simulation',
+                                                   path: user_full_simulation_bank_simulations_path(current_user,
+                                                                                                   @full_simulation),
+                                                   method: :post,
+                                                   title: 'Simulation banque',
+                                                   button: "Terminer"}%>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
 
 	<!-- Button Modal -->
 	<div class="container-fluid row justify-content-center simulation-result" id='finalize'>
