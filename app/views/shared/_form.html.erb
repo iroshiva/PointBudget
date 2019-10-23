@@ -2,7 +2,7 @@
   <div class="row" style="margin-top:50px">
     <div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
 
-      <%= form_for(resource, url: path, method: method) do |f| %>
+      <%= form_for(resource, url: path, method: method, :id => 'form_tag_with_remote_true', remote: true) do |f| %>
       <h2><%=title %></h2>
 
 <!--        IF DEVISE ERRORS-->

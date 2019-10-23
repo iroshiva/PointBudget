@@ -37,14 +37,31 @@ class GasSimulationsController < ApplicationController
                                         full_simulation: @full_simulation,
                                         isolation_type: params[:isolation_type])
 
+    # if @gas_simulation.save
+    #   @gas_simulation.create_join_table_gas(comparison[1], comparison[2])
+    #   @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @gas_simulation.gas_cost_saved),
+    #                           counter: @full_simulation.counter + 1)
+    #   flash[:success] = 'Votre simulation de gaz a bien été enregistrée'
+    # else
+    #   flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation de gaz'
+    # end
     if @gas_simulation.save
-      @gas_simulation.create_join_table_gas(comparison[1], comparison[2])
-      @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @gas_simulation.gas_cost_saved),
+      respond_to do |format|
+        format.html do
+          flash[:success] = 'Votre simulation de gaz a bien été enregistrée'
+        end
+        format.js do
+        end
+      end
+    @gas_simulation.create_join_table_gas(comparison[1], comparison[2])
+    @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @gas_simulation.gas_cost_saved),
                               counter: @full_simulation.counter + 1)
-      flash[:success] = 'Votre simulation de gaz a bien été enregistrée'
     else
       flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation de gaz'
     end
     redirect_to user_full_simulation_path(current_user, @full_simulation)
   end
 end
+
+
+    
