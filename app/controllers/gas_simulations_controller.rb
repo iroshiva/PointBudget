@@ -48,9 +48,10 @@ class GasSimulationsController < ApplicationController
     if @gas_simulation.save
       respond_to do |format|
         format.html do
-          flash[:success] = 'Votre simulation de gaz a bien été enregistrée'
+          # flash[:success] = 'Votre simulation de gaz a bien été enregistrée'
         end
         format.js do
+          flash[:success] = 'Js pris en compte'
         end
       end
     @gas_simulation.create_join_table_gas(comparison[1], comparison[2])
