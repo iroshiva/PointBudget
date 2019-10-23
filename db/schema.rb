@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_142431) do
+ActiveRecord::Schema.define(version: 2019_10_21_120528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_142431) do
     t.float "insurance_payment", default: 0.0
     t.float "sms_alert", default: 0.0
     t.float "international_withdraw", default: 0.0
-    t.string "name", default: "Banque"
+    t.string "name", default: "Bank"
     t.bigint "full_simulation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_142431) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", default: "Gaz"
+    t.string "isolation_type"
     t.index ["full_simulation_id"], name: "index_gas_simulations_on_full_simulation_id"
   end
 

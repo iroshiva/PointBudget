@@ -20,6 +20,9 @@ class GasSimulation < ApplicationRecord
   validates :water_cooking_type,
             allow_blank: true,
             format: { with: /\A(Gaz|Electricite|Autre)\Z/ }
+  validates :isolation_type,
+            allow_blank: true,
+            format: { with: /\A(Peu performante|Performante|Très performante)\Z/ }
   validates :residents_number,
             allow_blank: true,
             numericality: { greater_than_or_equal_to: 1 }
@@ -30,7 +33,7 @@ class GasSimulation < ApplicationRecord
   def print_report
     table_attributes = []
     message = "Non renseigné"
-    [floor_space, heat_type, water_cooking_type, residents_number].each do |attribute|
+    [floor_space, heat_type, water_cooking_type, residents_number, isolation_type].each do |attribute|
       if attribute.blank?
         table_attributes << message
       else
@@ -46,17 +49,20 @@ class GasSimulation < ApplicationRecord
   end
 
   # This method can estimate the consumption depending on the params you give to it
-  def estimation(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents )
+  def estimation(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type)
     yearly_cost = yearly_cost.to_f
     yearly_consumption = yearly_consumption.to_i
     floor_space = floor_space.to_i
     nb_residents = nb_residents.to_i
-    if verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents)
+    if verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type)
     # == if gas_simulation is completed
       first_factor = heat_type == 'Gaz' ? 1 : 0
       second_factor = water_cooking_type == 'Gaz' ? 1 : 0
       yearly_consumption = floor_space * 100 * first_factor + consumption_people(nb_residents) * second_factor if yearly_consumption.zero?
-      [yearly_cost, yearly_consumption]
+
+      third_factor = isolation_type == 'Peu performante' ? 1.1 : isolation_type == 'Performante' ? 1 : 0.9
+      yearly_consumption = yearly_consumption * third_factor
+      [yearly_cost, yearly_consumption.to_i]
     # puts an array
     else
       [false, -1]
@@ -118,12 +124,12 @@ class GasSimulation < ApplicationRecord
 
   # This method is part of the estimation process
   # It verifies the entries of the client and termine if all the fields are completed or not
-  def verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents)
+  def verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type)
     if yearly_cost.zero? # if he forgot the yearly cost
       false
     else
       if yearly_consumption.zero? # if the consumption is not entered, all the other field must be present
-        if [floor_space, nb_residents].include?(0) || [heat_type, water_cooking_type].include?('')
+        if [floor_space, nb_residents].include?(0) || [heat_type, water_cooking_type, isolation_type].include?('')
           false
         else
           true
