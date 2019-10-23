@@ -17,6 +17,9 @@
       <!-- energy -->
       <%= render partial: 'button_categories', locals: {category: 'energy', sub_category: 'cat', bg:'primary', animate: 'animate-up-3', style:'', icon: "fas fa-sun", name:'Energie', disabled: false, title: ''} %>
     <%end%>
+  
+  </div>
+  <div id="categories" class="row container-fluid d-flex justify-content-center">
 
 		<!-- numeric -->
     <% if @full_simulation.only_one_box_simulation && @full_simulation.only_one_mobil_simulation %>
@@ -26,6 +29,8 @@
       <!-- numeric btn -->
       <%= render partial: 'button_categories', locals: {category: 'numeric', sub_category: 'cat', bg:'primary', animate: 'animate-up-3', style:'', icon: "fas fa-mobile-alt", name:'Numérique',disabled:false, title: ''} %>
     <% end %>
+  </div>
+  <div id="categories" class="row container-fluid d-flex justify-content-center">
 
     <!-- bank -->
     <% if @full_simulation.only_one_bank_simulation %>
