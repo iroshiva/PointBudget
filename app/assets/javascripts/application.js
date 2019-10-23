@@ -125,9 +125,9 @@ $(document).ready(function () {
             if (energyDeployStatus == false) {
               $("#energy-categories").addClass("d-flex");
               $("#energy-categories").show(500);
-              $("#gas-simu").hide(500);
-              $("#elec-simu").hide(500);
-              gasDeployStatus = true;
+              $("#gas-simu").show(500);
+              $("#elec-simu").show(500);
+              // gasDeployStatus = true;
               energyDeployStatus = true;
               // $("#finalize").hide(400);
             }
