@@ -34,15 +34,29 @@
       <% end %>
 
           <!-- Gas Simulation JS -->
-      <div id="gas-simu" class="col-md-6">
-        <%= render partial: "shared/form", locals:{resource: @gas_simulation,
-                                                   action: 'new_gas_simulation',
-                                                   path: user_full_simulation_gas_simulations_path(current_user,
-                                                                                                   @full_simulation),
-                                                   method: :post,
-                                                   title: 'Simulation gaz',
-                                                   button: "Terminer"}%>
-      </div>
+      <% if @full_simulation.only_one_gas_simulation %>
+      <!-- gas_simulation has been done, delete the id otherwise appear... -->
+        <div class="col-md-7" style="display:none;">
+          <%= render partial: "shared/form", locals:{resource: @gas_simulation,
+                                                     action: 'new_gas_simulation',
+                                                     path: user_full_simulation_gas_simulations_path(current_user,
+                                                                                                     @full_simulation),
+                                                     method: :post,
+                                                     title: 'Simulation gaz',
+                                                     button: "Terminer"}%>
+        </div>
+      <% else %>
+      <!-- gas_simulation has not be done yet, id appear for the js -->
+        <div id="gas-simu" class="col-md-7">
+          <%= render partial: "shared/form", locals:{resource: @gas_simulation,
+                                                     action: 'new_gas_simulation',
+                                                     path: user_full_simulation_gas_simulations_path(current_user,
+                                                                                                     @full_simulation),
+                                                     method: :post,
+                                                     title: 'Simulation gaz',
+                                                     button: "Terminer"}%>
+        </div>
+      <% end %>
     </div>
     <div class="col-md-6">
       <% if @full_simulation.only_one_ele_simulation %>
@@ -54,7 +68,8 @@
       <%end%>
 
         <!-- Elec Simulation JS -->
-      <div id="elec-simu" class="col-md-12">
+      <% if @full_simulation.only_one_ele_simulation %>
+      <div class="col-md-8" style="display: none;">
         <%= render partial: "shared/form", locals:{resource: @ele_simulation,
                                                    action: 'new_ele_simulation',
                                                    path: user_full_simulation_ele_simulations_path(current_user,
@@ -63,6 +78,18 @@
                                                    title: 'Simulation électricité',
                                                    button: "Terminer"}%>
       </div>
+      <% else %>
+      <div id="elec-simu" class="col-md-8">
+        <%= render partial: "shared/form", locals:{resource: @ele_simulation,
+                                                   action: 'new_ele_simulation',
+                                                   path: user_full_simulation_ele_simulations_path(current_user,
+                                                                                                   @full_simulation),
+                                                   method: :post,
+                                                   title: 'Simulation électricité',
+                                                   button: "Terminer"}%>
+      </div>
+      <% end %>
+
     </div>
   </div>
 
