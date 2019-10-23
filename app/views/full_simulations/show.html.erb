@@ -69,6 +69,7 @@
 
         <!-- Elec Simulation JS -->
       <% if @full_simulation.only_one_ele_simulation %>
+      <!-- elec_simulation has been done, delete the id otherwise appear... -->
       <div class="col-md-8" style="display: none;">
         <%= render partial: "shared/form", locals:{resource: @ele_simulation,
                                                    action: 'new_ele_simulation',
@@ -79,6 +80,7 @@
                                                    button: "Terminer"}%>
       </div>
       <% else %>
+      <!-- elec_simulation has not be done yet, id appear for the js -->
       <div id="elec-simu" class="col-md-8">
         <%= render partial: "shared/form", locals:{resource: @ele_simulation,
                                                    action: 'new_ele_simulation',
@@ -117,6 +119,7 @@
 
         <!-- Box Simulation JS -->
       <% if @full_simulation.only_one_box_simulation %>
+      <!-- box_simulation has been done, delete the id otherwise appear... -->
         <div class="col-md-12" style="display: none;">
            <%= render partial: "shared/form", locals:{resource: @box_simulation,
                                                       action: 'new_box_simulation',
@@ -127,6 +130,7 @@
                                                       button: "Terminer"}%>
         </div>
       <% else %>
+      <!-- box_simulation has not be done yet, id appear for the js -->
         <div id="box-simu" class="col-md-12">
           <%= render partial: "shared/form", locals:{resource: @box_simulation,
                                                     action: 'new_box_simulation',
@@ -149,6 +153,7 @@
       
        <!-- mobil_simulation JS -->
       <% if @full_simulation.only_one_mobil_simulation %>
+      <!-- mobil_simulation has been done, delete the id otherwise appear... -->
         <div class="col-md-12" style="display: none;">
           <%= render partial: "shared/form", locals:{resource: @box_simulation,
                                                     action: 'new_box_simulation',
@@ -159,6 +164,7 @@
                                                     button: "Terminer"}%>
         </div>
       <% else %>
+      <!-- mobil_simulation has not be done yet, id appear for the js -->
         <div id="mobil-simu" class="col-md-12">
            <%= render partial: "shared/form", locals:{resource: @mobil_simulation,
                                                       action: 'new_mobil_simulation',
@@ -190,6 +196,7 @@
     <div class="col-md-4">
       <!-- Gas Simulation JS -->
       <% if @full_simulation.only_one_bank_simulation %>
+      <!-- bank_simulation has been done, delete the id otherwise appear... -->
         <div class="col-md-12" style="display: none;">
           <%= render partial: "shared/form", locals:{resource: @bank_simulation,
                                                      action: 'new_bank_simulation',
@@ -200,6 +207,7 @@
                                                      button: "Terminer"}%>
         </div>
       <% else %>
+      <!-- bank_simulation has not be done yet, id appear for the js -->
         <div id="bank-simu" class="col-md-12">
           <%= render partial: "shared/form", locals:{resource: @bank_simulation,
                                                      action: 'new_bank_simulation',
