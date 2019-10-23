@@ -100,7 +100,7 @@ $(document).ready(function () {
         mobilDeployStatus = false;
         // btn mobil
         clickToDisplayBankSimu = document.getElementById("btn-bank");
-        bankDeployStatus = false;
+        bankDeployStatus = true;
         // btn bank
 
 
@@ -158,7 +158,7 @@ $(document).ready(function () {
             // energyDeployStatus = false;
             // bankDeployStatus = false
             if (numericDeployStatus == false) {
-                $("#numeric-categories").addClass("d-flex");
+                // $("#numeric-categories").addClass("d-flex");
                 $("#numeric-categories").show(500);
                 $("#box-simu").show(500);
                 $("#mobil-simu").show(500);
@@ -168,7 +168,7 @@ $(document).ready(function () {
                 // $("#finalize").hide(400);
             }
             else if (numericDeployStatus == true) {
-                $("#numeric-categories").removeClass("d-flex");
+                // $("#numeric-categories").removeClass("d-flex");
                 $("#numeric-categories").hide(500);
                 numericDeployStatus = false;
                 // $("#finalize").show(400);
@@ -187,12 +187,12 @@ $(document).ready(function () {
             // energyDeployStatus = false;
             if(bankDeployStatus === false){
                 // $("#bank-simu").hide(400);
-                $("#bank-categories").addClass("d-flex");
+                // $("#bank-categories").addClass("d-flex");
                 $("#bank-categories").show(500);
 
                 bankDeployStatus = true;
             }else{
-                $("#bank-categories").removeClass("d-flex");
+                // $("#bank-categories").removeClass("d-flex");
                 $("#bank-categories").hide(400);
                 bankDeployStatus = false;
             }
