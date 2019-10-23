@@ -123,7 +123,7 @@ $(document).ready(function () {
             // numericDeployStatus = false;
             // bankDeployStatus = false
             if (energyDeployStatus == false) {
-              $("#energy-categories").addClass("d-flex");
+              // $("#energy-categories").addClass("d-flex");
               $("#energy-categories").show(500);
               $("#gas-simu").show(500);
               $("#elec-simu").show(500);
@@ -132,7 +132,7 @@ $(document).ready(function () {
               // $("#finalize").hide(400);
             }
             else if (energyDeployStatus == true) {
-              $("#energy-categories").removeClass("d-flex");
+              // $("#energy-categories").removeClass("d-flex");
               $("#energy-categories").hide(500);
               energyDeployStatus = false;
               // $("#finalize").show(400);
