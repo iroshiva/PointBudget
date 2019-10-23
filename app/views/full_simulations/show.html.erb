@@ -23,8 +23,8 @@
   </div>
 
     <!-- btn energy JAVASCRIPT -->
-  <div class="container-fluid" id="energy-categories" style="display:none;">
-    <div class="col-md-4">
+  <div class="container-fluid d-flex" id="energy-categories" style="display:none;">
+    <div class="col-md-6">
       <% if @full_simulation.only_one_gas_simulation %>
         <!-- gas_simulation disbled btn -->
         <%= render partial: 'button_categories', locals: {category: 'gas', sub_category: 'gas', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-burn", name:'Gaz', disabled:true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -79,7 +79,7 @@
 
     <!-- btn numeric JAVASCRIPT -->
   <div class="container-fluid" id="numeric-categories" style="display:none;">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <% if @full_simulation.only_one_box_simulation %>
         <%= render partial: 'button_categories', locals: {category: 'box', sub_category: 'numeric', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-signal", name:'Box', disabled: true, title: 'Vous avez déjà simulé cette catégorie'} %>
       <% else %>
