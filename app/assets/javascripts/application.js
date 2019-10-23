@@ -140,6 +140,42 @@ $(document).ready(function () {
         });
 
 
+        // Numeric
+        clickToDisplayBoxSimu.addEventListener('click', function(){
+            $("#box-simu").toggle(600);
+            // $("#mobil-simu").hide(500);
+        });
+
+        clickToDisplayMobilSimu.addEventListener('click', function(){
+            $("#mobil-simu").toggle(600);
+            // $("#box-simu").hide(500);
+        });
+
+        clickToDisplayNumerics.addEventListener('click', function(){
+            // $("#bank-categories").hide(600);
+            // $("#energy-categories").hide(600);
+            // $("#energy-categories").removeClass("d-flex");
+            // energyDeployStatus = false;
+            // bankDeployStatus = false
+            if (numericDeployStatus == false) {
+                $("#numeric-categories").addClass("d-flex");
+                $("#numeric-categories").show(500);
+                $("#box-simu").show(500);
+                $("#mobil-simu").show(500);
+                boxDeployStatus = false;
+                mobilDeployStatus = false;
+                numericDeployStatus = true;
+                // $("#finalize").hide(400);
+            }
+            else if (numericDeployStatus == true) {
+                $("#numeric-categories").removeClass("d-flex");
+                $("#numeric-categories").hide(500);
+                numericDeployStatus = false;
+                // $("#finalize").show(400);
+            }
+        });
+
+
         // BANK
         clickToDisplayBankSimu.addEventListener('click', function(){
             // $("#bank-categories").toggle(600);
@@ -162,42 +198,6 @@ $(document).ready(function () {
             }
 
 
-        });
-
-
-      // Numeric
-        clickToDisplayBoxSimu.addEventListener('click', function(){
-            $("#box-simu").toggle(600);
-            // $("#mobil-simu").hide(500);
-        });
-
-        clickToDisplayMobilSimu.addEventListener('click', function(){
-            $("#mobil-simu").toggle(600);
-            // $("#box-simu").hide(500);
-        });
-
-        clickToDisplayNumerics.addEventListener('click', function(){
-            // $("#bank-categories").hide(600);
-            // $("#energy-categories").hide(600);
-            // $("#energy-categories").removeClass("d-flex");
-            // energyDeployStatus = false;
-            // bankDeployStatus = false
-            if (numericDeployStatus == false) {
-                $("#numeric-categories").addClass("d-flex");
-                $("#numeric-categories").show(500);
-                $("#box-simu").hide(500);
-                $("#mobil-simu").hide(500);
-                boxDeployStatus = false;
-                mobilDeployStatus = false;
-                numericDeployStatus = true;
-                // $("#finalize").hide(400);
-            }
-            else if (numericDeployStatus == true) {
-                $("#numeric-categories").removeClass("d-flex");
-                $("#numeric-categories").hide(500);
-                numericDeployStatus = false;
-                // $("#finalize").show(400);
-            }
         });
 
     };
