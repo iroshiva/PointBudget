@@ -1,9 +1,5 @@
-<div class="col-md-8" style="display:none;">
-  <%= render partial: "shared/form", locals:{resource: @gas_simulation,
-                                             action: 'new_gas_simulation',
-                                             path: user_full_simulation_gas_simulations_path(current_user,
-                                                                                             @full_simulation),
-                                             method: :post,
-                                             title: 'Simulation gaz',
-                                             button: "Terminer"}%>
-</div>
+<% if full_simulation.only_one_gas_simulation == true %>
+      <!-- gas_simulation disbled btn -->
+  <%= render partial: 'full_simulations/button_categories', locals: {category: 'gas', sub_category: 'gas', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-burn", name:'Gaz', disabled:true, title: 'Vous avez déjà simulé cette catégorie'} %>
+	
+<% end %>
