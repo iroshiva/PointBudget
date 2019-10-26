@@ -46,21 +46,18 @@ class GasSimulationsController < ApplicationController
     #   flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation de gaz'
     # end
     if @gas_simulation.save
-      respond_to do |format|
-        format.html do
-          # flash[:success] = 'Votre simulation de gaz a bien été enregistrée'
-        end
-        format.js do
-          flash[:success] = 'Js pris en compte'
-        end
-      end
-    @gas_simulation.create_join_table_gas(comparison[1], comparison[2])
-    @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @gas_simulation.gas_cost_saved),
+      @gas_simulation.create_join_table_gas(comparison[1], comparison[2])
+      @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @gas_simulation.gas_cost_saved),
                               counter: @full_simulation.counter + 1)
+      respond_to do |format|
+        format.html { redirect_to user_full_simulation_path(current_user, @full_simulation) }
+        format.js { }
+      end
+   
     else
       flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation de gaz'
     end
-    redirect_to user_full_simulation_path(current_user, @full_simulation)
+   
   end
 end
 
