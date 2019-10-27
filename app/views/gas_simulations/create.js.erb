@@ -7,7 +7,7 @@ alert("le fichier JS est exécuté!");
 document.getElementById('gas-simu').style.display = "none";
 document.getElementById('gas-simu').innerHTML = "";
 
-document.getElementById("disa").disabled = false;
+document.getElementById("disa").insertAdjacentHTML("beforeend", "<%= j render 'disable_btn_gas' %>");
 
 
 
