@@ -131,7 +131,7 @@
       <% else %>
       <!-- box_simulation has not be done yet, id appear for the js -->
         <div id="box-simu" class="col-md-10">
-          <%= render partial: "shared/form", locals:{resource: @box_simulation,
+          <%= render partial: "shared/form_ajax", locals:{resource: @box_simulation,
                                                     action: 'new_box_simulation',
                                                     path: user_full_simulation_box_simulations_path(current_user,
                                                                                                     @full_simulation),

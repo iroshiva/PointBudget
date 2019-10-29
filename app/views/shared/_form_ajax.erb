@@ -61,6 +61,34 @@
             </div>
           </div>
 
+
+<!--          BOX SIMULATION FORM-->
+        <%when 'new_box_simulation'%>
+          <div class="form-group">
+            <p>Coût mensuel de votre abonnement box internet en €
+              <%= number_field_tag "monthly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
+            </p>
+            <p>Avez-vous ou voulez-vous la TV?
+              <%= f.radio_button(:tv, 'true')%>
+              <%= f.label(:tv_yes, "Oui")%>
+              <%= f.radio_button(:tv, 'false') %>
+              <%= f.label(:tv_no, "Non") %>
+            </p>
+            <p>Avez-vous ou voulez-vous les appels vers les téléphones fixes en France?
+              <%= f.radio_button(:call_fix_fr, 'true')%>
+              <%= f.label(:call_fix_fr_yes, "Oui")%>
+              <%= f.radio_button(:call_fix_fr, 'false') %>
+              <%= f.label(:call_fix_fr_no, "Non") %>
+            </p>
+            <p>Avez-vous ou voulez-vous les appels vers les téléphones mobile en France?
+              <%= f.radio_button(:call_mob_fr, 'true')%>
+              <%= f.label(:call_mob_fr_yes, "Oui")%>
+              <%= f.radio_button(:call_mob_fr, 'false') %>
+              <%= f.label(:call_mob_fr_no, "Non") %>
+            </p>
+
+          </div>
+
     	<%end%>
 
 <!--        FOR ALL FORMS-->
