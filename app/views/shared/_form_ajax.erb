@@ -89,6 +89,51 @@
 
           </div>
 
+<!--        NEW MOBILE SIMULATION  -->
+
+        <%when 'new_mobil_simulation'%>
+          <div class="form-group">
+            <p>Combien payez-vous par mois?<br>
+              <%= number_field_tag "monthly_cost",nil, in: 0.00..200.00 ,step: 0.01, placeholder: 0, class: "form-control"%>
+            </p>
+            <p>Combien votre forfait possède-t-il de Go?<br>
+              (Rentrer 100 si illimité) <br>
+              <%= number_field_tag "bundle_go",nil, in: 0.00..200.00 ,step: 0.01, placeholder: 0,class: "form-control"  %>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Voulez-vous inclure les forfaits <br> avec engagement dans votre comparaison?<br><br>
+              <%= radio_button_tag(:engagement, 'true', true)%>
+              <%= label_tag(:engagement_yes, "Oui")%>
+              <%= radio_button_tag(:engagement, 'false') %>
+              <%= label_tag(:engagement_no, "Non") %>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Bénéficiez-vous d'appels/SMS/MMS illimités en Europe?<br><br>
+              <%= radio_button_tag(:calls_europe, 'true', true)%>
+              <%= label_tag(:calls_europe_yes, "Oui")%>
+              <%= radio_button_tag(:calls_europe, 'false') %>
+              <%= label_tag(:calls_europe_no, "Non") %>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Appels, SMS, MMS illimités à l'étranger?<br><br>
+            <%= radio_button_tag(:calls_international, 'true')%>
+            <%= label_tag(:calls_international_yes, "Oui")%>
+            <%= radio_button_tag(:calls_international, 'false', true) %>
+            <%= label_tag(:calls_international_no, "Non") %>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Internet à l'étranger?<br><br>
+            <%= radio_button_tag(:net_international, 'true')%>
+            <%= label_tag(:net_international, "Oui")%>
+            <%= radio_button_tag(:net_international, 'false', true) %>
+            <%= label_tag(:net_international, "Non") %>
+            </p>
+          </div>
+
     	<%end%>
 
 <!--        FOR ALL FORMS-->

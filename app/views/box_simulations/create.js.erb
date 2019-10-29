@@ -1,0 +1,16 @@
+alert("box-simualtion");
+
+document.getElementById('box-simu').style.display = "none";
+// do not display gas-form after ending gas_simulation
+
+document.getElementById('box-simu').innerHTML = "";
+// do not play the gas-form after reclicking en Energie
+
+document.getElementById('btn-box').setAttribute('disabled', false);
+// set the btn onclickable
+
+document.getElementById('btn-box').style.cursor = 'not-allowed';
+// cursor of the mouse forbidden
+
+document.getElementById('btn-box').className = "btn-simu-box btn-simu btn btn-secondary disabled mx-2 mx-md-5 mx-1";
+// add a new class with change of color and no animation
