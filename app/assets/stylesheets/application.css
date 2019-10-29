@@ -342,8 +342,12 @@ li.button-group{
 
 /* FULL-SIMULATIONS#SHOW */
 
+#full-simu-not-validated{
+	margin-bottom: 50px;
+}
+
 #categories{
-	margin: 90px 0 70px 0;
+	margin-top: 50px;
 }
 
 #simu-category{
@@ -462,10 +466,6 @@ li.button-group{
 #btn-click-1{
   background:none;
   border:none
-}
-
-#energy-categories, #numeric-categories{
-	margin-bottom: 80px;
 }
 
 

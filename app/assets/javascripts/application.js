@@ -12,9 +12,10 @@
 //
 //= require rails-ujs
 //= require activestorage
-// require turbolinks
+//require turbolinks
 //= require_tree .
 //= require jquery3
+//= require jquery
 //= require jquery_ujs
 
 //= require js/pixel
@@ -41,6 +42,17 @@ $(document).ready(function () {
         }
     });
 
+    // for the simulations categories display before starting a full_simultaion
+    if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "new") {
+      clickToDisplayDomains = document.getElementById("btn-click-1");
+      domainDeploySatus = false;
+
+      clickToDisplayDomains.addEventListener('click', function(){
+        $("#domain-list").toggle(600);
+      })
+    };
+
+    // gas simulation
     if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "show" && document.body.contains(document.getElementById('full-simu-not-validated'))) {
         radioYes = document.getElementById("answer_yes");
         radioNo = document.getElementById("answer_no");
@@ -65,119 +77,128 @@ $(document).ready(function () {
         }
     }
 
-    if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "new") {
-      clickToDisplayDomains = document.getElementById("btn-click-1");
-      domainDeploySatus = false;
-
-      clickToDisplayDomains.addEventListener('click', function(){
-        $("#domain-list").toggle(600);
-      })
-    };
-
+    // concern the btn of the categories
     if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "show" && document.body.contains(document.getElementById('full-simu-not-validated'))) {
 
         // GET the differents button of the simulation
 
-        clickToDisplayNumerics = document.getElementById("btn-numeric");
-        numericDeployStatus = false;
-        clickToDisplayBoxSimu = document.getElementById("btn-box");
-        boxDeployStatus = false;
-        clickToDisplayMobilSimu = document.getElementById("btn-mobil");
-        mobilDeployStatus = false;
         clickToDisplayEnergies = document.getElementById("btn-energy");
-        energyDeployStatus = false;
+        energyDeployStatus = true;
+        // btn energy
         clickToDisplayGasSimu = document.getElementById("btn-gas");
         gasDeployStatus = false;
+          // btn gas
         clickToDisplayElecSimu = document.getElementById("btn-elec");
+        elecDeployStatus = false;
+        // btn elec
+        clickToDisplayNumerics = document.getElementById("btn-numeric");
+        numericDeployStatus = true;
+        // btn nuemric
+        clickToDisplayBoxSimu = document.getElementById("btn-box");
+        boxDeployStatus = false;
+        // btn box
+        clickToDisplayMobilSimu = document.getElementById("btn-mobil");
+        mobilDeployStatus = false;
+        // btn mobil
         clickToDisplayBankSimu = document.getElementById("btn-bank");
-        bankDeployStatus = false;
-
-        // BANK
-        clickToDisplayBankSimu.addEventListener('click', function(){
-            $("#bank-categories").toggle(600);
-            $("#numeric-categories").hide(600);
-            $("#numeric-categories").removeClass("d-flex");
-            numericDeployStatus = false;
-            $("#energy-categories").hide(600);
-            $("#energy-categories").removeClass("d-flex");
-            energyDeployStatus = false;
-            if(bankDeployStatus === false){
-                $("#finalize").hide(400);
-                bankDeployStatus = true;
-            }else{
-                $("#finalize").show(400);
-                bankDeployStatus = false;
-            }
+        bankDeployStatus = true;
+        // btn bank
 
 
-        });
         // ENERGY
         clickToDisplayGasSimu.addEventListener('click', function(){
             $("#gas-simu").toggle(600);
-            $("#elec-simu").hide(500);
+            // $("#gas-simu").show(500);
+            // $("#elec-simu").hide(500);
           });
 
         clickToDisplayElecSimu.addEventListener('click', function(){
             $("#elec-simu").toggle(600);
-            $("#gas-simu").hide(500);
+            // $("#gas-simu").hide(500);
           });
 
         clickToDisplayEnergies.addEventListener('click', function(){
-            $("#bank-categories").hide(600);
-            $("#numeric-categories").hide(600);
-            $("#numeric-categories").removeClass("d-flex");
-            numericDeployStatus = false;
-            bankDeployStatus = false
+            // $("#bank-categories").hide(600);
+            // $("#numeric-categories").hide(600);
+            // $("#numeric-categories").removeClass("d-flex");
+            // numericDeployStatus = false;
+            // bankDeployStatus = false
             if (energyDeployStatus == false) {
-              $("#energy-categories").addClass("d-flex");
+              // $("#energy-categories").addClass("d-flex");
               $("#energy-categories").show(500);
-              $("#gas-simu").hide(500);
-              $("#elec-simu").hide(500);
-              gasDeployStatus = false;
+              $("#gas-simu").show(500);
+              $("#elec-simu").show(500);
+              // gasDeployStatus = true;
               energyDeployStatus = true;
-              $("#finalize").hide(400);
+              // $("#finalize").hide(400);
             }
             else if (energyDeployStatus == true) {
-              $("#energy-categories").removeClass("d-flex");
+              // $("#energy-categories").removeClass("d-flex");
               $("#energy-categories").hide(500);
               energyDeployStatus = false;
-              $("#finalize").show(400);
+              // $("#finalize").show(400);
             }
-          });
+        });
 
-      // Numeric
+
+        // Numeric
         clickToDisplayBoxSimu.addEventListener('click', function(){
             $("#box-simu").toggle(600);
-            $("#mobil-simu").hide(500);
+            // $("#mobil-simu").hide(500);
         });
 
         clickToDisplayMobilSimu.addEventListener('click', function(){
             $("#mobil-simu").toggle(600);
-            $("#box-simu").hide(500);
+            // $("#box-simu").hide(500);
         });
 
         clickToDisplayNumerics.addEventListener('click', function(){
-            $("#bank-categories").hide(600);
-            $("#energy-categories").hide(600);
-            $("#energy-categories").removeClass("d-flex");
-            energyDeployStatus = false;
-            bankDeployStatus = false
+            // $("#bank-categories").hide(600);
+            // $("#energy-categories").hide(600);
+            // $("#energy-categories").removeClass("d-flex");
+            // energyDeployStatus = false;
+            // bankDeployStatus = false
             if (numericDeployStatus == false) {
-                $("#numeric-categories").addClass("d-flex");
+                // $("#numeric-categories").addClass("d-flex");
                 $("#numeric-categories").show(500);
-                $("#box-simu").hide(500);
-                $("#mobil-simu").hide(500);
+                $("#box-simu").show(500);
+                $("#mobil-simu").show(500);
                 boxDeployStatus = false;
                 mobilDeployStatus = false;
                 numericDeployStatus = true;
-                $("#finalize").hide(400);
+                // $("#finalize").hide(400);
             }
             else if (numericDeployStatus == true) {
-                $("#numeric-categories").removeClass("d-flex");
+                // $("#numeric-categories").removeClass("d-flex");
                 $("#numeric-categories").hide(500);
                 numericDeployStatus = false;
-                $("#finalize").show(400);
+                // $("#finalize").show(400);
             }
+        });
+
+
+        // BANK
+        clickToDisplayBankSimu.addEventListener('click', function(){
+            // $("#bank-categories").toggle(600);
+            // $("#numeric-categories").hide(600);
+            // $("#numeric-categories").removeClass("d-flex");
+            // numericDeployStatus = false;
+            // $("#energy-categories").hide(600);
+            // $("#energy-categories").removeClass("d-flex");
+            // energyDeployStatus = false;
+            if(bankDeployStatus === false){
+                // $("#bank-simu").hide(400);
+                // $("#bank-categories").addClass("d-flex");
+                $("#bank-categories").show(500);
+
+                bankDeployStatus = true;
+            }else{
+                // $("#bank-categories").removeClass("d-flex");
+                $("#bank-categories").hide(400);
+                bankDeployStatus = false;
+            }
+
+
         });
 
     };

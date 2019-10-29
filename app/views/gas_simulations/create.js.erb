@@ -1,0 +1,38 @@
+
+
+
+document.getElementById('gas-simu').style.display = "none";
+// do not display gas-form after ending gas_simulation
+
+document.getElementById('gas-simu').innerHTML = "";
+// do not play the gas-form after reclicking en Energie
+
+document.getElementById('btn-gas').setAttribute('disabled', false);
+// set the btn onclickable
+
+document.getElementById('btn-gas').style.cursor = 'not-allowed';
+// cursor of the mouse forbidden
+
+document.getElementById('btn-gas').className = "btn-simu-gas btn-simu btn btn-secondary disabled mx-2 mx-md-5 mx-1";
+// add a new class with change of color and no animation
+
+
+<%if @full_simulation.only_one_ele_simulation %>
+	document.getElementById('btn-energy').setAttribute('disabled', false);
+	// set the btn onclickable
+
+	document.getElementById('btn-energy').style.cursor = 'not-allowed';
+	// cursor of the mouse forbidden
+
+	document.getElementById('btn-energy').className = "btn-simu-cat btn-simu btn btn-secondary disabled mx-2 mx-md-5 mx-1";
+	// add a new class with change of color and no animation
+<% end %>
+
+
+
+
+
+
+
+
+

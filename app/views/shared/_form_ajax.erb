@@ -1,0 +1,164 @@
+<div class="container d-flex justify-content-center align-items-center my-5">
+  <div class="row" style="margin-top:50px">
+    <div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
+
+      <%= form_for(resource, url: path, method: method, remote: true) do |f| %>
+      <h2><%=title %></h2>
+
+<!--        GAS SIMULATION-->
+      	<%case action %>
+        <%when 'new_gas_simulation'%>
+          <div class="form-group">
+            <p>Coût annuel du gaz en €
+            <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
+            </p>
+            <p>Connaissez vous votre consommation de gaz ?
+            <%= radio_button_tag(:answer, "yes")%>
+            <%= label_tag(:answer_yes, "Oui")%>
+            <%= radio_button_tag(:answer, "no") %>
+            <%= label_tag(:answer_no, "Non") %>
+            </p>
+            <div id="consumption" style="display:none;">
+              <p>Consommation annuelle en kWh
+              <%= number_field_tag "yearly_consumption", nil, step: 1, class: 'd-flex justify-content-end' %>
+              </p>
+            </div>
+            <div id="estimation" style="display:none;">
+              <h3>Estimation de votre consommation :</h3>
+              <p>Superficie en m²
+              <%= number_field_tag "floor_space", nil, step: 1 , class: 'd-flex justify-content-end'%>
+              </p>
+              <p> Type de chauffage
+              <%= select_tag "heat_type", options_for_select(["", "Gaz", "Electricite", "Autre" ], "Non renseignée"), class: 'd-flex justify-content-end'%>
+              </p>
+              <p> Energie utilisée pour l'eau chaude et la cuisson
+              <%= select_tag "water_cooking_type", options_for_select(["", "Gaz", "Electricite", "Autre"], "Non renseignée"), class: 'd-flex justify-content-end'%>
+              </p>
+               <p> Estimez la qualité de votre isolation
+              <%= select_tag "isolation_type", options_for_select(["", "Peu performante", "Performante", "Très performante"], "Non renseignée"), class: 'd-flex justify-content-end'%>
+              </p>
+              <p>Nombres de personnes dans le logement
+              <%= number_field_tag "nb_residents", nil, step: 1 , class: 'd-flex justify-content-end'%>
+              </p>
+            </div>
+          </div>
+				
+<!--        ELEC SIMULATION-->
+        <%when 'new_ele_simulation'%>
+          <div class="form-group">
+            <p>Coût annuel de l'electricité en €
+              <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
+            </p>
+            <p>Quelle est votre consommation d'électricité ?
+            </p>
+            <div id="consumption-elec">
+              <p>Consommation annuelle en kWh
+                <%= number_field_tag "yearly_consumption", nil, step: 1,  placeholder:0, class: 'd-flex justify-content-end' %>
+              </p>
+              <p>Quelle est la puissance de votre compteur en kVa?
+                <%= number_field_tag "kVA_power", nil, in: 6..12 , step: 3 , placeholder:0, class: 'd-flex justify-content-end' %>
+              </p>
+            </div>
+          </div>
+
+
+<!--          BOX SIMULATION FORM-->
+        <%when 'new_box_simulation'%>
+          <div class="form-group">
+            <p>Coût mensuel de votre abonnement box internet en €
+              <%= number_field_tag "monthly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
+            </p>
+            <p>Avez-vous ou voulez-vous la TV?
+              <%= f.radio_button(:tv, 'true')%>
+              <%= f.label(:tv_yes, "Oui")%>
+              <%= f.radio_button(:tv, 'false') %>
+              <%= f.label(:tv_no, "Non") %>
+            </p>
+            <p>Avez-vous ou voulez-vous les appels vers les téléphones fixes en France?
+              <%= f.radio_button(:call_fix_fr, 'true')%>
+              <%= f.label(:call_fix_fr_yes, "Oui")%>
+              <%= f.radio_button(:call_fix_fr, 'false') %>
+              <%= f.label(:call_fix_fr_no, "Non") %>
+            </p>
+            <p>Avez-vous ou voulez-vous les appels vers les téléphones mobile en France?
+              <%= f.radio_button(:call_mob_fr, 'true')%>
+              <%= f.label(:call_mob_fr_yes, "Oui")%>
+              <%= f.radio_button(:call_mob_fr, 'false') %>
+              <%= f.label(:call_mob_fr_no, "Non") %>
+            </p>
+
+          </div>
+
+<!--        NEW MOBILE SIMULATION  -->
+
+        <%when 'new_mobil_simulation'%>
+          <div class="form-group">
+            <p>Combien payez-vous par mois?<br>
+              <%= number_field_tag "monthly_cost",nil, in: 0.00..200.00 ,step: 0.01, placeholder: 0, class: "form-control"%>
+            </p>
+            <p>Combien votre forfait possède-t-il de Go?<br>
+              (Rentrer 100 si illimité) <br>
+              <%= number_field_tag "bundle_go",nil, in: 0.00..200.00 ,step: 0.01, placeholder: 0,class: "form-control"  %>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Voulez-vous inclure les forfaits <br> avec engagement dans votre comparaison?<br><br>
+              <%= radio_button_tag(:engagement, 'true', true)%>
+              <%= label_tag(:engagement_yes, "Oui")%>
+              <%= radio_button_tag(:engagement, 'false') %>
+              <%= label_tag(:engagement_no, "Non") %>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Bénéficiez-vous d'appels/SMS/MMS illimités en Europe?<br><br>
+              <%= radio_button_tag(:calls_europe, 'true', true)%>
+              <%= label_tag(:calls_europe_yes, "Oui")%>
+              <%= radio_button_tag(:calls_europe, 'false') %>
+              <%= label_tag(:calls_europe_no, "Non") %>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Appels, SMS, MMS illimités à l'étranger?<br><br>
+            <%= radio_button_tag(:calls_international, 'true')%>
+            <%= label_tag(:calls_international_yes, "Oui")%>
+            <%= radio_button_tag(:calls_international, 'false', true) %>
+            <%= label_tag(:calls_international_no, "Non") %>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Internet à l'étranger?<br><br>
+            <%= radio_button_tag(:net_international, 'true')%>
+            <%= label_tag(:net_international, "Oui")%>
+            <%= radio_button_tag(:net_international, 'false', true) %>
+            <%= label_tag(:net_international, "Non") %>
+            </p>
+          </div>
+
+<!--        NEW BANK SIMULATION  -->
+
+        <%when 'new_bank_simulation'%>
+          <div class="form-group">
+            <p>Combien payez-vous de frais de gestion de compte par mois?<br>
+              <%= f.number_field :accounting_fees, within: 0.00..1000.00 ,step: 0.10, placeholder:0, class: "form-control"%>
+            </p>
+            <p>Combien payez-vous votre chéquier?<br>
+              <%= f.number_field :price_cheque, in: 0.00..1000.00 ,step: 0.10, placeholder:0,class: "form-control"  %>
+            </p>
+            <p>Combien payez-vous pour votre assurance de vos moyen de paiements par mois?<br>
+              <%= f.number_field :insurance_payment, in: 0.00..1000.00 ,step: 0.10, placeholder:0,class: "form-control"  %>
+            </p>
+          </div>
+
+    	<%end%>
+
+<!--        FOR ALL FORMS-->
+        <div class="form-group">
+          <%= f.submit button, class: "btn btn-primary btn-block btn-form" %>
+        </div>
+
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
