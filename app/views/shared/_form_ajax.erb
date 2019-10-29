@@ -5,6 +5,7 @@
       <%= form_for(resource, url: path, method: method, remote: true) do |f| %>
       <h2><%=title %></h2>
 
+<!--        GAS SIMULATION-->
       	<%case action %>
         <%when 'new_gas_simulation'%>
           <div class="form-group">
@@ -41,7 +42,24 @@
               </p>
             </div>
           </div>
-
+				
+<!--        ELEC SIMULATION-->
+        <%when 'new_ele_simulation'%>
+          <div class="form-group">
+            <p>Coût annuel de l'electricité en €
+              <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
+            </p>
+            <p>Quelle est votre consommation d'électricité ?
+            </p>
+            <div id="consumption-elec">
+              <p>Consommation annuelle en kWh
+                <%= number_field_tag "yearly_consumption", nil, step: 1,  placeholder:0, class: 'd-flex justify-content-end' %>
+              </p>
+              <p>Quelle est la puissance de votre compteur en kVa?
+                <%= number_field_tag "kVA_power", nil, in: 6..12 , step: 3 , placeholder:0, class: 'd-flex justify-content-end' %>
+              </p>
+            </div>
+          </div>
 
     	<%end%>
 

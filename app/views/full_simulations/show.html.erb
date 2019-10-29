@@ -76,20 +76,18 @@
                                                                                                    @full_simulation),
                                                    method: :post,
                                                    title: 'Simulation électricité',
-                                                   button: "Terminer",
-                                                     remote: true}%>
+                                                   button: "Terminer"}%>
       </div>
       <% else %>
       <!-- elec_simulation has not be done yet, id appear for the js -->
       <div id="elec-simu" class="col-md-10">
-        <%= render partial: "shared/form", locals:{resource: @ele_simulation,
+        <%= render partial: "shared/form_ajax", locals:{resource: @ele_simulation,
                                                    action: 'new_ele_simulation',
                                                    path: user_full_simulation_ele_simulations_path(current_user,
                                                                                                    @full_simulation),
                                                    method: :post,
                                                    title: 'Simulation électricité',
-                                                   button: "Terminer",
-                                                     remote: true}%>
+                                                   button: "Terminer"}%>
       </div>
       <% end %>
 
