@@ -27,9 +27,9 @@ class EleSimulationsController < ApplicationController
         format.html { redirect_to user_full_simulation_path(current_user, @full_simulation) }
         format.js { }
       end
+
     else
       flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation'
     end
-    redirect_to user_full_simulation_path(current_user, @full_simulation)
   end
 end
