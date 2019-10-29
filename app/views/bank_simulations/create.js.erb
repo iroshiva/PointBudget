@@ -1,0 +1,14 @@
+document.getElementById('bank-simu').style.display = "none";
+// do not display bank-form after ending gas_simulation
+
+document.getElementById('bank-simu').innerHTML = "";
+// do not play the bank-form after reclicking en Energie
+
+document.getElementById('btn-bank').setAttribute('disabled', false);
+// set the btn onclickable
+
+document.getElementById('btn-bank').style.cursor = 'not-allowed';
+// cursor of the mouse forbidden
+
+document.getElementById('btn-bank').className = "btn-simu-bank btn-simu btn btn-secondary disabled mx-2 mx-md-5 mx-1";
+// add a new class with change of color and no animation
