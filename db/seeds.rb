@@ -25,10 +25,10 @@ require 'rest-client'
 #   end
 # end
 
-# City.destroy_all
-# 20.times do
-#   City.create(name: Faker::Address.city, zip_code: '12345', insee_code: "12345")
-# end
+City.destroy_all
+20.times do
+  City.create(name: Faker::Address.city, zip_code: '12345', insee_code: "12345")
+end
 
 # User.destroy_all
 #
@@ -45,7 +45,7 @@ require 'rest-client'
 # puts ''
 # puts 'Users created'
 User.create(email: 'admin123@admin.com', password: 'admin123', city: City.first, is_admin: true)
-puts 'admin created'
+# puts 'admin created'
 
 
 ############################## GAS #######################################
