@@ -17,7 +17,7 @@ User.all.each do |user|
 end
 cities_url = 'https://geo.api.gouv.fr/communes'
 data = JSON.parse( RestClient.get(cities_url) )
-data.select { |city| !city['population'].nil? && city['population'] > 5000 }.each do |city|
+data.select { |city| !city['population'].nil? && city['population'] > 80000 }.each do |city|
   if city['codesPostaux'][0].nil?
     City.create(name: city['nom'], insee_code: city['code'], zip_code: city['code'])
   else
@@ -44,8 +44,8 @@ end
 # end
 # puts ''
 # puts 'Users created'
-# User.create(email: 'admin123@admin.com', password: 'admin123', city: City.first, is_admin: true)
-# puts 'admin created'
+User.create(email: 'admin123@admin.com', password: 'admin123', city: City.first, is_admin: true)
+puts 'admin created'
 
 
 ############################## GAS #######################################
