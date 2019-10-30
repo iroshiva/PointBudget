@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  devise :omniauthable, omniauth_providers: [:facebook]
+  
 
   validates :phone_number,
             format: { with: /\A((\+)33|0)[1-9](\d{2}){4}\Z/ },
