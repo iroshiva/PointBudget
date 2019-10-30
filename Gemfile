@@ -83,3 +83,7 @@ gem 'stripe'
 gem 'table_print'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem "rubyzip", ">= 1.3.0"
+
+
+
