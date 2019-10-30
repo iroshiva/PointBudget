@@ -62,7 +62,7 @@ group :test do
   gem 'database_cleaner'
   gem 'nyan-cat-formatter'
   gem 'shoulda-matchers'
-  gem 'webdrivers', '~> 3.0'
+  gem 'webdrivers', '~> 4.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
