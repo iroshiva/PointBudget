@@ -69,8 +69,8 @@ end
 gem 'activerecord'
 gem 'devise', '>= 4.7.1'
 gem 'devise-i18n'
-gem 'omniauth'
-gem 'omniauth-facebook'
+# gem 'omniauth'
+# gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'faker'
 gem 'font-awesome-rails'
@@ -82,7 +82,6 @@ gem 'rubocop-rails'
 gem 'stripe'
 gem 'table_print'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem "rubyzip", ">= 1.3.0"
 
 
