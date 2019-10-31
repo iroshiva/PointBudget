@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_120528) do
     t.float "insurance_payment", default: 0.0
     t.float "sms_alert", default: 0.0
     t.float "international_withdraw", default: 0.0
-    t.string "name", default: "Bank"
+    t.string "name", default: "Banque"
     t.bigint "full_simulation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -245,8 +245,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_120528) do
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "provider"
-    t.string "uid"
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
