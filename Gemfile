@@ -69,8 +69,6 @@ end
 gem 'activerecord'
 gem 'devise', '>= 4.7.1'
 gem 'devise-i18n'
-# gem 'omniauth'
-# gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'faker'
 gem 'font-awesome-rails'
