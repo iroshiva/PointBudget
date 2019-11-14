@@ -46,16 +46,22 @@ class EleSimulation < ApplicationRecord
     nb_residents = nb_residents.to_i
     # given value is in string class
 
-    if verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_cooking_type, nb_residents, isolation_type)
+    if verify_nilness_params(yearly_cost, floor_space, heat_type, water_type, cooking_type, nb_residents, isolation_type)
     # == if gas_simulation is completed
-      first_factor = heat_type == 'Gaz' ? 1 : 0
-      second_factor = water_cooking_type == 'Gaz' ? 1 : 0
-      yearly_consumption = floor_space * 100 * first_factor + consumption_people(nb_residents) * second_factor if yearly_consumption.zero?
+      first_factor = heat_type == 'Electricite' ? 1 : 0
+      # if heat with electricity, value 1
+      second_factor = water_type == 'Electricite' ? 1 : 0
+      third_factor = cooking_type == 'Electricite' ? 1 : 0
+      fourth_factor = 2000
+      # add this factor for electro devises
+      fifth_factor = isolation_type == 'Peu performante' ? 1.35 : isolation_type == 'Performante' ? 1.15 : 1
 
-      third_factor = isolation_type == 'Peu performante' ? 1.1 : isolation_type == 'Performante' ? 1 : 0.9
-      yearly_consumption = yearly_consumption * third_factor
+      yearly_consumption = floor_space * 110 * first_factor * fifth_factor + second_factor * nb_residents * 800 + third_factor * nb_residents * 200 
+      # if yearly_consumption.zero?
+
+      
       [yearly_cost, yearly_consumption.to_i]
-    # puts an array
+      # puts an array
     else
       [false, -1]
     end
