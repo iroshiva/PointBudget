@@ -13,7 +13,21 @@ class EleSimulationsController < ApplicationController
   def create
     @full_simulation = FullSimulation.find(params[:full_simulation_id])
     @ele_simulation = EleSimulation.new
-    comparison = @ele_simulation.comparison(params[:yearly_cost],params[:yearly_consumption],params[:kVA_power])
+
+    # def estimation in model when user doesn't know his elec consumption
+    estimation = @ele_simulation.estimation(params[:yearly_cost],
+                                            params[:yearly_consumption],
+                                            params[:floor_space],
+                                            params[:heat_type],
+                                            params[:water_type],
+                                            params[:cooking_type],
+                                            params[:nb_residents],
+                                            params[:isolation_type])
+
+    # comparison = @ele_simulation.comparison(params[:yearly_cost],params[:yearly_consumption],params[:kVA_power])
+
+    comparison = estimation[0] == false ? [-1, false] : @ele_simulation.comparison(estimation[0], estimation[1], params[:kVA_power])
+
     @ele_simulation = EleSimulation.new(actual_price_paid: params[:yearly_cost],
                                         ele_cost_saved: comparison[0],
                                         ele_use: params[:yearly_consumption],

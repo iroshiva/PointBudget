@@ -37,16 +37,16 @@ class EleSimulation < ApplicationRecord
   end
 
   # This method can estimate the consumption depending on the params you give to it
-  def estimation(yearly_cost, floor_space, heat_type, water_type, cooking_type, nb_residents, isolation_type)
+  def estimation(yearly_cost, yearly_consumption, floor_space, heat_type, water_type, cooking_type, nb_residents, isolation_type)
     yearly_cost = yearly_cost.to_f
     # given value is in string class
-    # yearly_consumption = yearly_consumption.to_i
+    yearly_consumption = yearly_consumption.to_i
     floor_space = floor_space.to_i
     # given value is in string class
     nb_residents = nb_residents.to_i
     # given value is in string class
 
-    if verify_nilness_params(yearly_cost, floor_space, heat_type, water_type, cooking_type, nb_residents, isolation_type)
+    if verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_type, cooking_type, nb_residents, isolation_type)
     # == if gas_simulation is completed
       first_factor = heat_type == 'Electricite' ? 1 : 0
       # if heat with electricity, value 1
@@ -107,20 +107,20 @@ class EleSimulation < ApplicationRecord
 
   # This method is part of the estimation process
   # It verifies the entries of the client and termine if all the fields are completed or not
-  def verify_nilness_params(yearly_cost, floor_space, heat_type, water_type, cooking_type, nb_residents, isolation_type)
+  def verify_nilness_params(yearly_cost, yearly_consumption, floor_space, heat_type, water_type, cooking_type, nb_residents, isolation_type)
     if yearly_cost.zero? # if he forgot the yearly cost
       false
     else
-      # if yearly_consumption.zero? 
+      if yearly_consumption.zero? 
       # if the consumption is not entered, all the other field must be present
         if [floor_space, nb_residents].include?(0) || [heat_type, water_cooking_type, isolation_type].include?('')
           false
         else
           true
         end
-      # else
-      #   true
-      # end
+      else
+        true
+      end
     end
   end
 end
