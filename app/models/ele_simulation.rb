@@ -56,8 +56,7 @@ class EleSimulation < ApplicationRecord
       # add this factor for electro devises
       fifth_factor = isolation_type == 'Peu performante' ? 1.35 : isolation_type == 'Performante' ? 1.15 : 1
 
-      yearly_consumption = floor_space * 110 * first_factor * fifth_factor + second_factor * nb_residents * 800 + third_factor * nb_residents * 200 
-      # if yearly_consumption.zero?
+      yearly_consumption =  110 * first_factor * fifth_factor * floor_space + second_factor * nb_residents * 800 + third_factor * nb_residents * 200 if yearly_consumption.zero?
 
       
       [yearly_cost, yearly_consumption.to_i]
@@ -120,7 +119,7 @@ class EleSimulation < ApplicationRecord
     else
       if yearly_consumption.zero? 
       # if the consumption is not entered, all the other field must be present
-        if [floor_space, nb_residents].include?(0) || [heat_type, water_cooking_type, isolation_type].include?('')
+        if [floor_space, nb_residents].include?(0) || [heat_type, water_type, cooking_type, isolation_type].include?('')
           false
         else
           true

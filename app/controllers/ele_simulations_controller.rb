@@ -29,10 +29,16 @@ class EleSimulationsController < ApplicationController
     comparison = estimation[0] == false ? [-1, false] : @ele_simulation.comparison(estimation[0], estimation[1], params[:kVA_power])
 
     @ele_simulation = EleSimulation.new(actual_price_paid: params[:yearly_cost],
-                                        # max_save
                                         ele_cost_saved: comparison[0],
-                                        ele_use: params[:yearly_consumption],
-                                        full_simulation: @full_simulation)
+                                        floor_space: params[:floor_space],
+                                        heat_type: params[:heat_type],
+                                        water_type: params[:water_type],
+                                        cooking_type: params[:cooking_type],
+                                        residents_number: params[:nb_residents],
+                                        ele_use: estimation[1],
+                                        full_simulation: @full_simulation,
+                                        isolation_type: params[:isolation_type])
+
 
     if @ele_simulation.save
       @ele_simulation.create_join_table_ele(comparison[1], comparison[2])
