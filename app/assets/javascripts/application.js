@@ -79,19 +79,19 @@ $(document).ready(function () {
 
     //elec_simulation
      if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "show" && document.body.contains(document.getElementById('full-simu-not-validated'))) {
-        radioYes = document.getElementById("answer_yes");
-        radioNo = document.getElementById("answer_no");
+        radioYes = document.getElementById("answer_elec_yes");
+        radioNo = document.getElementById("answer_elec_no");
 
         // it show the two differents form of the gas simulation
 
         radioYes.addEventListener('click', function () {
-            $('#consumption').show(500);
-            $('#estimation').hide(500);
+            $('#consumption-elec').show(500);
+            $('#estimation-elec').hide(500);
         });
 
         radioNo.addEventListener('click', function () {
-            $('#consumption').hide(500);
-            $('#estimation').show(500);
+            $('#consumption-elec').hide(500);
+            $('#estimation-elec').show(500);
         });
     } else if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "show") {
         try {
@@ -102,7 +102,7 @@ $(document).ready(function () {
         }
     }
 
-    
+
     // concern the btn of the categories
     if ($("body").data("controller") == "full_simulations" && $("body").data("action") == "show" && document.body.contains(document.getElementById('full-simu-not-validated'))) {
 

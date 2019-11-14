@@ -46,7 +46,7 @@
 				
 <!--        ELEC SIMULATION-->
         <%when 'new_ele_simulation'%>
-        <!--   <div class="form-group">
+      <!--     <div class="form-group">
             <p>Coût annuel de l'electricité en €
               <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
@@ -66,10 +66,10 @@
             <p>Coût annuel de l'electricité en €
               <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
-            <p>Connaissez vous votre consommation de gaz ?
-            <%= radio_button_tag(:answer, "yes")%>
+            <p>Connaissez vous votre consommation d'électricité ?
+            <%= radio_button_tag(:answer_elec, "yes")%>
             <%= label_tag(:answer_yes, "Oui")%>
-            <%= radio_button_tag(:answer, "no") %>
+            <%= radio_button_tag(:answer_elec, "no") %>
             <%= label_tag(:answer_no, "Non") %>
             </p>
             <div id="consumption-elec" style="display:none;">
