@@ -1,4 +1,4 @@
-<div class="container d-flex justify-content-center align-items-center my-5">
+<div class="container d-flex justify-content-center align-items-center">
   <div class="row" style="margin-top:50px">
     <div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
 
@@ -9,7 +9,7 @@
 <!--        GAS SIMULATION-->
       	<%case action %>
         <%when 'new_gas_simulation'%>
-          <div class="form-group">
+          <div class="form-group mb-5">
             <p>Coût annuel du gaz en €
             <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
@@ -46,7 +46,7 @@
 				
 <!--        ELEC SIMULATION-->
         <%when 'new_ele_simulation'%>
-          <div class="form-group">
+          <div class="form-group mb-5">
             <p>Coût annuel de l'electricité en €
               <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
@@ -62,17 +62,20 @@
               </p>
             </div>
             <div id="estimation-elec" style="display:none;">
-              <h3>Estimation de votre consommation :</h3>
+              <h3>Estimation de votre consommation:</h3>
               <p>Superficie en m²
               <%= number_field_tag "floor_space", nil, step: 1 , class: 'd-flex justify-content-end'%>
               </p>
               <p> Type de chauffage
               <%= select_tag "heat_type", options_for_select(["", "Gaz", "Electricite", "Autre" ], "Non renseignée"), class: 'd-flex justify-content-end'%>
               </p>
-              <p> Energie utilisée pour l'eau chaude et la cuisson
-              <%= select_tag "water_cooking_type", options_for_select(["", "Gaz", "Electricite", "Autre"], "Non renseignée"), class: 'd-flex justify-content-end'%>
+              <p> Energie utilisée pour l'eau chaude
+              <%= select_tag "water_type", options_for_select(["", "Gaz", "Electricite", "Autre"], "Non renseignée"), class: 'd-flex justify-content-end'%>
               </p>
-               <p> Estimez la qualité de votre isolation
+              <p> Energie utilisée pour la cuisson
+              <%= select_tag "cooking_type", options_for_select(["", "Gaz", "Electricite", "Autre"], "Non renseignée"), class: 'd-flex justify-content-end'%>
+              </p>
+              <p> Estimez la qualité de votre isolation
               <%= select_tag "isolation_type", options_for_select(["", "Peu performante", "Performante", "Très performante"], "Non renseignée"), class: 'd-flex justify-content-end'%>
               </p>
               <p>Nombres de personnes dans le logement
@@ -87,7 +90,7 @@
 
 <!--          BOX SIMULATION FORM-->
         <%when 'new_box_simulation'%>
-          <div class="form-group">
+          <div class="form-group mb-5">
             <p>Coût mensuel de votre abonnement box internet en €
               <%= number_field_tag "monthly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
@@ -115,7 +118,7 @@
 <!--        NEW MOBILE SIMULATION  -->
 
         <%when 'new_mobil_simulation'%>
-          <div class="form-group">
+          <div class="form-group mb-5">
             <p>Combien payez-vous par mois?<br>
               <%= number_field_tag "monthly_cost",nil, in: 0.00..200.00 ,step: 0.01, placeholder: 0, class: "form-control"%>
             </p>
@@ -160,7 +163,7 @@
 <!--        NEW BANK SIMULATION  -->
 
         <%when 'new_bank_simulation'%>
-          <div class="form-group">
+          <div class="form-group mb-5">
             <p>Combien payez-vous de frais de gestion de compte par mois?<br>
               <%= f.number_field :accounting_fees, within: 0.00..1000.00 ,step: 0.10, placeholder:0, class: "form-control"%>
             </p>
