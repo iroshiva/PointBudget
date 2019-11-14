@@ -29,6 +29,7 @@ class EleSimulationsController < ApplicationController
     comparison = estimation[0] == false ? [-1, false] : @ele_simulation.comparison(estimation[0], estimation[1], params[:kVA_power])
 
     @ele_simulation = EleSimulation.new(actual_price_paid: params[:yearly_cost],
+                                        # max_save
                                         ele_cost_saved: comparison[0],
                                         ele_use: params[:yearly_consumption],
                                         full_simulation: @full_simulation)

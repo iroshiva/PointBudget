@@ -93,7 +93,7 @@ class EleSimulation < ApplicationRecord
     [max_save.round(2), second_filter, all_savings]
   end
 
-  # This method create all the join table given by the filter and the saving associated with each
+  # This method create all the join table given by the filter == comparison[1] and the saving == comparison[2], associated with each
   def create_join_table_ele(filter, all_savings)
     filter.each_with_index do |contract, index|
       JoinTableEleSimulationContract.create(ele_simulation: self, ele_contract: contract, savings: all_savings[index])
