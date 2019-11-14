@@ -72,12 +72,19 @@ class EleSimulation < ApplicationRecord
     yearly_cost = yearly_cost.to_f
     yearly_consumption = yearly_consumption.to_i
     kVA_power = kVA_power.to_i
+    # select the contracts corresponding to the kVA
     first_filter = EleContract.all.select { |contract| contract.kVA_power == kVA_power }
+   
+    # select the contracts with yearly_cost below user yearly_cost
     second_filter = first_filter.select{ |contract| yearly_cost > (contract.kwh_price_base * yearly_consumption + contract.subscription_base_price_month * 12)}
+
     max_save = 0
     all_savings = []
     second_filter.each do |contract|
+      # calculate the difference of prices
       savings = yearly_cost - (contract.kwh_price_base * yearly_consumption + contract.subscription_base_price_month * 12)
+
+      # define the highest save the user can make
       if savings > max_save
         max_save = savings
       end
