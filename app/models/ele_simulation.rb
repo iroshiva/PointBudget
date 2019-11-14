@@ -9,6 +9,24 @@ class EleSimulation < ApplicationRecord
   validates :ele_cost_saved,
             presence: true,
             numericality: { greater_than_or_equal_to: 0 }
+  validates :floor_space,
+            allow_blank: true,
+            numericality: { greater_than_or_equal_to: 9 }
+  validates :heat_type,
+            allow_blank: true,
+            format: { with: /\A(Gaz|Electricite|Autre|Non)\Z/ }
+  validates :water_type,
+            allow_blank: true,
+            format: { with: /\A(Gaz|Electricite|Autre)\Z/ }
+  validates :cooking_type,
+            allow_blank: true,
+            format: { with: /\A(Gaz|Electricite|Autre)\Z/ }
+  validates :isolation_type,
+            allow_blank: true,
+            format: { with: /\A(Peu performante|Performante|Très performante)\Z/ }
+  validates :residents_number,
+            allow_blank: true,
+            numericality: { greater_than_or_equal_to: 1 }
   validates :ele_use,
             presence: true,
             numericality: { greater_than_or_equal_to: 0, only_integer: true }
