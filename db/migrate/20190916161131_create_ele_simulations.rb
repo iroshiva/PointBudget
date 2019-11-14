@@ -10,6 +10,7 @@ class CreateEleSimulations < ActiveRecord::Migration[5.2]
       t.integer :residents_number
       t.integer :ele_use
       t.belongs_to :full_simulation, index: true
+      t.string :isolation_type
 
       t.timestamps
     end
