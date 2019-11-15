@@ -36,6 +36,19 @@ class EleSimulation < ApplicationRecord
     self.full_simulation.user
   end
 
+  def print_report
+    table_attributes = []
+    message = "Non renseigné"
+    [floor_space, heat_type, water_type, cooking_type, residents_number, isolation_type].each do |attribute|
+      if attribute.blank?
+        table_attributes << message
+      else
+        table_attributes << attribute
+      end
+    end
+    table_attributes
+  end
+
   # This method can estimate the consumption depending on the params you give to it
   def estimation(yearly_cost, yearly_consumption, floor_space, heat_type, water_type, cooking_type, nb_residents, isolation_type)
     yearly_cost = yearly_cost.to_f
