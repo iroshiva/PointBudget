@@ -47,7 +47,7 @@
         <% else %>
         <!-- gas_simulation has not be done yet, id appear for the js -->
           <div id="gas-simu" class="col-md-8">
-            <%= render partial: "shared/form_ajax", locals:{resource: @gas_simulation,
+            <%= render partial: "shared/form", locals:{resource: @gas_simulation,
                                                        action: 'new_gas_simulation',
                                                        path: user_full_simulation_gas_simulations_path(current_user,
                                                                                                        @full_simulation),
@@ -81,7 +81,7 @@
         <% else %>
         <!-- elec_simulation has not be done yet, id appear for the js -->
         <div id="elec-simu" class="col-md-10" id="elec-radio">
-          <%= render partial: "shared/form_ajax", locals:{resource: @ele_simulation,
+          <%= render partial: "shared/form", locals:{resource: @ele_simulation,
                                                      action: 'new_ele_simulation',
                                                      path: user_full_simulation_ele_simulations_path(current_user,
                                                                                                      @full_simulation),
