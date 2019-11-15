@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class GasSimulationsController < ApplicationController
   before_action :authenticate_user!
   before_action :user_signed_in?
