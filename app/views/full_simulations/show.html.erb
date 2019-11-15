@@ -24,7 +24,7 @@
 
     <!-- btn energy JAVASCRIPT -->
     <div class="container-fluid" id="energy-categories">
-      <div class="col-md-6">
+      <div class="col-md-6 col-xs-12">
         <% if @full_simulation.only_one_gas_simulation %>
           <!-- gas_simulation disabled btn -->
           <%= render partial: 'button_categories', locals: {category: 'gas', sub_category: 'gas', bg:'secondary', animate: 'disabled mx-2', style:'cursor:not-allowed', icon: "fas fa-burn", name:'Gaz', disabled:true, title: 'Vous avez déjà simulé cette catégorie'} %>
@@ -47,7 +47,7 @@
         <% else %>
         <!-- gas_simulation has not be done yet, id appear for the js -->
           <div id="gas-simu" class="col-md-8">
-            <%= render partial: "shared/form_ajax", locals:{resource: @gas_simulation,
+            <%= render partial: "shared/form", locals:{resource: @gas_simulation,
                                                        action: 'new_gas_simulation',
                                                        path: user_full_simulation_gas_simulations_path(current_user,
                                                                                                        @full_simulation),
@@ -69,7 +69,7 @@
           <!-- Elec Simulation JS -->
         <% if @full_simulation.only_one_ele_simulation %>
         <!-- elec_simulation has been done, delete the id otherwise appear... -->
-        <div class="col-md-10" style="display: none;">
+        <div class="col-md-8" style="display: none;">
           <%= render partial: "shared/form", locals:{resource: @ele_simulation,
                                                      action: 'new_ele_simulation',
                                                      path: user_full_simulation_ele_simulations_path(current_user,
@@ -80,8 +80,8 @@
         </div>
         <% else %>
         <!-- elec_simulation has not be done yet, id appear for the js -->
-        <div id="elec-simu" class="col-md-10">
-          <%= render partial: "shared/form_ajax", locals:{resource: @ele_simulation,
+        <div id="elec-simu" class="col-md-8" id="elec-radio">
+          <%= render partial: "shared/form", locals:{resource: @ele_simulation,
                                                      action: 'new_ele_simulation',
                                                      path: user_full_simulation_ele_simulations_path(current_user,
                                                                                                      @full_simulation),

@@ -103,8 +103,14 @@ ActiveRecord::Schema.define(version: 2019_10_21_120528) do
   create_table "ele_simulations", force: :cascade do |t|
     t.float "actual_price_paid"
     t.float "ele_cost_saved"
+    t.integer "floor_space"
+    t.string "heat_type"
+    t.string "water_type"
+    t.string "cooking_type"
+    t.integer "residents_number"
     t.integer "ele_use"
     t.bigint "full_simulation_id"
+    t.string "isolation_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", default: "Electricité"

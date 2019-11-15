@@ -61,7 +61,7 @@ class GasSimulation < ApplicationRecord
       yearly_consumption = floor_space * 100 * first_factor + consumption_people(nb_residents) * second_factor if yearly_consumption.zero?
 
       third_factor = isolation_type == 'Peu performante' ? 1.1 : isolation_type == 'Performante' ? 1 : 0.9
-      yearly_consumption = yearly_consumption * third_factor
+      yearly_consumption = yearly_consumption * third_factor if yearly_consumption.zero?
       [yearly_cost, yearly_consumption.to_i]
     # puts an array
     else
