@@ -186,7 +186,7 @@
             <p>Coût annuel du gaz en €
             <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
-            <p>Connaissez vous votre consommation de gaz ?
+            <p>Connaissez-vous votre consommation de gaz ?
             <%= radio_button_tag(:answer, "yes")%>
             <%= label_tag(:answer_yes, "Oui")%>
             <%= radio_button_tag(:answer, "no") %>
@@ -241,7 +241,7 @@
             <p>Coût annuel de l'electricité en €
               <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
             </p>
-            <p>Connaissez vous votre consommation d'électricité ?
+            <p>Connaissez-vous votre consommation d'électricité ?<br>
             <%= radio_button_tag(:answer_elec, "yes")%>
             <%= label_tag(:answer_yes, "Oui")%>
             <%= radio_button_tag(:answer_elec, "no") %>
