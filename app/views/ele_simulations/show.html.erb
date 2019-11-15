@@ -25,10 +25,19 @@
               <div class="col text-center">
                 <ul class="list-group mb-4">
                   <li class="list-group-item"><strong>Coût annuel de l'électricité</strong><br><%=@ele_sim.actual_price_paid%> €</li>
+                  <li class="list-group-item"><strong>Superficie</strong><br>
+                      <%= @floor_space%> m2</li>
+                  <li class="list-group-item"><strong>Nombre de personnes</strong><br> <%= @residents_number%></li>
+                  <li class="list-group-item"><strong>Type d'isolation</strong><br> <%= @isolation_type%></li>
                 </ul>
               </div>
               <div class="col text-center">
                 <ul class="list-group mb-4">
+                  <li class="list-group-item"><strong>Type de chauffage (habitat)</strong>  <%= @heat_type%></li>
+                  <li class="list-group-item"><strong>Type de chauffage (eau)</strong>
+                      <%= @water_type%></li>
+                  <li class="list-group-item"><strong>Type de chauffage (cuisson)</strong>
+                      <%= @cooking_type%></li>
                   <li class="list-group-item"><strong>Consommation annuelle</strong>  <%= @ele_sim.ele_use%> kWh</li>
                 </ul>
               </div>
