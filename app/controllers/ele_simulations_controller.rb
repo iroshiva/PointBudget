@@ -7,6 +7,13 @@ class EleSimulationsController < ApplicationController
 
    def show
     @ele_sim = EleSimulation.find(params[:id])
+    table_attributes = @ele_sim.print_report
+    @floor_space = table_attributes[0]
+    @heat_type = table_attributes[1]
+    @water_type = table_attributes[2]
+    @cooking_type = table_attributes[3]
+    @residents_number = table_attributes[4]
+    @isolation_type = table_attributes[5]
     @ele_contracts = @ele_sim.sort_contracts(3)
   end
 
