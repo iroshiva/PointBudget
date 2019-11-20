@@ -41,7 +41,7 @@ class GasSimulationsController < ApplicationController
       @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @gas_simulation.gas_cost_saved),
                               counter: @full_simulation.counter + 1)
 
-      flash[:success] = 'Votre simulation de gaz a bien été enregistrée'
+      flash[:success] = 'Votre comparaison concernant le gaz a bien été enregistrée'
    
     else
       flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation de gaz'

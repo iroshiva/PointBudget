@@ -37,13 +37,19 @@ class MobilSimulationsController < ApplicationController
       # update full_simulation
       @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @mobil_simulation.mobil_cost_saved),
                               counter: @full_simulation.counter + 1)
-      respond_to do |format|
-        format.html { redirect_to user_full_simulation_path(current_user, @full_simulation) }
-        format.js { }
-      end
+    #   respond_to do |format|
+    #     format.html { redirect_to user_full_simulation_path(current_user, @full_simulation) }
+    #     format.js { }
+    #   end
+    # else
+    #   flash[:error] = @mobil_simulation.errors.messages
+    # end
+    flash[:success] = "Votre comparaison concernant votre mobile a bien été enregistrée"
+
     else
-      flash[:error] = @mobil_simulation.errors.messages
+      flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation'
     end
+    redirect_to user_full_simulation_path(current_user, @full_simulation)
   end
 
 end

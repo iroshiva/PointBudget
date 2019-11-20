@@ -52,7 +52,7 @@ class EleSimulationsController < ApplicationController
       @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @ele_simulation.ele_cost_saved),
                               counter: @full_simulation.counter + 1)
       
-      flash[:success] = "Votre simulation d'electricité a bien été enregistrée"
+      flash[:success] = "Votre comparaison concernant l'électricité a bien été enregistrée"
 
     else
       flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation'
