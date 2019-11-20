@@ -40,13 +40,14 @@ class GasSimulationsController < ApplicationController
       @gas_simulation.create_join_table_gas(comparison[1], comparison[2])
       @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @gas_simulation.gas_cost_saved),
                               counter: @full_simulation.counter + 1)
-      
-      redirect_to user_full_simulation_path(current_user, @full_simulation)
+
+      flash[:success] = 'Votre simulation de gaz a bien été enregistrée'
    
     else
-      flash[:error] = @gas_simulation.errors.full_messages.to_sentence
+      flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation de gaz'
     end
-   
+    
+    redirect_to user_full_simulation_path(current_user, @full_simulation)
   end
 end
 
