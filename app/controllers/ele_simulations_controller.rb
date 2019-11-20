@@ -51,13 +51,12 @@ class EleSimulationsController < ApplicationController
       @ele_simulation.create_join_table_ele(comparison[1], comparison[2])
       @full_simulation.update(total_cost_saved: (@full_simulation.total_cost_saved + @ele_simulation.ele_cost_saved),
                               counter: @full_simulation.counter + 1)
-      respond_to do |format|
-        format.html { redirect_to user_full_simulation_path(current_user, @full_simulation) }
-        format.js { }
-      end
+      
+      flash[:success] = "Votre simulation d'electricité a bien été enregistrée"
 
     else
       flash[:error] = 'Veuillez remplir tous les champs pour terminer la simulation'
     end
+    redirect_to user_full_simulation_path(current_user, @full_simulation)
   end
 end
