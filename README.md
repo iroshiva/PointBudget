@@ -6,125 +6,109 @@ Notre crédo : aider les consommateurs à savoir si ce qu’ils
 Venez donc faire un tout [ici](https://point-budget.herokuapp.com/)
 
 
-document.getElementById('gas-simu').remove();
-document.getElementById('gas-simu').style.display = "none";
 
-document.getElementById("disa").setAttribute("disabled", true);
+## form box
 
-document.getElementById('disa').style.cursor = "not-allowed";
+### form ==== db box_simulation
+
+- Coût
+
+- Q sur Adsl/fibre/4G
+
+- optionTV oui/non
+
+- add option multiTV oui/non  ====== ajout t.boolean "multitv", default: true
+
+- add Internet sur PC/Smartphone/Tablette  oui/non  ====== ajout t.boolean "internet_type", default: true
+
+- Appels Fr fixe oui/non
+
+- Appels Fr mobil oui/non
+
+- remove appels étranger
+
+- add Appels Etranger fixe oui/non   ===== ajout t.boolean "call_fix_foreign", default: true
+
+- add Appels Etranger mobile oui/non  ===== ajout t.boolean "call_mob_foreign", default: true
+
+- add RECUP Engagement oui/non =====  ajout t.boolean "commitment", default: true
+
+- add RECUP Préférence appel à l'étranger  =====  ajout t.string "call_for_pref"
+
+- add RECUP Stockage cloud  =====  ajout t.boolean "cloud", default: true
 
 
-# Simulation with recuperation of data entered by user
+### db box_contracts
 
-<!--        GAS SIMULATION-->
-      	<%case action %>
-        <%when 'new_gas_simulation'%>
-          <div class="form-group mb-5">
-            <p>Coût annuel du gaz en €
-            <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
-            </p>
-            <p>Connaissez vous votre consommation de gaz ?
-            <%= radio_button_tag(:answer, "yes")%>
-            <%= label_tag(:answer_yes, "Oui")%>
-            <%= radio_button_tag(:answer, "no") %>
-            <%= label_tag(:answer_no, "Non") %>
-            </p>
-            <div id="consumption" style="display:none;">
-              <p>Consommation annuelle en kWh
-              <%= number_field_tag "yearly_consumption", nil, step: 1, class: 'd-flex justify-content-end' %>
-              </p>
-            </div>
-            <div id="estimation" style="display:none;">
-              <h3>Estimation de votre consommation :</h3>
-              <p>Superficie en m²
-                <% if @full_simulation.only_one_ele_simulation && @full_simulation.ele_simulation.floor_space != nil %>
-                  <%= number_field_tag "floor_space", value=@full_simulation.ele_simulation.floor_space, step: 1 , class: 'd-flex justify-content-end'%>
-                <% else %>
-                  <%= number_field_tag "floor_space", nil, step: 1 , class: 'd-flex justify-content-end'%>
-                <% end %>
-              </p>
-              <p> Type de chauffage
-                <% if @full_simulation.only_one_ele_simulation && @full_simulation.ele_simulation.heat_type != nil %>
-                  <%= text_field_tag "heat_type", value=@full_simulation.ele_simulation.heat_type, class: 'd-flex justify-content-end'%>
-                <% else %>
-                  <%= select_tag "heat_type", options_for_select(["", "Gaz", "Electricite", "Autre" ], "Non renseignée"), class: 'd-flex justify-content-end'%>
-                <% end %>
-              </p>
-              <p> Energie utilisée pour l'eau chaude et la cuisson
-              <%= select_tag "water_cooking_type", options_for_select(["", "Gaz", "Electricite", "Autre"], "Non renseignée"), class: 'd-flex justify-content-end'%>
-              </p>
-              <p> Estimez la qualité de votre isolation
-                <% if @full_simulation.only_one_ele_simulation && @full_simulation.ele_simulation.isolation_type != nil %>
-                  <%= text_field_tag "isolation_type", value=@full_simulation.ele_simulation.isolation_type, class: 'd-flex justify-content-end'%>
-                <% else %>
-                  <%= select_tag "isolation_type", options_for_select(["", "Peu performante", "Performante", "Très performante"], "Non renseignée"), class: 'd-flex justify-content-end'%>
-                <% end %>
-              </p>
-              <p>Nombres de personnes dans le logement
-                <% if @full_simulation.only_one_ele_simulation && @full_simulation.ele_simulation.isolation_type != nil %>
-                  <%= text_field_tag "nb_residents", value=@full_simulation.ele_simulation.residents_number, class: 'd-flex justify-content-end'%>
-                <% else %>
-                  <%= number_field_tag "nb_residents", nil, step: 1 , class: 'd-flex justify-content-end'%>
-                <% end %>
-              </p>
-            </div>
-          </div>
-				
-<!--        ELEC SIMULATION-->
-        <%when 'new_ele_simulation'%>
-          <div class="form-group mb-5">
-            <p>Coût annuel de l'electricité en €
-              <%= number_field_tag "yearly_cost", nil, step: 1 , within: 1...10000, placeholder:0, class: 'd-flex justify-content-end' %>
-            </p>
-            <p>Connaissez vous votre consommation d'électricité ?
-            <%= radio_button_tag(:answer_elec, "yes")%>
-            <%= label_tag(:answer_yes, "Oui")%>
-            <%= radio_button_tag(:answer_elec, "no") %>
-            <%= label_tag(:answer_no, "Non") %>
-            </p>
-            <div id="consumption-elec" style="display:none;">
-              <p>Consommation annuelle en kWh
-              <%= number_field_tag "yearly_consumption", nil, step: 1, class: 'd-flex justify-content-end' %>
-              </p>
-            </div>
-            <div id="estimation-elec" style="display:none;">
-              <h3>Estimation de votre consommation:</h3>
-              <p>Superficie en m²
-                <% if @full_simulation.only_one_gas_simulation && @full_simulation.gas_simulation.floor_space != nil %>
-                  <%= number_field_tag "floor_space", value=@full_simulation.gas_simulation.floor_space, step: 1 , class: 'd-flex justify-content-end'%>
-                <% else %>
-                  <%= number_field_tag "floor_space", nil, step: 1 , class: 'd-flex justify-content-end'%>
-                <% end %>
-              </p>
-              <p> Type de chauffage
-                <% if @full_simulation.only_one_gas_simulation && @full_simulation.gas_simulation.heat_type != nil %>
-                  <%= text_field_tag "heat_type", value=@full_simulation.gas_simulation.heat_type, class: 'd-flex justify-content-end'%>
-                <% else %>
-                  <%= select_tag "heat_type", options_for_select(["", "Gaz", "Electricite", "Autre" ], "Non renseignée"), class: 'd-flex justify-content-end'%>
-                <% end %>
-              </p>
-              <p> Energie utilisée pour l'eau chaude
-              <%= select_tag "water_type", options_for_select(["", "Gaz", "Electricite", "Autre"], "Non renseignée"), class: 'd-flex justify-content-end'%>
-              </p>
-              <p> Energie utilisée pour la cuisson
-              <%= select_tag "cooking_type", options_for_select(["", "Gaz", "Electricite", "Autre"], "Non renseignée"), class: 'd-flex justify-content-end'%>
-              </p>
-              <p> Estimez la qualité de votre isolation
-                <% if @full_simulation.only_one_gas_simulation && @full_simulation.gas_simulation.isolation_type != nil %>
-                  <%= text_field_tag "isolation_type", value=@full_simulation.gas_simulation.isolation_type, class: 'd-flex justify-content-end'%>
-                <% else %>
-                  <%= select_tag "isolation_type", options_for_select(["", "Peu performante", "Performante", "Très performante"], "Non renseignée"), class: 'd-flex justify-content-end'%>
-                <% end %>
-              </p>
-              <p>Nombres de personnes dans le logement
-                <% if @full_simulation.only_one_gas_simulation && @full_simulation.gas_simulation.isolation_type != nil %>
-                  <%= text_field_tag "nb_residents", value=@full_simulation.gas_simulation.residents_number, class: 'd-flex justify-content-end'%>
-                <% else %>
-                  <%= number_field_tag "nb_residents", nil, step: 1 , class: 'd-flex justify-content-end'%>
-                <% end %>
-              </p>
-            </div>
-            <p>Quelle est la puissance de votre compteur en kVa?
-              <%= number_field_tag "kVA_power", nil, in: 6..12 , step: 3 , placeholder:0, class: 'd-flex justify-content-end' %>
-            </p>
-          </div>
+- ajout t.boolean "multitv"
+
+- remove t.boolean "call_foreign"
+
+- add t.boolean "call_fix_foreign"
+
+- add t.boolean "call_mob_foreign"
+
+
+### Mofifs Excel
+
+- remove column 'Etranger'
+
+- add column call_fix_foreign
+
+- add column call_mob_foreign
+
+- remove 'stockage cloud'
+
+- fusionner 'pc'/'tablette'/'smartphones' en 'internet_type'
+
+- remove 'bienvenue'
+
+- remove 'condition d'obtention'
+
+
+### excel to csv
+
+https://convertio.co/fr/xls-csv/
+
+https://www.aconvert.com/document/xls-to-csv/
+
+
+### Put .csv file in lib/populate_box_contract
+
+### in lib/populate_box_contract/populate_box_contract.rb
+
+    require 'csv'
+
+    data = CSV.read('./lib/populate_box_contract/offer_box.csv',
+                    headers: true, col_sep: ',', encoding: 'ISO-8859-1')
+    lines = data.reject { |line| line[0].blank? }
+
+
+    BoxContract.destroy_all
+    lines.each do |line|
+      BoxContract.create(supplier: line[0],
+                         offer_name: line[1],
+                         price_month: line[2].to_f,
+                         commitment: line[3].to_i,
+                         price_after: line[4].to_f,
+                         internet_type: line[5].to_s,
+                         downstream: line[6].to_i,
+                         upstream: line[7].to_i,
+                         tv_channel: line[8],
+                         tv: ActiveModel::Type::Boolean.new.cast(line[9]),
+                         multitv: ActiveModel::Type::Boolean.new.cast(line[10]),
+                         internet_type: ActiveModel::Type::Boolean.new.cast(line[11]),
+                         call_fix_fr: ActiveModel::Type::Boolean.new.cast(line[12]),
+                         call_mobile_fr: ActiveModel::Type::Boolean.new.cast(line[13]),
+                         call_fix_foreign: ActiveModel::Type::Boolean.new.cast(line[14]),
+                         call_mob_foreign: ActiveModel::Type::Boolean.new.cast(line[15]),
+                         opening_fee: line[16].to_f,
+                         termination_fee: line[17].to_f,
+                         taken_termination: line[18].to_f
+                         )
+    end
+
+
+### seed 
+
+add content lib/populate_box_contract/populate_box_contract.rb (below)
