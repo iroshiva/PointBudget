@@ -1,4 +1,4 @@
-/*
+	/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -61,13 +61,15 @@ li.button-group{
 
                         /* LANDING PAGE */
 
-/* NAVBAR */
+/* NAVBAR 
+==================================*/
 
-
+.logo {
+	width: 350px;
+}
 .logo-nav{
- 	width: 200px;
- 	margin-right: 30px;
- }
+ 	max-width: 200px;
+}
 
 .nav-fix{
 	position: fixed;
@@ -76,7 +78,12 @@ li.button-group{
 	z-index: 1030;
 }
 
-/* JUMBOTRON */
+.secteur-item {
+	font-size: 18px !important;
+}
+
+/* JUMBOTRON 
+===================================*/
 
 
 .jumbotron
