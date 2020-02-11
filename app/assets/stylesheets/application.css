@@ -137,10 +137,18 @@ li.button-group{
 
 	#jumbo-image {
 					background-image: url('jumbo.jpg');
-					background-repeat: no-repeat;
-					height: 800px;
+					/*background-repeat: no-repeat;*/
+					/*height: 800px;*/
 					max-width: 100%;
 					/*background-size:100% auto;*/
+
+					background-position: center 100%;
+				  background-size: cover;
+				  background-repeat: no-repeat;
+				  height: 65em;
+					-webkit-background-size: cover;
+				  -moz-background-size: cover;
+				  -o-background-size: cover;
 			}
 
 	/*}*/
