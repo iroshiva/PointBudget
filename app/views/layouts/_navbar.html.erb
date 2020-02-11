@@ -17,7 +17,7 @@
         <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
           <li class="nav-item dropdown">
             <%= link_to "#", class: "nav-link secteur-item", data: {toggle:'dropdown'}, role:'button' do %>
-              <i class="fas fa-angle-down nav-link-arrow"></i>
+              <i class="fas fa-angle-down nav-link-arrow mr-2"></i>
               <strong>Assurance</strong>
             <% end %>
             <ul class="dropdown-menu">
@@ -29,7 +29,7 @@
           </li>
           <li class="nav-item dropdown">
             <%= link_to "#", class: "nav-link secteur-item", data: {toggle:'dropdown'}, role:'button' do %>
-              <i class="fas fa-angle-down nav-link-arrow"></i>
+              <i class="fas fa-angle-down nav-link-arrow mr-2"></i>
               <strong>Energie</strong>
             <% end %>
             <ul class="dropdown-menu">
@@ -39,7 +39,7 @@
           </li>
           <li class="nav-item dropdown">
             <%= link_to "#", class: "nav-link secteur-item", data: {toggle:'dropdown'}, role:'button'  do%>
-              <i class="fas fa-angle-down nav-link-arrow"></i>
+              <i class="fas fa-angle-down nav-link-arrow mr-2"></i>
               <strong>Banque</strong>
             <% end %>
             <ul class="dropdown-menu">
@@ -56,7 +56,7 @@
           </li>
           <li class="nav-item dropdown">
             <%= link_to "#", class: "nav-link secteur-item", data: {toggle:'dropdown'}, role:'button' do %>
-              <i class="fas fa-angle-down nav-link-arrow"></i>
+              <i class="fas fa-angle-down nav-link-arrow mr-2"></i>
               <strong>Numérique</strong>
             <% end %>
             <ul class="dropdown-menu">
@@ -71,7 +71,7 @@
           <% if user_signed_in? %>
             <li><%= link_to "Commencer une simulation", new_user_full_simulation_path(current_user), class: "nav-item nav-link"%></li>
             <li class="nav-item dropdown">
-              <%=link_to '', class:'nav-link', data:{toggle:'dropdown'}, role:'button' do %>
+              <%=link_to '', class:'nav-link connexion-item', data:{toggle:'dropdown'}, role:'button' do %>
                 <i class="fas fa-angle-down nav-link-arrow"></i>
                 <span class="nav-link-inner-text">Mon Espace Client</span>
               <%end %>

@@ -80,12 +80,23 @@ li.button-group{
 
 .secteur-item {
 	font-size: 18px !important;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.connexion-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 /* JUMBOTRON 
 ===================================*/
 
-
+.display-1 {
+	display: inline-block;
+}
 .jumbotron
 {
     /* background-image: url("baniere.jpg"); */
