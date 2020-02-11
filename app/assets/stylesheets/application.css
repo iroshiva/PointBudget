@@ -85,11 +85,35 @@ li.button-group{
 	align-items: center;
 }
 
+.assurance {
+	color: #274991;
+}
+
+.energie {
+	color: #10ab7c;
+}
+
+.bank {
+	color:#ff0000;
+}
+
+.mutuelle {
+	color:#4dd2ff;
+}
+
+.numeric {
+	color:#cc9900;
+}
+
 .connexion-item {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
+
+/*.navbar-nav .navbar-nav-hover {
+	background-color: white;
+}*/
 
 /* JUMBOTRON 
 ===================================*/
