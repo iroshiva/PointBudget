@@ -1,19 +1,21 @@
 <div class="jumbotron" id="jumbo-image">
-  <div class="jumbo-text">
-    <!-- <h1 class="display-1">Point Budget</h1> -->
-    <h1 class="display-2"> <strong>Nous comparons ... </strong></h1>
-    <h1 class="display-2 align-self-end mb-5"> <strong>... Vous économisez </strong></h1>
-    <!-- <p class="lead">La meilleure façon de gérer son budget est de l'évaluer.</p> -->
-    <h1 class="display-4 align-self-center mb-5">Payez-vous au juste prix vos factures?</h1> 
-    <h3 class="display-7 text-center">LE PREMIER OUTIL PERMETTANT DE COMPARER VOS DEPENSES AUX <span>MEILLEURS CONTRATS</span> DU MARCHÉ</h3> 
-  
-    <div class="col-md-12 mt-5 jumbo-btn">
-      <% if user_signed_in? %>
-        <%=link_to "Lancer une simulation", new_user_full_simulation_path(current_user), class: "btn mr-2 mb-2 btn-pill btn-primary btn-lg mt-3"%>
-      <%else%>
-        <%=link_to "Faire une étude gratuite", new_user_registration_path, class: "btn mr-2 mb-2 btn-pill btn-primary btn-lg mt-3"%>
-        <%=link_to "Me connecter", new_user_session_path, class: "btn mr-2 mb-2 btn-pill btn-secondary btn-lg mt-3"%>
-      <%end%>
+  <div class="text-width">
+    <div class="jumbo-text">
+      <h1 class="display-1 mb-5">Point Budget</h1>
+      <h1 class="display-3 align-self-start"> Nous comparons ... </h1>
+      <h1 class="display-3 align-self-center mb-5"> ... Vous économisez </h1>
+      <!-- <p class="lead">La meilleure façon de gérer son budget est de l'évaluer.</p> -->
+      <h1 class="display-4 align-self-center mb-5">Payez-vous au juste prix vos factures?</h1> 
+      <h3 class="display-7 text-center">LE PREMIER OUTIL QUI PERMET DE COMPARER VOS DEPENSES AUX <span>MEILLEURS CONTRATS</span> DU MARCHÉ</h3> 
+    
+      <div class="col-md-12 mt-5 jumbo-btn">
+        <% if user_signed_in? %>
+          <%=link_to "Lancer une simulation", new_user_full_simulation_path(current_user), class: "btn mr-2 mb-2 btn-pill btn-primary btn-lg mt-3"%>
+        <%else%>
+          <%=link_to "Faire une ETUDE GRATUITE", new_user_registration_path, class: "btn mr-2 mb-2 btn-pill btn-primary btn-lg mt-3"%>
+          <%=link_to "Me connecter", new_user_session_path, class: "btn mr-2 mb-2 btn-pill btn-secondary btn-lg mt-3"%>
+        <%end%>
+      </div>
     </div>
   </div>
 </div>
