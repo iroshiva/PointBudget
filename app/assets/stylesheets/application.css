@@ -155,16 +155,23 @@ li.button-group{
 .jumbotron
 {
     /* background-image: url("baniere.jpg"); */
-    background-position: center 75%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 25em;
+	  /*  background-position: center 75%;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    height: 25em;*/
+	  display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.cochon-pic {
+	width: 800px;
 }
 
 
 /* Show in Large desktops and laptops */
 @media (min-width: 1200px) {
-	#jumbo-image {
+/*	#jumbo-image {
 		background-image: url('jumbo.jpg');
 		max-width: 100%;
 		background-position: center 100%;
@@ -174,7 +181,7 @@ li.button-group{
 		-webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
-	}
+	}*/
 }
 
 	/*Hide in Other Small Devices */
@@ -182,11 +189,15 @@ li.button-group{
 
 	/* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-	#jumbo-image {
+/*	#jumbo-image {
 		background-image: none;
 		background-color:  white;
 		height: 55em;
 		text-align: center;
+	}*/
+
+	.cochon {
+		display: none;
 	}
 
 	.text-width {
@@ -198,11 +209,15 @@ li.button-group{
 
 	/* Portrait tablets and small desktops */
 @media (max-width: 991px) {
-	#jumbo-image {
+	/*#jumbo-image {
 		background-image: none;
 		background-color:  white;
 		text-align: center;
 		height: 55em;
+	}*/
+
+	.cochon {
+		display: none;
 	}
 	
 	.jumbo-text {
@@ -219,11 +234,15 @@ li.button-group{
 
 	/* Landscape phones and portrait tablets */
 @media (max-width: 445px) {
-	#jumbo-image {
+/*	#jumbo-image {
 		background-image: none;
 		background-color:  white;
 		text-align: center;
 		justify-content: center;
+	}*/
+
+	.cochon {
+		display: none;
 	}
 
 	.jumbotron {
