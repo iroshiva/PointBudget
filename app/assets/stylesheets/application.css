@@ -116,9 +116,6 @@ li.button-group{
 	align-items: center;
 }
 
-/*.navbar-nav .navbar-nav-hover {
-	background-color: white;
-}*/
 
 /* JUMBOTRON 
 ===================================*/
@@ -174,6 +171,7 @@ li.button-group{
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
 	}
+
 }
 
 	/*Hide in Other Small Devices */
