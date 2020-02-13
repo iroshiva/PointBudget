@@ -116,14 +116,21 @@ li.button-group{
 	align-items: center;
 }
 
+
 /* JUMBOTRON 
 ===================================*/
+
+.text-width {
+	width: 700px;
+	margin-left: 50px;
+	display: flex;
+	flex-direction: row;
+}
 
 .jumbo-text {
 	display: flex;
 	flex-direction: column;
 	width: 700px;
-	margin-left: 50px;
 }
 
 .jumbo-text .jumbo-btn {
@@ -138,7 +145,7 @@ li.button-group{
 }
 
 .display-7 {
-	color: #274991;
+	/*color: #274991;*/
 	font-weight: 700;
 	line-height: 140%;
 }
@@ -169,43 +176,100 @@ li.button-group{
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
 	}
+
 }
 
 	/*Hide in Other Small Devices */
 
 
 	/* Landscape tablets and medium desktops */
-/*	@media (min-width: 992px) and (max-width: 1199px) {
-
-				#jumbo-image {
-					background-image: none;
-					background-color:  white;
-					text-align: center;
-			}
-
+@media (min-width: 992px) and (max-width: 1199px) {
+/*	#jumbo-image {
+		background-image: none;
+		background-color:  white;
+		height: 55em;
+		text-align: center;
 	}*/
+
+	.cochon {
+		display: none;
+	}
+
+	.text-width {
+		width: 100%;
+		justify-content: center;
+			margin-left: 0px;
+	}
+}
 
 	/* Portrait tablets and small desktops */
-/*	@media (min-width: 768px) and (max-width: 991px) {
-						#jumbo-image {
-					background-image: none;
-					background-color:  white;
-					text-align: center;
-			}
-
+@media (max-width: 991px) {
+	/*#jumbo-image {
+		background-image: none;
+		background-color:  white;
+		text-align: center;
+		height: 55em;
 	}*/
+
+	.cochon {
+		display: none;
+	}
+	
+	.jumbo-text {
+		width: 400px;
+	}
+
+	.text-width {
+		width: 100%;
+		justify-content: center;
+			margin-left: 0px;
+	}
+
+}
 
 	/* Landscape phones and portrait tablets */
-/*	@media (max-width: 767px) {
-
-						#jumbo-image {
-					background-image: none;
-					background-color:  white;
-					text-align: center;
-					justify-content: center;
-			}
-
+@media (max-width: 445px) {
+/*	#jumbo-image {
+		background-image: none;
+		background-color:  white;
+		text-align: center;
+		justify-content: center;
 	}*/
+
+	.cochon {
+		display: none;
+	}
+
+	.jumbotron {
+		padding-top: 5rem;
+	}
+
+	.display-4 {
+		font-size: 20px;
+	}
+
+	.jumbo-text {
+		width: 300px;
+	}
+}
+
+@media (max-width: 991.98px) {
+    .display-2 {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .display-3 {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .display-4 {
+        font-size: 1.5rem;
+    }
+}
 
 	/* Portrait phones and smaller */
 /*	@media (max-width: 480px) {
@@ -219,9 +283,9 @@ li.button-group{
 
 /* responsive */
 
-@media (max-width: 1430px) {
+/*@media (max-width: 1430px) {
 	.jumbo-text {
-	max-width: 600px;
+		width: 600px;
 	}
 
 	.display-2 {
@@ -231,7 +295,7 @@ li.button-group{
 	.display-4 {
 		font-size: 1.6rem;
 	}
-}
+}*/
 
 
 /* CONTEXT */
