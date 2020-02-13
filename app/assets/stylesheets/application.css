@@ -154,14 +154,9 @@ li.button-group{
 	color: #10AB7C;
 }
 
-/*.jumbotron
-{
-    background-position: center 75%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 25em;
-}*/
-
+.cochon-pic {
+	width: 800px;
+}
 
 /* Show in Large desktops and laptops */
 @media (min-width: 1200px) {
