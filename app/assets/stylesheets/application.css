@@ -69,6 +69,7 @@ li.button-group{
 }
 .logo-nav{
  	max-width: 200px;
+ 	color: white;
 }
 
 .nav-fix{
@@ -86,23 +87,27 @@ li.button-group{
 }
 
 .assurance {
-	color: #274991;
+	/*color: #FFFB29 !important;*/
+	color: #33CCFF !important;
 }
 
 .energie {
-	color: #10ab7c;
+	/*color: #10ab7c !important;*/
+	color: #4DE85E !important;
 }
 
 .bank {
-	color:#ff0000;
+	/*color:#ff0000 !important;*/
+	color:#FFF261 !important;
 }
 
 .mutuelle {
-	color:#4dd2ff;
+	/*color:#4dd2ff !important;*/
+	color:#FFAC2D !important;
 }
 
 .numeric {
-	color:#cc9900;
+	color:#DA7EFF !important;
 }
 
 .connexion-item {
@@ -152,36 +157,23 @@ li.button-group{
 	color: #10AB7C;
 }
 
-.jumbotron
-{
-    /* background-image: url("baniere.jpg"); */
-	  /*  background-position: center 75%;
-	    background-size: cover;
-	    background-repeat: no-repeat;
-	    height: 25em;*/
-	  display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
 .cochon-pic {
 	width: 800px;
 }
 
-
 /* Show in Large desktops and laptops */
 @media (min-width: 1200px) {
-/*	#jumbo-image {
+		#jumbo-image {
 		background-image: url('jumbo.jpg');
 		max-width: 100%;
-		background-position: center 100%;
+		background-position: center 90%;
 	  background-size: cover;
 	  background-repeat: no-repeat;
-	  height: 65em;
+	  height: 60em;
 		-webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
-	}*/
+	}
 }
 
 	/*Hide in Other Small Devices */
