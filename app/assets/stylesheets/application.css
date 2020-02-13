@@ -69,6 +69,7 @@ li.button-group{
 }
 .logo-nav{
  	max-width: 200px;
+ 	color: white;
 }
 
 .nav-fix{
@@ -83,6 +84,26 @@ li.button-group{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+}
+
+.assurance {
+	color: #274991;
+}
+
+.energie {
+	color: #10ab7c;
+}
+
+.bank {
+	color:#ff0000;
+}
+
+.mutuelle {
+	color:#4dd2ff;
+}
+
+.numeric {
+	color:#cc9900;
 }
 
 .connexion-item {
@@ -122,28 +143,27 @@ li.button-group{
 	color: #10AB7C;
 }
 
-.jumbotron
+/*.jumbotron
 {
-    /* background-image: url("baniere.jpg"); */
     background-position: center 75%;
     background-size: cover;
     background-repeat: no-repeat;
     height: 25em;
-}
+}*/
 
 
 /* Show in Large desktops and laptops */
-/*@media (min-width: 1200px) {*/
-
+@media (min-width: 1200px) {
 	#jumbo-image {
-					background-image: url('jumbo.jpg');
-					background-repeat: no-repeat;
-					height: 800px;
-					max-width: 100%;
-					/*background-size:100% auto;*/
-			}
+		background-position: center 75%;
+		background-image: url('jumbo.jpg');
+		background-repeat: no-repeat;
+		height: 900px;
+		max-width: 100%;
+		/*background-size:100% auto;*/
+	}
 
-	/*}*/
+	}
 
 	/*Hide in Other Small Devices */
 

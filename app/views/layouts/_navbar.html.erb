@@ -1,7 +1,7 @@
 <nav id="navbar" class="navbar navbar-expand-lg nav-fix navbar-transparent navbar-dark navbar-theme-primary">
     <div class="container-fluid">
       <div class="logo">
-        <%=link_to(image_tag("logo.png", class: "logo-nav"), root_path)%>
+        <h2><%=link_to "Point Budget", root_path, class: "logo-nav"%></h2>
       </div>
       <div class="navbar-collapse collapse" id="navbar-primary">
         <div class="navbar-collapse-header">
@@ -16,7 +16,7 @@
         </div>
         <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
           <li class="nav-item dropdown">
-            <%= link_to "#", class: "nav-link secteur-item", data: {toggle:'dropdown'}, role:'button' do %>
+            <%= link_to "#", class: "nav-link secteur-item assurance", data: {toggle:'dropdown'}, role:'button' do %>
               <i class="fas fa-angle-down nav-link-arrow mr-2"></i>
               <strong>Assurance</strong>
             <% end %>
@@ -28,7 +28,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <%= link_to "#", class: "nav-link secteur-item", data: {toggle:'dropdown'}, role:'button' do %>
+            <%= link_to "#", class: "nav-link secteur-item energie", data: {toggle:'dropdown'}, role:'button' do %>
               <i class="fas fa-angle-down nav-link-arrow mr-2"></i>
               <strong>Energie</strong>
             <% end %>
@@ -38,7 +38,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <%= link_to "#", class: "nav-link secteur-item", data: {toggle:'dropdown'}, role:'button'  do%>
+            <%= link_to "#", class: "nav-link secteur-item bank", data: {toggle:'dropdown'}, role:'button'  do%>
               <i class="fas fa-angle-down nav-link-arrow mr-2"></i>
               <strong>Banque</strong>
             <% end %>
@@ -50,12 +50,12 @@
             </ul>
           </li>
           <li class="nav-item">
-            <%= link_to "#", class: "nav-link secteur-item" do %>
+            <%= link_to "#", class: "nav-link secteur-item mutuelle" do %>
               <strong>Mutuelle</strong>
             <% end %>
           </li>
           <li class="nav-item dropdown">
-            <%= link_to "#", class: "nav-link secteur-item", data: {toggle:'dropdown'}, role:'button' do %>
+            <%= link_to "#", class: "nav-link secteur-item numeric", data: {toggle:'dropdown'}, role:'button' do %>
               <i class="fas fa-angle-down nav-link-arrow mr-2"></i>
               <strong>Numérique</strong>
             <% end %>
