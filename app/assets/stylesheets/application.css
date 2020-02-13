@@ -87,23 +87,27 @@ li.button-group{
 }
 
 .assurance {
-	color: #274991 !important;
+	/*color: #FFFB29 !important;*/
+	color: #33CCFF !important;
 }
 
 .energie {
-	color: #10ab7c !important;
+	/*color: #10ab7c !important;*/
+	color: #4DE85E !important;
 }
 
 .bank {
-	color:#ff0000 !important;
+	/*color:#ff0000 !important;*/
+	color:#FFF261 !important;
 }
 
 .mutuelle {
-	color:#4dd2ff !important;
+	/*color:#4dd2ff !important;*/
+	color:#FFAC2D !important;
 }
 
 .numeric {
-	color:#cc9900 !important;
+	color:#DA7EFF !important;
 }
 
 .connexion-item {
