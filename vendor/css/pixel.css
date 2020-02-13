@@ -5854,7 +5854,7 @@ input[type="button"].btn-block {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1rem;
+    padding: 1.5rem 1rem;
 }
 
 .navbar>.container,
@@ -6177,7 +6177,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    /*color: rgba(255, 255, 255, 0.9);*/
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
