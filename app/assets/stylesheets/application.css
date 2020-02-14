@@ -296,6 +296,7 @@ li.button-group{
 /* CONSTAT
 ============================================= */
 
+#solution,
 #context{
 	margin-bottom: 100px;
 }
@@ -314,12 +315,21 @@ li.button-group{
 	margin-top: 50px;
 }*/
 
+#solution .lead span,
 #context .lead span {
 	color: red;
 }
 .title-context h2{
 	padding: 40px 0 30px 0;
 	text-align: center;
+}
+
+/* SOLUTION 
+=============================== */
+
+#solution .content {
+	border: 2px solid grey;
+	padding: 20px 15px 10px 15px;
 }
 
 
