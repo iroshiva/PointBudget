@@ -344,7 +344,13 @@ li.button-group{
 	color: white;
 }
 
-/* TIMELINE */
+/* TIMELINE 
+========================================= */
+
+.timeline-section {
+	display: flex;
+	flex-direction: row;
+}
 
 #steps{
 	margin-top: 40px;
