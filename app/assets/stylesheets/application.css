@@ -341,7 +341,7 @@ li.button-group{
   background-image: url("parallax_img.jpg");
 
   /* Set a specific height */
-  height: 500px;
+  height: 700px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -355,6 +355,10 @@ li.button-group{
 #benefits{
 	color: white;
  }
+
+.benefits-content {
+	margin: auto;
+}
 
 #benefits .icon{
 	font-size: 38px;
