@@ -319,9 +319,44 @@ li.button-group{
 #context .lead span {
 	color: red;
 }
+
+#context p {
+	line-height: 1.4em;
+}
+
+#context .lead {
+	margin-bottom: 12px !important;
+}
+
 .title-context h2{
 	padding: 40px 0 30px 0;
 	text-align: center;
+}
+
+.constat-blue {
+	color: #33CCFF;
+	font-size: 27px;
+	font-weight: 900;
+	line-height: 140%;
+}
+
+#context .pb-category p {
+	display: inline-block;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 120%;
+}
+
+.pb-category {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.constat-title {
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 120%;
 }
 
 /* SOLUTION 
