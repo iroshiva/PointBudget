@@ -334,8 +334,8 @@ li.button-group{
 }
 
 .constat-blue {
-	color: #33CCFF;
-	font-size: 27px;
+	color: #274991;
+	/*font-size: 27px;*/
 	font-weight: 900;
 	line-height: 140%;
 }
@@ -346,6 +346,46 @@ li.button-group{
 	font-weight: 600;
 	line-height: 120%;
 }
+
+.ovale {
+	display: flex;
+	border-radius: 50%;
+}
+
+.ovale-assurance {
+	border: 3px #33CCFF solid;
+	height: 100px;
+	width: 180px;
+}
+
+.ovale-energy {
+	border: 3px #4DE85E solid;
+	height: 100px;
+	width: 180px;
+}
+
+.ovale-bank {
+	border: 3px #FFF261 solid;
+	height: 100px;
+	width: 180px;
+}
+
+.ovale-mutuelle {
+	border: 3px #FFAC2D solid;
+	height: 100px;
+	width: 180px;
+}
+
+.ovale-numeric {
+	border: 3px #DA7EFF solid;
+	height: 100px;
+	width: 180px;
+}
+
+.ovale p {
+	margin: 0em auto;
+}
+
 
 .pb-category {
 	display: flex;
