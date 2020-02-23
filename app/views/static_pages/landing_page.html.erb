@@ -95,14 +95,14 @@
 
   <!-- TIMELINE -->
 
-  <div id="steps" class="container">   
+<!--   <div id="steps" class="container">   
 
     <div class="title text-center">
         <h2>Point Budget en 4 étapes</h2>
     </div>                                                     
     <div class="timeline timeline-one">
 
-    <!-- Timeline Item 1 -->
+
       <div class="timeline-item">
         <span class="icon text-secondary"><i class="fas fa-sign-in-alt"></i></i>
         </span>
@@ -110,7 +110,7 @@
         <p>Rien de plus simple!<br> Vous trouverez un espace de connexion dans la barre de navigation, à droite, ou à la fin des étapes.</p>
       </div>
 
-    <!-- Timeline Item 2 -->
+
       <div class="timeline-item">
         <span class="icon text-primary"><i class="fas fa-chalkboard"></i></span>
         <h4 class="my-3">Accès à votre espace personnel</h4>
@@ -132,7 +132,7 @@
         </ul>
       </div>
 
-    <!-- Timeline Item 3 -->
+
       <div class="timeline-item">
         <span class="icon text-secondary"><i class="fas fa-calculator"></i></span>
         <h4 class="my-3">Lancer une simulation</h4>
@@ -142,7 +142,7 @@
         <p>Prêt... Feu.... Simuler!</p>
       </div>
 
- <!-- Timeline Item 4 -->
+
         <div class="timeline-item">
         <span class="icon text-primary"><i class="fas fa-comments"></i></span>
         <h4 class="my-3">Vous êtes décidé à faire des économies?</h4>
@@ -161,12 +161,12 @@
   <div class="log-in-button mx-md-5 mx-1">
     <%= link_to "Je me connecte", new_user_session_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
   </div>
-</div>
+</div> -->
 
 
 <!-- test other timeline -->
 
-<div class="container">
+<div class="container mt-5 mb-7">
   <div class="title text-center mb-5">
     <h2>Point Budget en 4 étapes</h2>
   </div>
@@ -204,7 +204,7 @@
             </ul>
           </div>
         </div>
-        <a href="#" class="timeline">
+        <div class="timeline">
           <div class="timeline-icon"><%= image_tag('calculator-solid.svg') %></div>
           <div class="timeline-content">
             <h3 class="title-time">Lancer une simulation</h3>
@@ -213,8 +213,8 @@
             <p class="description mb-4">Répondez aux questions et nous nous occupons du reste!</p>
             <p class="description mb-4">Prêt... Feu.... Simuler!</p>
           </div>
-        </a>
-        <a href="#" class="timeline">
+        </div>
+        <div class="timeline">
           <div class="timeline-icon"><%= image_tag('comments-solid.svg') %></div>
           <div class="timeline-content">
             <h3 class="title-time">Vous êtes décidé à faire des économies?</h3>
@@ -222,8 +222,17 @@
             <p class="description mb-4">Vous avez maintenant une idée de ce que vous avez à gagner en utilisant nos services.</p>
             <p class="description mb-4">Nous vous contacterons quand vous l'aurez décidé afin de connaître vos souhaits et les exaucer.</p>
           </div>
-        </a>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container d-flex justify-content-center logs-button">
+  <div class="sign-up-button mx-md-5 mx-1">
+    <%= link_to "Je crée mon compte", new_user_registration_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
+  </div>
+  <div class="log-in-button mx-md-5 mx-1">
+    <%= link_to "Je me connecte", new_user_session_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
   </div>
 </div>
