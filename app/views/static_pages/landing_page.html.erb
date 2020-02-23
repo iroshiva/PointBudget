@@ -95,14 +95,13 @@
 
   <!-- TIMELINE -->
 
-  <div id="steps" class="container">   
+<!--   <div id="steps" class="container">   
 
     <div class="title text-center">
         <h2>Point Budget en 4 étapes</h2>
     </div>                                                     
     <div class="timeline timeline-one">
 
-    <!-- Timeline Item 1 -->
 
       <div class="timeline-item">
         <span class="icon text-secondary"><i class="fas fa-sign-in-alt"></i></i>
@@ -111,25 +110,20 @@
         <p>Rien de plus simple!<br> Vous trouverez un espace de connexion dans la barre de navigation, à droite, ou à la fin des étapes.</p>
       </div>
 
-    <!-- Timeline Item 2 -->
 
       <div class="timeline-item">
         <span class="icon text-primary"><i class="fas fa-chalkboard"></i></span>
         <h4 class="my-3">Accès à votre espace personnel</h4>
         <p>Vous êtes maintenant inscrits!</p>
-        <!-- <p>Afin de vous accompagner au mieux et vous donner un maximum d'autonomie de gestion, vous aurez directement accès à votre espace personnel après votre connexion.</p> -->
         <p>S'offrent à vous différentes possibilités:</p>
         <ul>
           <li>
-            <!-- <p>De modifier votre profil.</p> -->
             <p>Faire une étude complète de votre budget.</p>
           </li>
           <li>
-            <!-- <p>D'accéder à vos simulations en cours ou terminées.</p> -->
             <p>Choisir un ou plusieurs domaines à étudier.</p>
           </li>
           <li>
-            <!-- <p>Et surtout de lancer une nouvelle simulation afin de faire le point sur vos dépenses mensuelles.</p> -->
             <p>Accéder à vos simulations en cours et/ou terminées.</p>
           </li>
           <li>
@@ -138,7 +132,6 @@
         </ul>
       </div>
 
-    <!-- Timeline Item 3 -->
 
       <div class="timeline-item">
         <span class="icon text-secondary"><i class="fas fa-calculator"></i></span>
@@ -146,31 +139,9 @@
         <p>Afin de gagner du temps, munissez-vous d'un maximum <br>de vos contrats ou factures.</p>
         <p>Choisissez les domaines où vous souhaitez que nous intervenions.</p>
         <p>Répondez aux questions et nous nous occupons du reste!</p>
-        <!-- <p>Selon vos besoins, il suffira de remplir nos formulaires concernant les domaines: </p> -->
-   <!--      <div class="container" style="text-align: left;">
-          <div class="row">
-            <div class="col-md-7">
-            </div>
-            <div class="col-md-5">
-              <ul>
-                <li>
-                  <p>Energetique.</p>
-                </li>
-                <li>
-                  <p>Numérique.</p>
-                </li>
-                <li>
-                  <p>Banquaire.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
         <p>Prêt... Feu.... Simuler!</p>
       </div>
 
-
- <!-- Timeline Item 4 -->
 
         <div class="timeline-item">
         <span class="icon text-primary"><i class="fas fa-comments"></i></span>
@@ -182,6 +153,80 @@
     </div>
   </div>
 </main>
+
+<div class="container d-flex justify-content-center logs-button">
+  <div class="sign-up-button mx-md-5 mx-1">
+    <%= link_to "Je crée mon compte", new_user_registration_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
+  </div>
+  <div class="log-in-button mx-md-5 mx-1">
+    <%= link_to "Je me connecte", new_user_session_path, class: "btn mr-2 mb-2 btn-pill btn-primary" %>
+  </div>
+</div> -->
+
+
+<!-- test other timeline -->
+
+<div class="container mt-5 mb-7">
+  <div class="title text-center mb-5">
+    <h2>Point Budget en 4 étapes</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="main-timeline">
+        <div class="timeline timeline-item">
+          <div class="timeline-icon icon"><%= image_tag('sign-in-alt-solid.svg') %></div>
+          <div class="timeline-content">
+            <h3 class="title-time">Vous inscrire/Vous connecter</h3>
+            <p class="description">
+                Rien de plus simple!<br><br> Vous trouverez un espace de connexion dans la barre de navigation, à droite, ou à la fin des étapes.
+            </p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-icon"><%= image_tag('chalkboard-teacher-solid.svg') %></div>
+          <div class="timeline-content">
+            <h3 class="title-time">Accès à votre espace personnel</h3>
+            <p class="description mb-4">Vous êtes maintenant inscrits!</p>
+            <p class="description mb-4">S'offrent à vous différentes possibilités:</p>
+            <ul class="description">
+              <li>
+                <p>Faire une étude complète de votre budget.</p>
+              </li>
+              <li>
+                <p>Choisir un ou plusieurs domaines à étudier.</p>
+              </li>
+              <li>
+                <p>Accéder à vos simulations en cours et/ou terminées.</p>
+              </li>
+              <li>
+                <p>Joindre les documents nécessaires à l'étude.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-icon"><%= image_tag('calculator-solid.svg') %></div>
+          <div class="timeline-content">
+            <h3 class="title-time">Lancer une simulation</h3>
+            <p class="description mb-4">Afin de gagner du temps, munissez-vous d'un maximum <br>de vos contrats ou factures.</p>
+            <p class="description mb-4">Choisissez les domaines où vous souhaitez que nous intervenions.</p>
+            <p class="description mb-4">Répondez aux questions et nous nous occupons du reste!</p>
+            <p class="description mb-4">Prêt... Feu.... Simuler!</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-icon"><%= image_tag('comments-solid.svg') %></div>
+          <div class="timeline-content">
+            <h3 class="title-time">Vous êtes décidé à faire des économies?</h3>
+            <p class="description mb-4">C'est maintenant que nous prenons le relais!</p>
+            <p class="description mb-4">Vous avez maintenant une idée de ce que vous avez à gagner en utilisant nos services.</p>
+            <p class="description mb-4">Nous vous contacterons quand vous l'aurez décidé afin de connaître vos souhaits et les exaucer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container d-flex justify-content-center logs-button">
   <div class="sign-up-button mx-md-5 mx-1">
