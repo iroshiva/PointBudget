@@ -166,7 +166,7 @@ li.button-group{
 		background-position: center 90%;
 	  background-size: cover;
 	  background-repeat: no-repeat;
-	  height: 60em;
+	  height: 55em;
 		-webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
@@ -298,7 +298,7 @@ li.button-group{
 
 #solution,
 #context{
-	margin-bottom: 100px;
+	margin-bottom: 160px;
 }
 
 #context .icon{
