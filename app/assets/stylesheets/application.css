@@ -123,6 +123,11 @@ li.button-group{
 /* JUMBOTRON 
 ===================================*/
 
+/*.upper-jumbo {
+	margin-top: 100px;
+	background-color: #EBEBED;
+}*/
+
 .text-width {
 	width: 700px;
 	margin-left: 50px;
@@ -162,20 +167,20 @@ li.button-group{
 }
 
 /* Show in Large desktops and laptops */
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {*/
 		#jumbo-image {
-		background-image: url('jumbo.jpg');
+		background-image: url('jumbo_3.jpg');
 		max-width: 100%;
-		background-position: center 90%;
+		background-position: center 0%;
 	  background-size: cover;
 	  background-repeat: no-repeat;
-	  height: 55em;
+	  height: 40em;
 		-webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
 	}
 
-}
+/*}*/
 
 	/*Hide in Other Small Devices */
 
@@ -187,11 +192,11 @@ li.button-group{
 		background-color:  white;
 		height: 55em;
 		text-align: center;
-	}*/
+	}
 
 	.cochon {
 		display: none;
-	}
+	}*/
 
 	.text-width {
 		width: 100%;
@@ -202,16 +207,16 @@ li.button-group{
 
 	/* Portrait tablets and small desktops */
 @media (max-width: 991px) {
-	/*#jumbo-image {
+/*	#jumbo-image {
 		background-image: none;
 		background-color:  white;
 		text-align: center;
 		height: 55em;
-	}*/
+	}
 
 	.cochon {
 		display: none;
-	}
+	}*/
 	
 	.jumbo-text {
 		width: 400px;
@@ -232,11 +237,11 @@ li.button-group{
 		background-color:  white;
 		text-align: center;
 		justify-content: center;
-	}*/
+	}
 
 	.cochon {
 		display: none;
-	}
+	}*/
 
 	.jumbotron {
 		padding-top: 5rem;

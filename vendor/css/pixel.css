@@ -5766,7 +5766,7 @@ input[type="button"].btn-block {
 }
 
 .nav-link {
-    display: block;
+    /*display: block;*/
     padding: 0.25rem 0.75rem;
 }
 
