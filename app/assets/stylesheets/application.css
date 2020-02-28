@@ -169,12 +169,12 @@ li.button-group{
 /* Show in Large desktops and laptops */
 /*@media (min-width: 1200px) {*/
 		#jumbo-image {
-		background-image: url('jumbo_3.jpg');
+		background-image: url('jumbo.jpg');
 		max-width: 100%;
-		background-position: center 0%;
+		background-position: center 70%;
 	  background-size: cover;
 	  background-repeat: no-repeat;
-	  height: 40em;
+	  height: 54em;
 		-webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
