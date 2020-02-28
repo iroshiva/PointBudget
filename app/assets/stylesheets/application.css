@@ -471,6 +471,11 @@ li.button-group{
 	color: white;
 }
 
+.container-promess {
+	width: 80%;
+	margin: 0 auto;
+}
+
 /* TIMELINE 
 ========================================= */
 
@@ -544,7 +549,7 @@ h4 {
 	border:4px solid #fff;
 	background:#ec496e;
 	position:absolute;
-	top:43%;
+	top:38%;
 	left:50%;
 	z-index:1;
 	transform:translate(-50%,-50%);
@@ -564,7 +569,7 @@ h4 {
 	transform:translateY(-50%);
 
 	/* height of party timeline-icon */
-	top:43%;
+	top:38%;
 }
 
 .main-timeline .timeline-icon img{
@@ -829,14 +834,14 @@ h4 {
 	}
 	.main-timeline .timeline-icon{
 		left:25%;
-		top: 43% !important;
+		top: 40% !important;
 	}
 	.main-timeline .timeline:nth-child(even) .timeline-icon{
 		right:25%;
-		top: 43% !important;
+		top: 40% !important;
 	}
 	.main-timeline .timeline::before {
-		top: 43% !important;
+		top: 40% !important;
 	}
 	.main-timeline .timeline-content{
 		margin-top:115px;
