@@ -2,7 +2,7 @@
 
 <main>
 <!-- CONSTAT -->
-  <div class="container mt-5" id="context">
+  <div class="container mt-3" id="context">
    <!--  <div class="icon-position">
       <span class="text-white icon bg-secondary"><i class="fas fa-lightbulb"></i></span>
     </div> -->
@@ -27,8 +27,8 @@
         <h3 class="text-center constat-blue">Point Budget s'occupe de tout et vous faites des économies.</h3>
       </div>
       <p class="lead text-center pb-3 constat-gratuit">Vous avez dit gratuit?<br>Oui et ça le restera toujours. </p>
-      <p class="lead pb-5">Point Budget se rémunère grâce aux partenaires des domaines étudiés et de façon <strong>équitable</strong>, ce qui permet d'instaurer une <strong>impartialité</strong> et de ne favoriser aucun fournisseur au profit de l'autre. </p>
-      <h3 class="text-center constat-blue">COMMENT SAVOIR SI VOS DEPENSES MENSUELLES SONT JUSTIFIEES ?</h3>
+      <p class="lead">Point Budget se rémunère grâce aux partenaires des domaines étudiés et de façon <strong>équitable</strong>, ce qui permet d'instaurer une <strong>impartialité</strong> et de ne favoriser aucun fournisseur au profit de l'autre. </p>
+      <h3 class="text-center constat-blue pt-5">COMMENT SAVOIR SI VOS DEPENSES MENSUELLES SONT JUSTIFIEES ?</h3>
       <h5 class="text-center pt-4">Point Budget a choisi de vous proposer son expertise dans les domaines suivants</h5>
       <div class="pb-category pt-5">
         <div class="ovale ovale-assurance">
@@ -69,26 +69,33 @@
   <div id="benefits" class="container-fluid d-flex flex-column parallax">
     <div class="benefits-content">
       <div class="row">
-        <div class="col-12 mt-5 mb-4">
+        <div class="col-12 mt-5 mb-5">
           <h2 class="title-benefits text-center">PointBudget vous promet</h2>
         </div>
       </div>
+      <div class="container-promess">
       <div class="row d-flex justify-content-around my-4">
-        <div class="col-sm-8 col-md-3 icon-position mb-4">
-          <span class="icon text-secondary icon"><i class="fas fa-balance-scale"></i></span>
-          <h3 class="title-color">Fiabilité</h3>
-          <p>Tous nos partenaires sont soigneusement sélectionnés pour la qualité de leur contrat <br>et leur sérieux.</p>
-        </div>
-        <div class="col-sm-8 col-md-3 icon-position mb-4">
+        <div class="col-lg-3 col-sm-8 col-md-3 icon-position mb-4">
           <span class="icon text-secondary icon"><i class="fas fa-euro-sign"></i></span>
           <h3 class="title-color">Gratuité</h3>
-          <p>Service 100% gratuit, vous ne payez rien ! <br>Ce sont nos partenaires qui nous versent <br>une commission.</p>
+          <p>Tout est 100% gratuit, vous ne payez rien à personne et pour toujours !</p>
         </div>
-        <div class="col-sm-8 col-md-3 icon-position mb-4">
+        <div class="col-lg-3 col-sm-8 col-md-3 icon-position mb-4">
+          <span class="icon text-secondary icon"><i class="fas fa-balance-scale"></i></span>
+          <h3 class="title-color">Fiabilité</h3>
+          <p>Tous les partenaires sont soigneusement sélectionnés pour la qualité de leur contrat et leur sérieux</p>
+        </div>
+        <div class="col-lg-3 col-sm-8 col-md-3 icon-position mb-4">
           <span class="icon text-secondary icon"><i class="fas fa-info-circle"></i></span>
-          <h3 class="title-color">Simplicité</h3>
-          <p>Faites vos simulations et prenez rendez-vous. <br>Nous nous occupons du reste!</p>
+          <h3 class="title-color">Equité</h3>
+          <p>Tous les clients sont égaux et bénéficient des mêmes conditions, peu importe le montant de leur facture</p>
         </div>
+        <div class="col-lg-3 col-sm-8 col-md-3 icon-position mb-4">
+          <span class="icon text-secondary icon"><i class="fas fa-info-circle"></i></span>
+          <h3 class="title-color">Réactivité</h3>
+          <p>Toutes vos demandes sont prisent en charge dans les 48 heures suivant votre demande</p>
+        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -176,9 +183,9 @@
         <div class="timeline timeline-item">
           <div class="timeline-icon icon"><%= image_tag('sign-in-alt-solid.svg') %></div>
           <div class="timeline-content">
-            <h3 class="title-time">Vous inscrire/Vous connecter</h3>
-            <p class="description">
-                Rien de plus simple!<br><br> Vous trouverez un espace de connexion dans la barre de navigation, à droite, ou à la fin des étapes.
+            <h3 class="title-time">Vous inscrire / Vous connecter</h3>
+            <p class="description mb-4">
+                Rien de plus simple!<br><br> Vous trouverez un espace de connexion dans la barre de navigation ou à la fin des étapes.
             </p>
           </div>
         </div>
@@ -209,8 +216,8 @@
           <div class="timeline-content">
             <h3 class="title-time">Lancer une simulation</h3>
             <p class="description mb-4">Afin de gagner du temps, munissez-vous d'un maximum <br>de vos contrats ou factures.</p>
-            <p class="description mb-4">Choisissez les domaines où vous souhaitez que nous intervenions.</p>
-            <p class="description mb-4">Répondez aux questions et nous nous occupons du reste!</p>
+            <p class="description mb-4">Choisissez les domaines où vous pensez pouvoir faire des économies.</p>
+            <p class="description mb-4">Répondez aux questions et votre expert s'occupe du reste!</p>
             <p class="description mb-4">Prêt... Feu.... Simuler!</p>
           </div>
         </div>
@@ -218,9 +225,9 @@
           <div class="timeline-icon"><%= image_tag('comments-solid.svg') %></div>
           <div class="timeline-content">
             <h3 class="title-time">Vous êtes décidé à faire des économies?</h3>
-            <p class="description mb-4">C'est maintenant que nous prenons le relais!</p>
-            <p class="description mb-4">Vous avez maintenant une idée de ce que vous avez à gagner en utilisant nos services.</p>
-            <p class="description mb-4">Nous vous contacterons quand vous l'aurez décidé afin de connaître vos souhaits et les exaucer.</p>
+            <p class="description mb-4">C’est maintenant que Point Budget prends le relais!</p>
+            <p class="description mb-4">Vous avez maintenant une idée de ce que vous avez à gagner en utilisant notre service.</p>
+            <p class="description mb-4">Votre expert vous contactera quand vous l'aurez décidé afin de connaître vos souhaits et les exaucer.</p>
           </div>
         </div>
       </div>
