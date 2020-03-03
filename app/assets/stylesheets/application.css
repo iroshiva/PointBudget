@@ -109,7 +109,7 @@ li.button-group{
 }
 
 .numeric {
-	color:#cc3399 !important;
+	color:#F87AFF !important;
 	/*color:#FFAC2D !important;*/
 }
 
@@ -362,7 +362,7 @@ li.button-group{
 
 .ovale-assurance {
 	/*border: 3px #33CCFF solid;*/
-	border: 3px #CF4F3C solid;
+	border: 3px #33CCFF solid;
 	height: 100px;
 	width: 180px;
 }
@@ -382,15 +382,15 @@ li.button-group{
 }
 
 .ovale-mutuelle {
-	/*border: 3px #FFAC2D solid;*/
-	border: 3px #33CCFF solid;
+	border: 3px #FFAC2D solid;
+	/*border: 3px #33CCFF solid;*/
 	height: 100px;
 	width: 180px;
 }
 
 .ovale-numeric {
-	/*border: 3px #DA7EFF solid;*/
-	border: 3px #FFAC2D solid;
+	border: 3px #F87AFF solid;
+	/*border: 3px #FFAC2D solid;*/
 	height: 100px;
 	width: 180px;
 }
