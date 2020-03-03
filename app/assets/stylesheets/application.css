@@ -957,6 +957,18 @@ h4 {
 .main-timeline .timeline-content:after,.main-timeline .timeline:nth-child(2n) .timeline-content:after{left:65px}
 }
 
+/* Avis section
+================================= */
+
+.avis-date {
+	font-size: 12px;
+}
+
+/*.border-light {
+	-webkit-box-shadow: 0px 0px 46px 34px rgba(227,227,227,0.98);
+	-moz-box-shadow: 0px 0px 46px 34px rgba(227,227,227,0.98);
+	box-shadow: 0px 0px 46px 34px rgba(227,227,227,0.98);
+}*/
 
 /* DASHBOARD ADMIN 
 ======================================*/
