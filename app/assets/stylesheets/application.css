@@ -433,9 +433,6 @@ li.button-group{
   /* The image used */
   background-image: url("parallax_img.jpg");
 
-  /* Set a specific height */
-  height: 700px;
-
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -451,6 +448,7 @@ li.button-group{
 
 .benefits-content {
 	margin: auto;
+	padding: 80px 0px;
 }
 
 #benefits .icon{
@@ -479,7 +477,10 @@ li.button-group{
 
 /* TIMELINE 
 ========================================= */
-
+#timelin {
+	margin: 50px auto;
+	padding: 50px 0px;
+}
 .timeline-section {
 	display: flex;
 	flex-direction: row;
@@ -525,11 +526,11 @@ h4 {
 
 .main-timeline:before{
 	content:"";
-	width:5px;
+	width:2px;
 	height:100%;
 	border-radius:20px;
 	margin:0 auto;
-	background:grey;
+	background: #404040;
 	position:absolute;
 	top:0;
 	left:0;
@@ -577,13 +578,9 @@ h4 {
 /* l'icon lui-même */
 .main-timeline .timeline-icon img{
 	display:block;
-	/*width: 10px;*/
 	border:12px solid #274991;
 	border-radius:40%;
 	background:#274991 !important;
-	/*font-size:64px;*/
-	/*color:#fff!important;*/
-	/*line-height:100px;*/
 	z-index:1;
 	position:relative;
 }
@@ -612,20 +609,12 @@ h4 {
 	right:-30px;
 }
 
-/*.fa-globe {
-	font-size: 80px;
-	z-index: 100;
-}*/
-
 .main-timeline .timeline-content{
 	width:50%;
 	padding:0 50px;
 	margin:65px 0 0;
 	float:right;
 	position:relative;
-
-	/* height of party timeline-icon */
-	/*top: 4% !important;*/
 }
 
 /* traits vert et horiz qui entoure le texte */
@@ -667,7 +656,6 @@ h4 {
 	font-size:16px;
 	color:#404040;
 	line-height:20px;
-	/*letter-spacing:1px;*/
 	margin:0;
 }
 
@@ -723,7 +711,6 @@ h4 {
 
 .main-timeline .timeline:nth-child(2n) .title-time{
 	color:#10ab7c;
-	/*border-color:#4CC440 !important;*/
 }
 
 .main-timeline .timeline:nth-child(2n) .timeline-content:before{
@@ -971,11 +958,10 @@ h4 {
 	font-size: 12px;
 }
 
-/*.border-light {
-	-webkit-box-shadow: 0px 0px 46px 34px rgba(227,227,227,0.98);
-	-moz-box-shadow: 0px 0px 46px 34px rgba(227,227,227,0.98);
-	box-shadow: 0px 0px 46px 34px rgba(227,227,227,0.98);
-}*/
+#avis {
+	margin: 100px auto;
+	padding: 50px 0px;
+}
 
 /* DASHBOARD ADMIN 
 ======================================*/
