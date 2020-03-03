@@ -172,8 +172,8 @@
 
 
 <!-- test other timeline -->
-
-<div class="container mt-5 mb-7">
+<div id="timelin">
+<div class="container">
   <div class="title text-center mb-5">
     <h2>Point Budget en 4 étapes</h2>
   </div>
@@ -244,6 +244,8 @@
   </div>
 </div>
 
+</div>
+
 <!-- Avis section -->
 
 <div id="avis">
@@ -251,9 +253,12 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="profile-card">
-          <div class="card shadow-lg text-center">
+          <div class="card shadow-sm text-center border-light">
+            <div class="profile-image-small mt-n6">
+              <%= image_tag('jumbo_3.jpg', class:"card-img-top organic-radius", style:"width:200px; height:120px") %>
+            </div>      
             <div class="card-body">
-              <h5 class="card-title text-left mb-3">Robert</h5>
+              <h5 class="card-title text-center mb-3">Robert</h5>
               <p class="card-text">"Some quick example text to build on the card title and make up the bulk of the card's content."
               </p>
               <p class="avis-date mb-0 text-right">
@@ -266,13 +271,11 @@
       <div class="col-lg-4">
         <div class="profile-card">
           <div class="card shadow-sm text-center border-light">
-            <div class="profile-cover" style="background-image: url(<%= asset_path 'jumbo.jpg' %>)">
-            </div>
             <div class="profile-image-small mt-n6">
               <%= image_tag('jumbo_3.jpg', class:"card-img-top organic-radius", style:"width:200px; height:120px") %>
-            </div>    
+            </div>      
             <div class="card-body">
-              <h5 class="card-title text-left mb-3">Robert</h5>
+              <h5 class="card-title text-center mb-3">Robert</h5>
               <p class="card-text">"Some quick example text to build on the card title and make up the bulk of the card's content."
               </p>
               <p class="avis-date mb-0 text-right">
