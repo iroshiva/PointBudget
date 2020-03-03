@@ -88,8 +88,8 @@ li.button-group{
 
 .assurance {
 	/*color: #FFFB29 !important;*/
-	/*color: #33CCFF !important;*/
-	color: #CF4F3C !important;
+	color: #33CCFF !important;
+	/*color: #CF4F3C !important;*/
 }
 
 .energie {
@@ -104,13 +104,13 @@ li.button-group{
 
 .mutuelle {
 	/*color:#4dd2ff !important;*/
-	/*color:#FFAC2D !important;*/
-	color:#33CCFF !important;
+	color:#FFAC2D !important;
+	/*color:#33CCFF !important;*/
 }
 
 .numeric {
-	/*color:#DA7EFF !important;*/
-	color:#FFAC2D !important;
+	color:#cc3399 !important;
+	/*color:#FFAC2D !important;*/
 }
 
 .connexion-item {
