@@ -7,11 +7,6 @@
   "resolutions": { 
     "serialize-javascript": "^2.1.1" 
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "rspec"
-    }
-  },
   "devDependencies": {
     "webpack": "^4.39.3",
     "webpack-dev-server": "^3.8.0"
