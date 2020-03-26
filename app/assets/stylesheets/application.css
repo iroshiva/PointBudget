@@ -170,7 +170,8 @@ li.button-group{
 /*@media (min-width: 1200px) {*/
 		#jumbo-image {
 		background-image: url('jumbo.jpg');
-		max-width: 100%;
+		/*width: auto;*/
+		max-height: 100%;
 		background-position: center 70%;
 	  background-size: cover;
 	  background-repeat: no-repeat;
@@ -431,7 +432,7 @@ li.button-group{
 
 .parallax {
   /* The image used */
-  background-image: url("parallax_img.jpg");
+  background-image: url("parallax.jpg");
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
