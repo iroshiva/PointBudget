@@ -66,8 +66,8 @@
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-hover align-items-lg-end ml-auto">
-            <li class="nav-item"><%= link_to "A propos", static_pages_about_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "Contact", {:anchor => "footer"}, data:{trigger_button:"#toggler"}, class: "nav-link" %></li>
+            <!-- <li class="nav-item"><%= link_to "A propos", static_pages_about_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "Contact", {:anchor => "footer"}, data:{trigger_button:"#toggler"}, class: "nav-link" %></li> -->
           <% if user_signed_in? %>
             <li><%= link_to "Commencer une simulation", new_user_full_simulation_path(current_user), class: "nav-item nav-link"%></li>
             <li class="nav-item dropdown">
@@ -86,7 +86,7 @@
             <li class="nav-item dropdown">
               <%= link_to "", class:'nav-link', data: {toggle:'dropdown'}, role:'button' do %>
                 <i class="fas fa-angle-down nav-link-arrow"></i>
-                <span class="nav-link-inner-text">S'inscrire/Se connecter</span>
+                <span class="nav-link-inner-text">Se connecter</span>
               <% end %>
 
               <ul class="dropdown-menu">
