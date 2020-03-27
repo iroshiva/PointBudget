@@ -8,20 +8,23 @@
       <!-- <h1 class="display-2 align-self-start"> Nous comparons ... </h1>
       <h1 class="display-2 align-self-center mb-5"> ... Vous économisez </h1>
       <h1 class="display-4 align-self-center mb-5">Payez-vous au juste prix vos factures?</h1>  -->
-      <div class="row jumbo-text">
-        <div class="col-md-3 btn-no-disp"> 
-          <div class="col-md-12 jumbo-btn">
+      <div class="jumbo-btn">
+        <div class="row">
+          <div class="col-4 btn-no-disp">
             <% if user_signed_in? %>
-              <%=link_to "Lancer une simulation", new_user_full_simulation_path(current_user), class: "mr-2 mb-2 btn-jumbo btn-lg mt-3"%>
+              <%=link_to "Lancer une simulation", new_user_full_simulation_path(current_user), class: "btn-jumbo"%>
             <%else%>
               <%=link_to "Faire une étude gratuite", new_user_registration_path, class: "btn-etude"%>
-              <%=link_to "Me connecter", new_user_session_path, class: "btn-log mr-2 mb-2 mt-3"%>
+              <%=link_to "Me connecter", new_user_session_path, class: "btn-log"%>
             <%end%>
           </div>
         </div>
-        <div class="col-md-12 txt">
-          <h3 class="display-7 text-center">Le premier outil qui permet de comparer vos dépenses aux meilleurs contrats du marché</h3> 
+      </div>
+      <div class="jumbo-text">
+        <div class="row">
+          <div class="col-md-12 txt">
+            <h3 class="display-7 text-center">Le premier outil qui permet de comparer vos dépenses aux meilleurs contrats du marché</h3> 
+          </div>
         </div>
       </div>
-    <!-- </div> -->
 </div>

@@ -128,8 +128,8 @@ li.button-group{
 	background-position: center 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.2);
-  color: #274991;;
+ /* box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.2);
+  color: #274991;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -139,22 +139,12 @@ li.button-group{
   
 }
 
-.jumbotron {
-
-}
-
 /*.text-width {
 	width: 700px;
 	margin-left: 50px;
 	display: flex;
 	flex-direction: row;
 }*/
-
-.jumbo-text {
-	display: flex;
-	flex-direction: column;
-	/*width: 700px;*/
-}
 
 .jumbo-text .jumbo-btn {
 	display: flex;
@@ -186,7 +176,6 @@ li.button-group{
 .btn-etude:hover {
   border: #274991 3px solid;
   background-color: #274991;
-
   color: #ffffff;
 }
 
@@ -212,18 +201,67 @@ li.button-group{
 		font-weight: 700;
 		line-height: 140%;
 		padding: 13px;
-		/*background-color: rgba(42, 53, 79, 0.07);*/
+		margin-top: 175px;
 	}
 
 	.jumbo-text {
 		align-self: center;
-		/*margin-bottom: 40px;*/
 	}
 
 	.jumbo-text .txt {
 		padding-left: 40px;
 		padding-right: 40px;
+	}
+
+	.btn-no-disp {
+		display: none;
+	}
+	
+	.btn-etude,
+	.btn-log {
+		margin: 10px auto;
+		height: 46px;
+	  font-size: 15px; 
+	  padding-top: 8px;
+	}
+
+	.btn-etude {
+		width: 222px;
+	}
+
+	.btn-log {
+		width: 150px; 
+	}
+
+	.btn-resp-display {
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	#jumbo-image {
+	  height: 43.5em;
+	}
+
+	.jumbo-text .jumbo-btn {
+		align-items: center;
+	}
+
+	.display-7 {
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 140%;
+		padding: 13px;
 		margin-top: 175px;
+	}
+
+	.jumbo-text {
+		align-self: center;
+	}
+
+	.jumbo-text .txt {
+		padding-left: 40px;
+		padding-right: 40px;
 	}
 
 	.btn-no-disp {
@@ -251,124 +289,76 @@ li.button-group{
 	}
 }
 	
-
-
-
-
-	/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-/*	#jumbo-image {
-		background-image: none;
-		background-color:  white;
-		height: 55em;
-		text-align: center;
+@media only screen and (min-width: 768px) {
+	.btn-resp-display {
+		display: none;
 	}
 
-	.cochon {
-		display: none;
-	}*/
-
-/*	.text-width {
-		width: 100%;
-		justify-content: center;
-			margin-left: 0px;
-	}*/
-}
-
-	/* Portrait tablets and small desktops */
-@media (max-width: 991px) {
-/*	#jumbo-image {
-		background-image: none;
-		background-color:  white;
-		text-align: center;
-		height: 55em;
+	.btn-no-disp {
+		display: flex;
+		flex-direction: column;
 	}
 
-	.cochon {
-		display: none;
-	}*/
+	.jumbotron {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#jumbo-image {
+	  height: 43.5em;
+	}
+
+	.jumbo-btn {
+		height: 50%;
+	}
 	
-/*	.jumbo-text {
-		width: 400px;
+	.jumbo-btn,
+	.jumbo-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 
-	.text-width {
-		width: 100%;
-		justify-content: center;
-			margin-left: 0px;
-	}*/
-
-}
-
-	/* Landscape phones and portrait tablets */
-@media (max-width: 445px) {
-/*	#jumbo-image {
-		background-image: none;
-		background-color:  white;
-		text-align: center;
-		justify-content: center;
+	.jumbo-text {
+		align-items: center;
+		height: 33%;
 	}
 
-	.cochon {
-		display: none;
-	}*/
-
-/*	.jumbotron {
-		padding-top: 5rem;
-	}
-
-	.display-4 {
+	.display-7 {
 		font-size: 20px;
+		font-weight: 700;
+		line-height: 140%;
+		padding: 13px;
+		margin-top: 0;
 	}
 
 	.jumbo-text {
-		width: 300px;
-	}*/
-}
-
-/*@media (max-width: 991.98px) {
-    .display-2 {
-        font-size: 1.875rem;
-    }
-}
-
-@media (max-width: 1199.98px) {
-    .display-3 {
-        font-size: 1.875rem;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .display-4 {
-        font-size: 1.5rem;
-    }
-}*/
-
-	/* Portrait phones and smaller */
-/*	@media (max-width: 480px) {
-						#jumbo-image {
-			background-image: none;
-			background-color:  white;
-			height: 50%;
-	}*/
-
-/*}*/
-
-/* responsive */
-
-/*@media (max-width: 1430px) {
-	.jumbo-text {
-		width: 600px;
+		align-self: center;
 	}
 
-	.display-2 {
-		font-size: 52px;
+	.jumbo-text .txt {
+		padding-left: 40px;
+		padding-right: 40px;
+		margin: auto;
+	}
+	
+	.btn-etude,
+	.btn-log {
+		height: 41px;
+	  font-size: 14px; 
+	  padding-top: 7px;
 	}
 
-	.display-4 {
-		font-size: 1.6rem;
+	.btn-etude {
+		width: 200px;
 	}
-}*/
+
+	.btn-log {
+		width: 125px; 
+	}
+}
+
+
 
 
 /* CONSTAT
