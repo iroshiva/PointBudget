@@ -65,10 +65,10 @@ li.button-group{
 ==================================*/
 
 .logo {
-	width: 350px;
+	width: 280px;
 }
 .logo-nav{
- 	max-width: 200px;
+ 	/*max-width: 200px;*/
  	color: white;
 }
 
@@ -123,182 +123,275 @@ li.button-group{
 /* JUMBOTRON 
 ===================================*/
 
-/*.upper-jumbo {
-	margin-top: 100px;
-	background-color: #EBEBED;
-}*/
+#jumbo-image {
+	background-image: url('ben-5.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+/*  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.1);
+  color: #274991;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0 !important;
+  border-radius: 0rem !important;
+  display: flex;
+  
+}
 
-.text-width {
+/*.text-width {
 	width: 700px;
 	margin-left: 50px;
 	display: flex;
 	flex-direction: row;
-}
-
-.jumbo-text {
-	display: flex;
-	flex-direction: column;
-	width: 700px;
-}
+}*/
 
 .jumbo-text .jumbo-btn {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-/*.display-7,*/
-.display-4,
-.display-3 {
-	display: inline-block;
-}
 
 .display-7 {
-	/*color: #274991;*/
+	color: #274991;
 	font-weight: 700;
 	line-height: 140%;
 }
 
-.display-7 span {
-	color: #10AB7C;
+.btn-log,
+.btn-etude {
+	height: 50px;
+	border-radius: 2rem;
+  border: #274991 3px solid;
+  background-color: #ffffff;
+
+  color: #274991;
+  font-size: 18px; 
+  font-weight: 401;
+  text-align: center;
+  padding-top: 8px;
 }
 
-.cochon-pic {
-	width: 800px;
+.btn-log:hover,
+.btn-etude:hover {
+  border: #274991 3px solid;
+  background-color: #274991;
+  color: #ffffff;
 }
 
-/* Show in Large desktops and laptops */
-/*@media (min-width: 1200px) {*/
-		#jumbo-image {
-		background-image: url('jumbo.jpg');
-		max-width: 100%;
-		background-position: center 70%;
-	  background-size: cover;
-	  background-repeat: no-repeat;
-	  height: 54em;
-		-webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	}
-
-/*}*/
-
-	/*Hide in Other Small Devices */
-
-
-	/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-/*	#jumbo-image {
-		background-image: none;
-		background-color:  white;
-		height: 55em;
-		text-align: center;
-	}
-
-	.cochon {
-		display: none;
-	}*/
-
-	.text-width {
-		width: 100%;
-		justify-content: center;
-			margin-left: 0px;
-	}
+.btn-log {
+	width: 166px; 
 }
 
-	/* Portrait tablets and small desktops */
-@media (max-width: 991px) {
-/*	#jumbo-image {
-		background-image: none;
-		background-color:  white;
-		text-align: center;
-		height: 55em;
+.btn-etude {
+	width: 257px; 
+}
+
+@media only screen and (max-width: 600px) {
+	#jumbo-image {
+	  height: 39.5em;
 	}
 
-	.cochon {
-		display: none;
-	}*/
-	
+	.jumbo-text .jumbo-btn {
+		align-items: center;
+	}
+
+	.display-7 {
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 140%;
+		padding: 13px;
+		margin-top: 175px;
+	}
+
 	.jumbo-text {
-		width: 400px;
+		align-self: center;
 	}
 
-	.text-width {
-		width: 100%;
-		justify-content: center;
-			margin-left: 0px;
+	.jumbo-text .txt {
+		padding-left: 40px;
+		padding-right: 40px;
 	}
 
+	.btn-no-disp {
+		display: none;
+	}
+	
+	.btn-etude,
+	.btn-log {
+		margin: 10px auto;
+		height: 46px;
+	  font-size: 15px; 
+	  padding-top: 8px;
+	}
+
+	.btn-etude {
+		width: 222px;
+	}
+
+	.btn-log {
+		width: 150px; 
+	}
+
+	.btn-resp-display {
+		margin-top: 20px;
+	}
 }
 
-	/* Landscape phones and portrait tablets */
-@media (max-width: 445px) {
-/*	#jumbo-image {
-		background-image: none;
-		background-color:  white;
-		text-align: center;
-		justify-content: center;
+@media only screen and (min-width: 600px) {
+	#jumbo-image {
+	  height: 39.5em;
 	}
 
-	.cochon {
+	.btn-resp-display {
 		display: none;
-	}*/
+	}
+
+	.btn-no-disp {
+		display: flex;
+		flex-direction: column;
+	}
 
 	.jumbotron {
-		padding-top: 5rem;
+		display: flex;
+		flex-direction: column;
 	}
 
-	.display-4 {
+	.jumbo-btn {
+		align-items: center;
+	}
+
+	.jumbo-btn {
+		margin-top: 55px;
+		margin-left: 30px;
+	}
+
+	.display-7 {
 		font-size: 20px;
+		font-weight: 700;
+		line-height: 140%;
+		padding: 13px;
 	}
 
 	.jumbo-text {
-		width: 300px;
+		align-self: center;
+		margin-top: 110px;
+		width: 80%;
+	}
+
+	.jumbo-text .txt {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	
+	.btn-etude,
+	.btn-log {
+		margin: 10px auto;
+		height: 46px;
+	  font-size: 15px; 
+	  padding-top: 8px;
+	}
+
+	.btn-etude {
+		width: 222px;
+	}
+
+	.btn-log {
+		width: 150px; 
 	}
 }
+	
+@media only screen and (min-width: 768px) {
+	#jumbo-image {
+	  height: 39.5em;
+	}
 
-@media (max-width: 991.98px) {
-    .display-2 {
-        font-size: 1.875rem;
-    }
-}
+	.jumbotron {
+		display: flex;
+		flex-direction: column;
+	}
 
-@media (max-width: 1199.98px) {
-    .display-3 {
-        font-size: 1.875rem;
-    }
-}
+	.jumbo-btn {
+		margin-top: 73px;
+		margin-left: 40px;
+	}
 
-@media (max-width: 767.98px) {
-    .display-4 {
-        font-size: 1.5rem;
-    }
-}
+	.jumbo-text {
+		margin-top: 92px;
+		width: 90%;
+	}
 
-	/* Portrait phones and smaller */
-/*	@media (max-width: 480px) {
-						#jumbo-image {
-			background-image: none;
-			background-color:  white;
-			height: 50%;
+	.display-7 {
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 140%;
+	}
+	
+/*	.btn-etude,
+	.btn-log {
+		height: 41px;
+	  font-size: 14px; 
+	  padding-top: 7px;
+	}
+
+	.btn-etude {
+		width: 200px;
+	}
+
+	.btn-log {
+		width: 125px; 
 	}*/
+}
 
-/*}*/
-
-/* responsive */
-
-/*@media (max-width: 1430px) {
+@media only screen and (min-width: 991px) {
 	.jumbo-text {
-		width: 600px;
+		margin-top: 88px;
+		width: 80%;
 	}
 
-	.display-2 {
-		font-size: 52px;
+	.display-7 {
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 160%;
+		margin-top: 0;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	#jumbo-image {
+	  height: 51.5em;
 	}
 
-	.display-4 {
-		font-size: 1.6rem;
+	.jumbo-text {
+		margin-top: 197px;
+		width: 64%;
 	}
-}*/
+
+	.display-7 {
+		font-size: 26px;
+		font-weight: 700;
+		line-height: 160%;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	#jumbo-image {
+	  height: 54em;
+	  background-position: center 65%;
+	}
+
+	.jumbo-text {
+		width: 54%;
+		margin-top: 220px;
+	}
+
+/*	.display-7 {
+		font-size: 26px;
+		font-weight: 700;
+		line-height: 160%;
+		margin-top: 0;
+	}*/
+}
 
 
 /* CONSTAT
@@ -431,7 +524,7 @@ li.button-group{
 
 .parallax {
   /* The image used */
-  background-image: url("parallax_img.jpg");
+  background-image: url("parallax.jpg");
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
