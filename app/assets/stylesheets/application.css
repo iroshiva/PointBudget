@@ -65,10 +65,10 @@ li.button-group{
 ==================================*/
 
 .logo {
-	width: 350px;
+	width: 280px;
 }
 .logo-nav{
- 	max-width: 200px;
+ 	/*max-width: 200px;*/
  	color: white;
 }
 
@@ -123,10 +123,17 @@ li.button-group{
 /* JUMBOTRON 
 ===================================*/
 
-/*.upper-jumbo {
-	margin-top: 100px;
-	background-color: #EBEBED;
-}*/
+#jumbo-image {
+	background-image: url('jumbo_cut.jpg');
+	background-position: center 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0 !important;
+  border-radius: 0rem !important;
+}
 
 .text-width {
 	width: 700px;
@@ -162,28 +169,46 @@ li.button-group{
 	color: #10AB7C;
 }
 
-.cochon-pic {
-	width: 800px;
+.btn-etude {
+	width: 257px; 
+	height: 50px;
+	border-radius: 2rem;
+  border: #274991 3px solid;
+  background-color: #ffffff;
+
+  color: #274991;
+  font-size: 18px; 
+  font-weight: 401;
+  text-align: center;
+  padding-top: 8px;
+  
+  /*box-shadow: 0 0.125rem 0.25rem rgba(42, 53, 79, 0.07);*/
 }
 
-/* Show in Large desktops and laptops */
-/*@media (min-width: 1200px) {*/
-		#jumbo-image {
-		background-image: url('jumbo.jpg');
-		/*width: auto;*/
-		max-height: 100%;
-		background-position: center 70%;
-	  background-size: cover;
-	  background-repeat: no-repeat;
-	  height: 54em;
-		-webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
+.btn-log {
+	width: 166px; 
+	height: 50px;
+	border-radius: 2rem;
+  border: #274991 3px solid;
+  background-color: #ffffff;
+
+  color: #274991;
+  font-size: 18px; 
+  font-weight: 401;
+  text-align: center;
+  padding-top: 8px;
+  
+  /*box-shadow: 0 0.125rem 0.25rem rgba(42, 53, 79, 0.07);*/
+}
+
+@media only screen and (max-width: 600px) {
+	#jumbo-image {
+	  height: 55.5em;
 	}
+}
+	
 
-/*}*/
 
-	/*Hide in Other Small Devices */
 
 
 	/* Landscape tablets and medium desktops */
@@ -199,11 +224,11 @@ li.button-group{
 		display: none;
 	}*/
 
-	.text-width {
+/*	.text-width {
 		width: 100%;
 		justify-content: center;
 			margin-left: 0px;
-	}
+	}*/
 }
 
 	/* Portrait tablets and small desktops */
@@ -219,7 +244,7 @@ li.button-group{
 		display: none;
 	}*/
 	
-	.jumbo-text {
+/*	.jumbo-text {
 		width: 400px;
 	}
 
@@ -227,7 +252,7 @@ li.button-group{
 		width: 100%;
 		justify-content: center;
 			margin-left: 0px;
-	}
+	}*/
 
 }
 
@@ -244,7 +269,7 @@ li.button-group{
 		display: none;
 	}*/
 
-	.jumbotron {
+/*	.jumbotron {
 		padding-top: 5rem;
 	}
 
@@ -254,10 +279,10 @@ li.button-group{
 
 	.jumbo-text {
 		width: 300px;
-	}
+	}*/
 }
 
-@media (max-width: 991.98px) {
+/*@media (max-width: 991.98px) {
     .display-2 {
         font-size: 1.875rem;
     }
@@ -273,7 +298,7 @@ li.button-group{
     .display-4 {
         font-size: 1.5rem;
     }
-}
+}*/
 
 	/* Portrait phones and smaller */
 /*	@media (max-width: 480px) {
