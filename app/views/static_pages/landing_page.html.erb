@@ -1,5 +1,20 @@
 <%= render 'layouts/jumbotron' %>
 
+<div class="btn-resp-display">
+  <div class="row jumbo-text">
+    <div class="col-md-3"> 
+      <div class="col-md-12 jumbo-btn">
+        <% if user_signed_in? %>
+          <%=link_to "Lancer une simulation", new_user_full_simulation_path(current_user), class: "btn-jumbo"%>
+        <%else%>
+          <%=link_to "Faire une étude gratuite", new_user_registration_path, class: "btn-etude"%>
+          <%=link_to "Me connecter", new_user_session_path, class: "btn-log"%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
 <main>
 <!-- CONSTAT -->
   <div class="container mt-3" id="context">

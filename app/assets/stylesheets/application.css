@@ -128,24 +128,32 @@ li.button-group{
 	background-position: center 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.2);
+  color: #274991;;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   margin-bottom: 0 !important;
   border-radius: 0rem !important;
+  display: flex;
+  
 }
 
-.text-width {
+.jumbotron {
+
+}
+
+/*.text-width {
 	width: 700px;
 	margin-left: 50px;
 	display: flex;
 	flex-direction: row;
-}
+}*/
 
 .jumbo-text {
 	display: flex;
 	flex-direction: column;
-	width: 700px;
+	/*width: 700px;*/
 }
 
 .jumbo-text .jumbo-btn {
@@ -153,24 +161,15 @@ li.button-group{
 	flex-direction: column;
 	align-items: center;
 }
-/*.display-7,*/
-.display-4,
-.display-3 {
-	display: inline-block;
-}
 
 .display-7 {
-	/*color: #274991;*/
+	color: #274991;
 	font-weight: 700;
 	line-height: 140%;
 }
 
-.display-7 span {
-	color: #10AB7C;
-}
-
+.btn-log,
 .btn-etude {
-	width: 257px; 
 	height: 50px;
 	border-radius: 2rem;
   border: #274991 3px solid;
@@ -181,29 +180,74 @@ li.button-group{
   font-weight: 401;
   text-align: center;
   padding-top: 8px;
-  
-  /*box-shadow: 0 0.125rem 0.25rem rgba(42, 53, 79, 0.07);*/
+}
+
+.btn-log:hover,
+.btn-etude:hover {
+  border: #274991 3px solid;
+  background-color: #274991;
+
+  color: #ffffff;
 }
 
 .btn-log {
 	width: 166px; 
-	height: 50px;
-	border-radius: 2rem;
-  border: #274991 3px solid;
-  background-color: #ffffff;
+}
 
-  color: #274991;
-  font-size: 18px; 
-  font-weight: 401;
-  text-align: center;
-  padding-top: 8px;
-  
-  /*box-shadow: 0 0.125rem 0.25rem rgba(42, 53, 79, 0.07);*/
+.btn-etude {
+	width: 257px; 
 }
 
 @media only screen and (max-width: 600px) {
 	#jumbo-image {
-	  height: 55.5em;
+	  height: 43.5em;
+	}
+
+	.jumbo-text .jumbo-btn {
+		align-items: center;
+	}
+
+	.display-7 {
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 140%;
+		padding: 13px;
+		/*background-color: rgba(42, 53, 79, 0.07);*/
+	}
+
+	.jumbo-text {
+		align-self: center;
+		/*margin-bottom: 40px;*/
+	}
+
+	.jumbo-text .txt {
+		padding-left: 40px;
+		padding-right: 40px;
+		margin-top: 175px;
+	}
+
+	.btn-no-disp {
+		display: none;
+	}
+	
+	.btn-etude,
+	.btn-log {
+		margin: 10px auto;
+		height: 46px;
+	  font-size: 15px; 
+	  padding-top: 8px;
+	}
+
+	.btn-etude {
+		width: 222px;
+	}
+
+	.btn-log {
+		width: 150px; 
+	}
+
+	.btn-resp-display {
+		margin-top: 20px;
 	}
 }
 	
