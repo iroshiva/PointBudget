@@ -124,11 +124,11 @@ li.button-group{
 ===================================*/
 
 #jumbo-image {
-	background-image: url('jumbo_cut.jpg');
-	background-position: center 100%;
+	background-image: url('ben-5.jpg');
+	background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
- /* box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.2);
+/*  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.1);
   color: #274991;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -189,7 +189,7 @@ li.button-group{
 
 @media only screen and (max-width: 600px) {
 	#jumbo-image {
-	  height: 43.5em;
+	  height: 39.5em;
 	}
 
 	.jumbo-text .jumbo-btn {
@@ -240,11 +240,30 @@ li.button-group{
 
 @media only screen and (min-width: 600px) {
 	#jumbo-image {
-	  height: 43.5em;
+	  height: 39.5em;
 	}
 
-	.jumbo-text .jumbo-btn {
+	.btn-resp-display {
+		display: none;
+	}
+
+	.btn-no-disp {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.jumbotron {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.jumbo-btn {
 		align-items: center;
+	}
+
+	.jumbo-btn {
+		margin-top: 55px;
+		margin-left: 30px;
 	}
 
 	.display-7 {
@@ -252,20 +271,17 @@ li.button-group{
 		font-weight: 700;
 		line-height: 140%;
 		padding: 13px;
-		margin-top: 175px;
 	}
 
 	.jumbo-text {
 		align-self: center;
+		margin-top: 110px;
+		width: 80%;
 	}
 
 	.jumbo-text .txt {
 		padding-left: 40px;
 		padding-right: 40px;
-	}
-
-	.btn-no-disp {
-		display: none;
 	}
 	
 	.btn-etude,
@@ -283,20 +299,11 @@ li.button-group{
 	.btn-log {
 		width: 150px; 
 	}
-
-	.btn-resp-display {
-		margin-top: 20px;
-	}
 }
 	
 @media only screen and (min-width: 768px) {
-	.btn-resp-display {
-		display: none;
-	}
-
-	.btn-no-disp {
-		display: flex;
-		flex-direction: column;
+	#jumbo-image {
+	  height: 39.5em;
 	}
 
 	.jumbotron {
@@ -304,45 +311,23 @@ li.button-group{
 		flex-direction: column;
 	}
 
-	#jumbo-image {
-	  height: 43.5em;
-	}
-
 	.jumbo-btn {
-		height: 50%;
-	}
-	
-	.jumbo-btn,
-	.jumbo-text {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
+		margin-top: 73px;
+		margin-left: 40px;
 	}
 
 	.jumbo-text {
-		align-items: center;
-		height: 33%;
+		margin-top: 92px;
+		width: 90%;
 	}
 
 	.display-7 {
 		font-size: 20px;
 		font-weight: 700;
 		line-height: 140%;
-		padding: 13px;
-		margin-top: 0;
-	}
-
-	.jumbo-text {
-		align-self: center;
-	}
-
-	.jumbo-text .txt {
-		padding-left: 40px;
-		padding-right: 40px;
-		margin: auto;
 	}
 	
-	.btn-etude,
+/*	.btn-etude,
 	.btn-log {
 		height: 41px;
 	  font-size: 14px; 
@@ -355,10 +340,58 @@ li.button-group{
 
 	.btn-log {
 		width: 125px; 
+	}*/
+}
+
+@media only screen and (min-width: 991px) {
+	.jumbo-text {
+		margin-top: 88px;
+		width: 80%;
+	}
+
+	.display-7 {
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 160%;
+		margin-top: 0;
 	}
 }
 
+@media only screen and (min-width: 1200px) {
+	#jumbo-image {
+	  height: 51.5em;
+	}
 
+	.jumbo-text {
+		margin-top: 197px;
+		width: 64%;
+	}
+
+	.display-7 {
+		font-size: 26px;
+		font-weight: 700;
+		line-height: 160%;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	#jumbo-image {
+	  height: 54em;
+	  background-position: center 65%;
+	}
+
+	.jumbo-text {
+		width: 54%;
+		margin-top: 220px;
+	}
+
+/*	.display-7 {
+		font-size: 26px;
+		font-weight: 700;
+		line-height: 160%;
+		margin-top: 0;
+	}*/
+}
 
 
 /* CONSTAT
